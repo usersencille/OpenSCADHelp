@@ -23,3 +23,21 @@ The advantages of HelpNDoc.
 HelpNDoc has a free version for personal use that I think is compatible with this project. 
 
 HelpNDoc can generate, starting from the same font, CHM files for Microsoft Windows, eBooks for Amazon Kindle, PDF Files for standard readers and responsive HTML web sites.
+
+# Sources for the project
+
+The main source for OpenSCAD language is going to be the official wiki page of Reference: https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/General
+
+The libraries included in help are going the next ones:
+
+## MCAD
+Components commonly used in designing and mocking up mechanical designs
+https://github.com/openscad/MCAD
+
+## dotSCAD
+Reduce the burden of 3D modelling in mathematics.
+https://github.com/JustinSDK/dotSCAD
+
+## BOSL
+The Belfry OpenScad Library - A library of tools, shapes, and helpers to make OpenSCAD easier to use.
+https://github.com/revarbat/BOSL
