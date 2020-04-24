@@ -1,4 +1,7 @@
 # OpenSCADHelp
+
+You can find the html version in this link (at the current state of course): http://sencille.es/OpenSCADAcademy/index.html
+
 OpenSCAD Help Project is a compilation of help information about OpenSCAD and some libraries.
 
 Any programming language has two parts to learn. The language syntax and himself instructions and the common libraries of constructed instructions.
