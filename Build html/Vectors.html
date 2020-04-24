@@ -1,0 +1,188 @@
+﻿
+
+<html>
+	
+<head>
+	<title>Vectors</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 6.4.1.367">
+	<meta name="description" content="" /> 
+	<meta name="keywords" content="">
+	
+	
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "OpenSCAD Help.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Vectors");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	
+</head>
+
+<body>
+
+
+
+	
+		<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Vectors</h1>
+				
+				
+				<div id="topic_breadcrumb">
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="TheOpenSCADLanguage.html">The OpenSCAD Language</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; 
+				</div>
+				
+			</div>
+			
+			<div id="topic_header_nav">
+				
+				
+				<a href="ValuesandDataTypes.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				
+				
+				<a href="SpecialVariables.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				
+				
+				<a href="VectorOperatorsconcatlen.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				
+			</div>
+			
+			<div class="clear"></div>
+		</div>
+	
+	
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts28">Vectors</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps7"><span class="rvts21">A vector is a sequence of zero or more OpenSCAD values. Vectors are a collection (or list or table) of numeric or boolean values, variables, vectors, strings or any combination thereof. They can also be expressions which evaluate to one of these. </span></p>
+<p class="rvps7"><span class="rvts21">Vectors handle the role of arrays found in many imperative languages. The information here also applies to lists and tables which use vectors for their data.</span></p>
+<p class="rvps7"><span class="rvts21">A vector has square brackets, [] enclosing zero or more items (elements or members), separated by commas. A vector can contain vectors, which contain vectors, etc.</span></p>
+<p class="rvps7"><span class="rvts21"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps9"><span class="rvts20">examples</span></li>
+<li style="margin-left: 0px" class="rvps9"><span class="rvts20"></span></li>
+</ul>
+<p class="rvps13"><span class="rvts6">[1, 2, 3] </span></p>
+<p class="rvps13"><span class="rvts6">[a, 5, b] </span></p>
+<p class="rvps13"><span class="rvts6">[] </span></p>
+<p class="rvps13"><span class="rvts6">[5.643] </span></p>
+<p class="rvps13"><span class="rvts6">["a", "b", "string"] </span></p>
+<p class="rvps13"><span class="rvts6">[[1, r], [x, y, z, 4, 5]] </span></p>
+<p class="rvps13"><span class="rvts6">[3, 5, [6,7], [[8, 9], [10, [11, 12], 13], c, "string"] </span></p>
+<p class="rvps13"><span class="rvts6">[4/3, 6*1.5, cos(60)]</span></p>
+<p class="rvps7"><span class="rvts21"><br/></span></p>
+<p class="rvps7"><span class="rvts21">use in OpenSCAD:</span></p>
+<p class="rvps7"><span class="rvts21"><br/></span></p>
+<p class="rvps13"><span class="rvts6">cube( [width, depth, height]); &nbsp; &nbsp; // optional spaces shown for clarity </span></p>
+<p class="rvps13"><span class="rvts6">translate( [x, y, z] ) </span></p>
+<p class="rvps13"><span class="rvts6">polygon( [ [x0, y0], [x1, y1], [x2, y2] ] );</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps9"><span class="rvts20"></span></li>
+<li style="margin-left: 0px" class="rvps9"><span class="rvts20">creation</span></li>
+</ul>
+<p class="rvps7"><span class="rvts21">Vectors are created by writing the list of elements, separated by commas, and enclosed in square brackets. Variables are replaced by their values.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps13"><span class="rvts6">cube([10, 15, 20]); </span></p>
+<p class="rvps13"><span class="rvts6">a1 = [1, 2, 3]; </span></p>
+<p class="rvps13"><span class="rvts6">a2 = [4, 5]; </span></p>
+<p class="rvps13"><span class="rvts6">a3 = [6, 7, 8, 9]; </span></p>
+<p class="rvps13"><span class="rvts6">b = [a1, a2, a3]; &nbsp; &nbsp; // [ [1,2,3], [4,5], [6,7,8,9] ] note increased nesting depth</span></p>
+<p class="rvps13"><span class="rvts6"><br/></span></p>
+<p class="rvps13"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps2"><span class="rvts20">elements within vectors</span></li>
+</ul>
+<p class="rvps7"><span class="rvts21">Elements within vectors are numbered from 0 to n-1 where n is the length returned by&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language#len">len()</a><span class="rvts21">. Address elements within vectors with the following notation:</span></p>
+<p class="rvps7"><span class="rvts21"><br/></span></p>
+<p class="rvps13"><span class="rvts29">e[5] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// element no 5 (sixth) at 1st nesting level </span></p>
+<p class="rvps13"><span class="rvts29">e[5][2] &nbsp; &nbsp; &nbsp; // element 2 of element 5 2nd nesting level </span></p>
+<p class="rvps13"><span class="rvts29">e[5][2][0] &nbsp; &nbsp;// element 0 of 2 of 5 3rd nesting level </span></p>
+<p class="rvps13"><span class="rvts29">e[5][2][0][1] // element 1 of 0 of 2 of 5 4th nesting level</span></p>
+<p class="rvps16"><span class="rvts21"><br/></span></p>
+<p class="rvps16"><span class="rvts21">example elements with lengths from len()</span></p>
+<p class="rvps16"><span class="rvts21"><br/></span></p>
+<p class="rvps13"><span class="rvts6">e = [ [1], [], [3, 4, 5], "string", "x", [[10, 11], [12, 13, 14], [[15, 16], [17]]] ]; // length 6 </span></p>
+<p class="rvps13"><span class="rvts6"><br/></span></p>
+<p class="rvps13"><span class="rvts6">address </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">length </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">element </span></p>
+<p class="rvps13"><span class="rvts6">e[0] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">1 </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">[1] </span></p>
+<p class="rvps13"><span class="rvts6">e[1] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">0 </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">[] </span></p>
+<p class="rvps13"><span class="rvts6">e[5] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">3 </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">[ [10,11], [12,13,14], [[15,16],[17]] ] </span></p>
+<p class="rvps13"><span class="rvts6">e[5][1] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">3 </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">[12, 13, 14] </span></p>
+<p class="rvps13"><span class="rvts6">e[5][2] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">2 </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">[[15, 16], [17] ] </span></p>
+<p class="rvps13"><span class="rvts6">e[5][2][0] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">2 </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">[15, 16 ] </span></p>
+<p class="rvps13"><span class="rvts6">e[5][2][0][1] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">undef </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">16 </span></p>
+<p class="rvps13"><span class="rvts6"><br/></span></p>
+<p class="rvps13"><span class="rvts6">e[3] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">6 </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">"string" </span></p>
+<p class="rvps13"><span class="rvts6">e[3 ][2] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">1 </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">"r" </span></p>
+<p class="rvps13"><span class="rvts6">s = [2,0,5]; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">a = 2; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps13"><span class="rvts6">s[a] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">undef </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">5 </span></p>
+<p class="rvps13"><span class="rvts6">e[s[a]] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">3 </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">[[10, 11], [12, 13, 14], [[15, 16], [17]]]</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps9"><span class="rvts20"></span></li>
+<li style="margin-left: 0px" class="rvps9"><span class="rvts20">alternate dot notation</span></li>
+</ul>
+<p class="rvps7"><span class="rvts21"><br/></span></p>
+<p class="rvps7"><span class="rvts21">The first three elements of a vector can be accessed with an alternate dot notation:</span></p>
+<p class="rvps13"><span class="rvts6"><br/></span></p>
+<p class="rvps13"><span class="rvts6">e.x </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">//equivalent to e[0] </span></p>
+<p class="rvps13"><span class="rvts6">e.y </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">//equivalent to e[1] </span></p>
+<p class="rvps13"><span class="rvts6">e.z </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">//equivalent to e[2]</span></p>
+<p></p>
+<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Produce Kindle eBooks easily</a></p>
+
+	</div>
+	
+	
+		<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				2020 by Juan C.Cilleruelo. GPL License
+			</div>
+		</div>
+	
+	
+
+	
+</body>
+	
+</html>
+

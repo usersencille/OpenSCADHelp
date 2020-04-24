@@ -1,0 +1,3686 @@
+﻿
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title>OpenSCAD Help- Table of Contents</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 6.4.1.367">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/silver-theme/jquery-ui-1.8.12.custom.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/dynatree/chm/ui.dynatree.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="css/toc.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#tabs .ui-widget-header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.dynatree.min.js"></script>
+	<script type="text/javascript" src="js/hndjsse.js"></script>
+	<script type="text/javascript">
+	
+		window.bSearchDataLoaded = false;
+		var sHelpIdToActivate = '';
+	
+		$(document).ready(function()
+		{
+			var sAnchorName = '';
+			try { sAnchorName = top.location.href.substring(top.location.href.lastIndexOf("#") + 1, top.location.href.length); }
+			catch(err) { sAnchorName = ''; }
+			var nSelectedTab = 0;
+			if (sAnchorName == '_index') nSelectedTab = 1
+			else if (sAnchorName == '_search') nSelectedTab = 2;			
+			$("#tabs").tabs({
+				selected: nSelectedTab,
+				select: function(event, ui) { HideKwPopup(); }
+			});
+			
+			// Toc
+			if ($("#tab-toc").length) {
+				$("#tab-toc").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#tab-keywords").length && $("#tab-keywords").dynatree && $("#tab-keywords").dynatree("getTree") && $("#tab-keywords").dynatree("getTree").activateKey)
+							$("#tab-keywords").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+				// Expand all nodes if required
+				
+					$("#tab-toc").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				
+				// Select the active help id
+				if (sHelpIdToActivate != '') $("#tab-toc").dynatree("getTree").activateKey(sHelpIdToActivate);
+			}
+			
+			// Keywords
+			
+			if ($("#tab-keywords").length) {
+				$("#tab-keywords").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onClick: function(node, event){
+						HideKwPopup();
+						if (node.data && node.data.click)
+						{
+							var aRefList = null;
+							eval('aRefList=' + node.data.click);
+							if (ShowKwPopup(node.li, aRefList))
+							{
+								if ($("#tab-toc") && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").activateKey)
+									$("#tab-toc").dynatree("getTree").activateKey(null);
+								if(node.data.href && node.data.href != '#'){
+									window.open(node.data.href, node.data.target);
+								}
+							}
+						}
+					}
+				});
+				// Expand all nodes if required
+				
+					$("#tab-keywords").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				
+			}
+			
+			// Load search data
+			(function() {
+				var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+				se.src = 'js/hndsd.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+			})();
+		});
+		
+		$('body').click(function() {
+			HideKwPopup();
+		});
+		
+		function SelectTocItem(sHelpId)
+		{
+			if ($("#tab-toc").length && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").getNodeByKey) {
+				var aNode = $("#tab-toc").dynatree("getTree").getNodeByKey(sHelpId);
+				if (aNode) {
+					aNode.activateSilently();  
+				}
+			}
+			else {
+				sHelpIdToActivate = sHelpId;
+			}
+		}
+		
+		function HideKwPopup()
+		{
+			if($("#popupMenu")) $("#popupMenu").remove();
+		}
+		
+		function ShowKwPopup(oSender, aLinks)
+		{
+			HideKwPopup();
+			if (!aLinks || !aLinks.length || aLinks.length == 0) return false
+			else if (aLinks.length == 1) return true
+			else
+			{
+				var oParentDiv = document.createElement("DIV");
+				oParentDiv.id = "popupMenu";
+				var oLink = null;
+				// Close button
+				oLink = document.createElement("SPAN");
+				oLink.className = "close-button";
+				oLink.innerHTML = "X";
+				oLink.href = "#";
+				oLink.onclick = HideKwPopup;
+				oParentDiv.appendChild(oLink);
+				// Items
+				for (var nCnt=0; nCnt<aLinks.length; nCnt++)
+				{
+					oLink = document.createElement("A");
+					oLink.innerHTML = aLinks[nCnt][0];
+					oLink.href = aLinks[nCnt][1];
+					oLink.target = "FrameMain";
+					oLink.onclick = HideKwPopup;
+					oParentDiv.appendChild(oLink);
+				}
+				document.body.appendChild(oParentDiv);
+				var pos = $(oSender).offset(); 
+				var height = $(oSender).height();
+				$(oParentDiv).css({
+					"left": (pos.left+20) + "px",
+					"top": (pos.top + height + 5) + "px"
+				});
+				$(oParentDiv).show();
+				return false;
+			}
+		}
+		
+		function PerformSearch()
+		{
+			if (!window.bSearchDataLoaded) {
+				$("#search_results").html("Search engine data hasn't been fully loaded yet or an error occurred while loading it. This usually happens when documentation is browsed locally.");
+				return;
+			}
+			sValue = $("#search_value").val();
+			$("#search_results").html('Searching...');
+			var oSearchEngine = new HndJsSe;
+			oSearchEngine.ParseInput(sValue);			
+			oSearchEngine.PerformSearch();
+			if (!oSearchEngine.aResults || !oSearchEngine.aResults.length)
+			{
+				$("#search_results").html('No results found.');
+			}
+			else
+			{
+				$("#search_results").html('<div id="search_results_content"></div>');
+				var oUl = $("#search_results_content").append("<ul id='lr'></ul>").find("ul");
+				for (var nCnt = 0; nCnt < oSearchEngine.aResults.length; nCnt++)
+				{
+					if (oSearchEngine.aResults[nCnt][0] < aTl.length)
+					{
+						oUl.append("<li><a href='" + aTl[oSearchEngine.aResults[nCnt][0]][0] + "?search=" + escape(sValue) + "' target='FrameMain'>" + unescape(aTl[oSearchEngine.aResults[nCnt][0]][1]) + "</a></li>");
+					}
+				}
+				// Tree
+				$("#search_results_content").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#search_results_content") && $("#search_results_content").dynatree && $("#search_results_content").dynatree("getTree") && $("#search_results_content").dynatree("getTree").activateKey)
+							$("#search_results_content").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="tabs">
+		<ul>
+			
+				<li><a href="#tab-toc">Contents</a></li>
+			
+				<li><a href="#tab-keywords">Index</a></li>
+			
+				<li><a href="#tab-search">Search</a></li>
+			
+		</ul>
+		
+		<div id="tab-toc">
+			<ul id="toc" class="">
+
+				
+
+						<li class="folder" id="Introduction" data="">
+							<a
+							href="Introduction.html"
+							target="FrameMain">
+								Introduction
+							</a>
+
+				<ul>
+
+						<li class="" id="Whatsnew" data="">
+							<a
+							href="Whatsnew.html"
+							target="FrameMain">
+								What's new
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="GettingStarted" data="">
+							<a
+							href="GettingStarted.html"
+							target="FrameMain">
+								Getting Started
+							</a>
+
+				</li>
+
+						<li class="folder" id="LanguageReference" data="">
+							<a
+							href="LanguageReference.html"
+							target="FrameMain">
+								Language Reference
+							</a>
+
+				<ul>
+
+						<li class="folder" id="TheOpenSCADLanguage" data="">
+							<a
+							href="TheOpenSCADLanguage.html"
+							target="FrameMain">
+								The OpenSCAD Language
+							</a>
+
+				<ul>
+
+						<li class="" id="Introduction1" data="">
+							<a
+							href="Introduction1.html"
+							target="FrameMain">
+								Introduction
+							</a>
+
+				</li>
+
+						<li class="" id="Comments" data="">
+							<a
+							href="Comments.html"
+							target="FrameMain">
+								Comments
+							</a>
+
+				</li>
+
+						<li class="folder" id="ValuesandDataTypes" data="">
+							<a
+							href="ValuesandDataTypes.html"
+							target="FrameMain">
+								Values and Data Types
+							</a>
+
+				<ul>
+
+						<li class="" id="Numbers" data="">
+							<a
+							href="Numbers.html"
+							target="FrameMain">
+								Numbers
+							</a>
+
+				</li>
+
+						<li class="" id="BooleanValues" data="">
+							<a
+							href="BooleanValues.html"
+							target="FrameMain">
+								Boolean Values
+							</a>
+
+				</li>
+
+						<li class="" id="Strings" data="">
+							<a
+							href="Strings.html"
+							target="FrameMain">
+								Strings
+							</a>
+
+				</li>
+
+						<li class="" id="Ranges" data="">
+							<a
+							href="Ranges.html"
+							target="FrameMain">
+								Ranges
+							</a>
+
+				</li>
+
+						<li class="" id="TheUndefinedValue" data="">
+							<a
+							href="TheUndefinedValue.html"
+							target="FrameMain">
+								The Undefined Value
+							</a>
+
+				</li>
+
+						<li class="folder" id="Variables" data="">
+							<a
+							href="Variables.html"
+							target="FrameMain">
+								Variables
+							</a>
+
+				<ul>
+
+						<li class="" id="Undefinedvariable" data="">
+							<a
+							href="Undefinedvariable.html"
+							target="FrameMain">
+								Undefined variable
+							</a>
+
+				</li>
+
+						<li class="" id="Scopeofvariables" data="">
+							<a
+							href="Scopeofvariables.html"
+							target="FrameMain">
+								Scope of variables
+							</a>
+
+				</li>
+
+						<li class="" id="Variablesaresetatcompile-timenot" data="">
+							<a
+							href="Variablesaresetatcompile-timenot.html"
+							target="FrameMain">
+								Variables are set at compile-time, not at run-time
+							</a>
+
+				</li>
+
+						<li class="" id="SpecialVariables" data="">
+							<a
+							href="SpecialVariables.html"
+							target="FrameMain">
+								Special Variables
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="Vectors" data="">
+							<a
+							href="Vectors.html"
+							target="FrameMain">
+								Vectors
+							</a>
+
+				<ul>
+
+						<li class="" id="VectorOperatorsconcatlen" data="">
+							<a
+							href="VectorOperatorsconcatlen.html"
+							target="FrameMain">
+								Vector Operators (concat &amp; len)
+							</a>
+
+				</li>
+
+						<li class="" id="Matrix" data="">
+							<a
+							href="Matrix.html"
+							target="FrameMain">
+								Matrix
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="Gettinginput" data="">
+							<a
+							href="Gettinginput.html"
+							target="FrameMain">
+								Getting input
+							</a>
+
+				</li></ul></li></ul></li>
+
+						<li class="folder" id="3DObjects" data="">
+							<a
+							href="3DObjects.html"
+							target="FrameMain">
+								3D Objects
+							</a>
+
+				<ul>
+
+						<li class="folder" id="PrimitiveSolids" data="">
+							<a
+							href="PrimitiveSolids.html"
+							target="FrameMain">
+								Primitive Solids
+							</a>
+
+				<ul>
+
+						<li class="" id="cube" data="">
+							<a
+							href="cube.html"
+							target="FrameMain">
+								cube
+							</a>
+
+				</li>
+
+						<li class="" id="sphere" data="">
+							<a
+							href="sphere.html"
+							target="FrameMain">
+								sphere
+							</a>
+
+				</li>
+
+						<li class="" id="cylinder" data="">
+							<a
+							href="cylinder.html"
+							target="FrameMain">
+								cylinder
+							</a>
+
+				</li>
+
+						<li class="folder" id="polyhedron" data="">
+							<a
+							href="polyhedron.html"
+							target="FrameMain">
+								polyhedron
+							</a>
+
+				<ul>
+
+						<li class="" id="Debuggingpolyhedra" data="">
+							<a
+							href="Debuggingpolyhedra.html"
+							target="FrameMain">
+								Debugging polyhedra
+							</a>
+
+				</li>
+
+						<li class="" id="Mis-orderedfaces" data="">
+							<a
+							href="Mis-orderedfaces.html"
+							target="FrameMain">
+								Mis-ordered faces
+							</a>
+
+				</li>
+
+						<li class="" id="Pointrepetitionsinapolyhedronpoi" data="">
+							<a
+							href="Pointrepetitionsinapolyhedronpoi.html"
+							target="FrameMain">
+								Point repetitions in a polyhedron point list
+							</a>
+
+				</li></ul></li></ul></li>
+
+						<li class="" id="3Dto2DProjection" data="">
+							<a
+							href="3Dto2DProjection.html"
+							target="FrameMain">
+								3D to 2D Projection
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="2DObjects1" data="">
+							<a
+							href="2DObjects1.html"
+							target="FrameMain">
+								2D Objects
+							</a>
+
+				<ul>
+
+						<li class="" id="square" data="">
+							<a
+							href="square.html"
+							target="FrameMain">
+								square
+							</a>
+
+				</li>
+
+						<li class="folder" id="circle" data="">
+							<a
+							href="circle.html"
+							target="FrameMain">
+								circle
+							</a>
+
+				<ul>
+
+						<li class="" id="ellipse" data="">
+							<a
+							href="ellipse.html"
+							target="FrameMain">
+								ellipse
+							</a>
+
+				</li>
+
+						<li class="" id="regularpolygon" data="">
+							<a
+							href="regularpolygon.html"
+							target="FrameMain">
+								regular polygon
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="polygon" data="">
+							<a
+							href="polygon.html"
+							target="FrameMain">
+								polygon
+							</a>
+
+				</li>
+
+						<li class="" id="import_dxf" data="">
+							<a
+							href="import_dxf.html"
+							target="FrameMain">
+								import_dxf
+							</a>
+
+				</li>
+
+						<li class="folder" id="Text" data="">
+							<a
+							href="Text.html"
+							target="FrameMain">
+								Text
+							</a>
+
+				<ul>
+
+						<li class="" id="UsingFontsStyles" data="">
+							<a
+							href="UsingFontsStyles.html"
+							target="FrameMain">
+								Using Fonts &amp; Styles
+							</a>
+
+				</li>
+
+						<li class="folder" id="Alignment" data="">
+							<a
+							href="Alignment.html"
+							target="FrameMain">
+								Alignment
+							</a>
+
+				<ul>
+
+						<li class="" id="VerticalAlignment" data="">
+							<a
+							href="VerticalAlignment.html"
+							target="FrameMain">
+								Vertical Alignment
+							</a>
+
+				</li>
+
+						<li class="" id="HorizontalAligment" data="">
+							<a
+							href="HorizontalAligment.html"
+							target="FrameMain">
+								Horizontal Aligment
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="3DText" data="">
+							<a
+							href="3DText.html"
+							target="FrameMain">
+								3D Text
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="3Dto2DProjection1" data="">
+							<a
+							href="3Dto2DProjection1.html"
+							target="FrameMain">
+								3D to 2D Projection
+							</a>
+
+				</li>
+
+						<li class="folder" id="2Dto3DProjection" data="">
+							<a
+							href="2Dto3DProjection.html"
+							target="FrameMain">
+								2D to 3D Projection
+							</a>
+
+				<ul>
+
+						<li class="folder" id="LinearExtrude" data="">
+							<a
+							href="LinearExtrude.html"
+							target="FrameMain">
+								Linear Extrude
+							</a>
+
+				<ul>
+
+						<li class="" id="Usage" data="">
+							<a
+							href="Usage.html"
+							target="FrameMain">
+								Usage
+							</a>
+
+				</li>
+
+						<li class="" id="Twist" data="">
+							<a
+							href="Twist.html"
+							target="FrameMain">
+								Twist
+							</a>
+
+				</li>
+
+						<li class="" id="Center" data="">
+							<a
+							href="Center.html"
+							target="FrameMain">
+								Center
+							</a>
+
+				</li>
+
+						<li class="" id="MeshRefinement" data="">
+							<a
+							href="MeshRefinement.html"
+							target="FrameMain">
+								Mesh Refinement
+							</a>
+
+				</li>
+
+						<li class="" id="Scale" data="">
+							<a
+							href="Scale.html"
+							target="FrameMain">
+								Scale
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="RotateExtrude" data="">
+							<a
+							href="RotateExtrude.html"
+							target="FrameMain">
+								Rotate Extrude
+							</a>
+
+				</li>
+
+						<li class="folder" id="Parameters" data="">
+							<a
+							href="Parameters.html"
+							target="FrameMain">
+								Parameters
+							</a>
+
+				<ul>
+
+						<li class="" id="Usage1" data="">
+							<a
+							href="Usage1.html"
+							target="FrameMain">
+								Usage
+							</a>
+
+				</li>
+
+						<li class="" id="Examples" data="">
+							<a
+							href="Examples.html"
+							target="FrameMain">
+								Examples
+							</a>
+
+				</li>
+
+						<li class="" id="MeshRefinement1" data="">
+							<a
+							href="MeshRefinement1.html"
+							target="FrameMain">
+								Mesh Refinement
+							</a>
+
+				</li>
+
+						<li class="" id="ExtrudingaPolygon" data="">
+							<a
+							href="ExtrudingaPolygon.html"
+							target="FrameMain">
+								Extruding a Polygon
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="DescriptionofextrudeParameters" data="">
+							<a
+							href="DescriptionofextrudeParameters.html"
+							target="FrameMain">
+								Description of extrude Parameters
+							</a>
+
+				<ul>
+
+						<li class="" id="Extrudeparametersforallextrusion" data="">
+							<a
+							href="Extrudeparametersforallextrusion.html"
+							target="FrameMain">
+								Extrude parameters for all extrusion modes
+							</a>
+
+				</li>
+
+						<li class="" id="Extrudeparametersforlinearextrus" data="">
+							<a
+							href="Extrudeparametersforlinearextrus.html"
+							target="FrameMain">
+								Extrude parameters for linear extrusion only
+							</a>
+
+				</li></ul></li></ul></li></ul></li>
+
+						<li class="folder" id="Transforms" data="">
+							<a
+							href="Transforms.html"
+							target="FrameMain">
+								Transforms
+							</a>
+
+				<ul>
+
+						<li class="" id="Basicconcept" data="">
+							<a
+							href="Basicconcept.html"
+							target="FrameMain">
+								Basic concept
+							</a>
+
+				</li>
+
+						<li class="" id="Advancedconcept" data="">
+							<a
+							href="Advancedconcept.html"
+							target="FrameMain">
+								Advanced concept
+							</a>
+
+				</li>
+
+						<li class="" id="scale1" data="">
+							<a
+							href="scale1.html"
+							target="FrameMain">
+								scale
+							</a>
+
+				</li>
+
+						<li class="" id="resize" data="">
+							<a
+							href="resize.html"
+							target="FrameMain">
+								resize
+							</a>
+
+				</li>
+
+						<li class="folder" id="rotate" data="">
+							<a
+							href="rotate.html"
+							target="FrameMain">
+								rotate
+							</a>
+
+				<ul>
+
+						<li class="" id="RotationruleHelp" data="">
+							<a
+							href="RotationruleHelp.html"
+							target="FrameMain">
+								Rotation rule Help
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="translate" data="">
+							<a
+							href="translate.html"
+							target="FrameMain">
+								translate
+							</a>
+
+				</li>
+
+						<li class="folder" id="mirror" data="">
+							<a
+							href="mirror.html"
+							target="FrameMain">
+								mirror
+							</a>
+
+				<ul>
+
+						<li class="" id="Functionsignature" data="">
+							<a
+							href="Functionsignature.html"
+							target="FrameMain">
+								Function signature:
+							</a>
+
+				</li>
+
+						<li class="" id="Examples1" data="">
+							<a
+							href="Examples1.html"
+							target="FrameMain">
+								Examples
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="multimatrix" data="">
+							<a
+							href="multimatrix.html"
+							target="FrameMain">
+								multimatrix
+							</a>
+
+				<ul>
+
+						<li class="" id="More" data="">
+							<a
+							href="More.html"
+							target="FrameMain">
+								More?
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="color" data="">
+							<a
+							href="color.html"
+							target="FrameMain">
+								color
+							</a>
+
+				<ul>
+
+						<li class="" id="functionsignature1" data="">
+							<a
+							href="functionsignature1.html"
+							target="FrameMain">
+								function signature
+							</a>
+
+				</li>
+
+						<li class="" id="Example" data="">
+							<a
+							href="Example.html"
+							target="FrameMain">
+								Example
+							</a>
+
+				</li>
+
+						<li class="" id="Example2" data="">
+							<a
+							href="Example2.html"
+							target="FrameMain">
+								Example 2
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="offset" data="">
+							<a
+							href="offset.html"
+							target="FrameMain">
+								offset
+							</a>
+
+				</li>
+
+						<li class="" id="minkowski" data="">
+							<a
+							href="minkowski.html"
+							target="FrameMain">
+								minkowski
+							</a>
+
+				</li>
+
+						<li class="" id="hull" data="">
+							<a
+							href="hull.html"
+							target="FrameMain">
+								hull
+							</a>
+
+				</li>
+
+						<li class="" id="Combiningtransformations" data="">
+							<a
+							href="Combiningtransformations.html"
+							target="FrameMain">
+								Combining transformations
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="BooleanCombinations" data="">
+							<a
+							href="BooleanCombinations.html"
+							target="FrameMain">
+								Boolean Combinations
+							</a>
+
+				<ul>
+
+						<li class="folder" id="Booleanoverview" data="">
+							<a
+							href="Booleanoverview.html"
+							target="FrameMain">
+								Boolean overview
+							</a>
+
+				<ul>
+
+						<li class="" id="2Dexamples" data="">
+							<a
+							href="2Dexamples.html"
+							target="FrameMain">
+								2D examples
+							</a>
+
+				</li>
+
+						<li class="" id="3Dexamples" data="">
+							<a
+							href="3Dexamples.html"
+							target="FrameMain">
+								3D examples
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="union" data="">
+							<a
+							href="union.html"
+							target="FrameMain">
+								union
+							</a>
+
+				</li>
+
+						<li class="folder" id="difference" data="">
+							<a
+							href="difference.html"
+							target="FrameMain">
+								difference
+							</a>
+
+				<ul>
+
+						<li class="" id="differencewithmultiplechildren" data="">
+							<a
+							href="differencewithmultiplechildren.html"
+							target="FrameMain">
+								difference with multiple children
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="intersection" data="">
+							<a
+							href="intersection.html"
+							target="FrameMain">
+								intersection
+							</a>
+
+				</li>
+
+						<li class="" id="render" data="">
+							<a
+							href="render.html"
+							target="FrameMain">
+								render
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="OtherFunctionsandOperators" data="">
+							<a
+							href="OtherFunctionsandOperators.html"
+							target="FrameMain">
+								Other Functions and Operators
+							</a>
+
+				<ul>
+
+						<li class="folder" id="ConditionandIteratorfunctions" data="">
+							<a
+							href="ConditionandIteratorfunctions.html"
+							target="FrameMain">
+								Condition and Iterator functions
+							</a>
+
+				<ul>
+
+						<li class="" id="Forloop" data="">
+							<a
+							href="Forloop.html"
+							target="FrameMain">
+								For loop
+							</a>
+
+				</li>
+
+						<li class="" id="IntersectionForloop" data="">
+							<a
+							href="IntersectionForloop.html"
+							target="FrameMain">
+								Intersection For loop
+							</a>
+
+				</li>
+
+						<li class="folder" id="ifstatement" data="">
+							<a
+							href="ifstatement.html"
+							target="FrameMain">
+								if statement
+							</a>
+
+				<ul>
+
+						<li class="" id="elseif" data="">
+							<a
+							href="elseif.html"
+							target="FrameMain">
+								else if
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="Conditional" data="">
+							<a
+							href="Conditional.html"
+							target="FrameMain">
+								Conditional ?
+							</a>
+
+				<ul>
+
+						<li class="" id="Recursivefunctioncalls" data="">
+							<a
+							href="Recursivefunctioncalls.html"
+							target="FrameMain">
+								Recursive function calls
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="AssignStatement" data="">
+							<a
+							href="AssignStatement.html"
+							target="FrameMain">
+								Assign Statement
+							</a>
+
+				</li>
+
+						<li class="" id="LetStatement" data="">
+							<a
+							href="LetStatement.html"
+							target="FrameMain">
+								Let Statement
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="MathematicalOperators" data="">
+							<a
+							href="MathematicalOperators.html"
+							target="FrameMain">
+								Mathematical Operators
+							</a>
+
+				<ul>
+
+						<li class="" id="ScalarArithmeticalOperators" data="">
+							<a
+							href="ScalarArithmeticalOperators.html"
+							target="FrameMain">
+								Scalar Arithmetical Operators
+							</a>
+
+				</li>
+
+						<li class="" id="RelationalOperators" data="">
+							<a
+							href="RelationalOperators.html"
+							target="FrameMain">
+								Relational Operators
+							</a>
+
+				</li>
+
+						<li class="" id="LogicalOperators" data="">
+							<a
+							href="LogicalOperators.html"
+							target="FrameMain">
+								Logical Operators
+							</a>
+
+				</li>
+
+						<li class="" id="ConditionalOperator" data="">
+							<a
+							href="ConditionalOperator.html"
+							target="FrameMain">
+								Conditional Operator
+							</a>
+
+				</li>
+
+						<li class="" id="Vector-NumberOperator" data="">
+							<a
+							href="Vector-NumberOperator.html"
+							target="FrameMain">
+								Vector-Number Operator
+							</a>
+
+				</li>
+
+						<li class="" id="VectorOperators1" data="">
+							<a
+							href="VectorOperators1.html"
+							target="FrameMain">
+								Vector Operators
+							</a>
+
+				</li>
+
+						<li class="" id="VectorDot-ProductOperator" data="">
+							<a
+							href="VectorDot-ProductOperator.html"
+							target="FrameMain">
+								Vector Dot-Product Operator
+							</a>
+
+				</li>
+
+						<li class="" id="MatrixMultiplication" data="">
+							<a
+							href="MatrixMultiplication.html"
+							target="FrameMain">
+								Matrix Multiplication
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="MathematicalFunctions" data="">
+							<a
+							href="MathematicalFunctions.html"
+							target="FrameMain">
+								Mathematical Functions
+							</a>
+
+				</li>
+
+						<li class="folder" id="TrigonometricFunctions" data="">
+							<a
+							href="TrigonometricFunctions.html"
+							target="FrameMain">
+								Trigonometric Functions
+							</a>
+
+				<ul>
+
+						<li class="" id="cos" data="">
+							<a
+							href="cos.html"
+							target="FrameMain">
+								cos
+							</a>
+
+				</li>
+
+						<li class="" id="sin" data="">
+							<a
+							href="sin.html"
+							target="FrameMain">
+								sin
+							</a>
+
+				</li>
+
+						<li class="" id="tan" data="">
+							<a
+							href="tan.html"
+							target="FrameMain">
+								tan
+							</a>
+
+				</li>
+
+						<li class="" id="acos" data="">
+							<a
+							href="acos.html"
+							target="FrameMain">
+								acos
+							</a>
+
+				</li>
+
+						<li class="" id="asin" data="">
+							<a
+							href="asin.html"
+							target="FrameMain">
+								asin
+							</a>
+
+				</li>
+
+						<li class="" id="atan" data="">
+							<a
+							href="atan.html"
+							target="FrameMain">
+								atan
+							</a>
+
+				</li>
+
+						<li class="" id="atan2" data="">
+							<a
+							href="atan2.html"
+							target="FrameMain">
+								atan2
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="OtherMathematicalFunctions" data="">
+							<a
+							href="OtherMathematicalFunctions.html"
+							target="FrameMain">
+								Other Mathematical Functions
+							</a>
+
+				<ul>
+
+						<li class="" id="abs" data="">
+							<a
+							href="abs.html"
+							target="FrameMain">
+								abs
+							</a>
+
+				</li>
+
+						<li class="" id="ceil" data="">
+							<a
+							href="ceil.html"
+							target="FrameMain">
+								ceil
+							</a>
+
+				</li>
+
+						<li class="" id="concat" data="">
+							<a
+							href="concat.html"
+							target="FrameMain">
+								concat
+							</a>
+
+				</li>
+
+						<li class="" id="cross" data="">
+							<a
+							href="cross.html"
+							target="FrameMain">
+								cross
+							</a>
+
+				</li>
+
+						<li class="" id="exp" data="">
+							<a
+							href="exp.html"
+							target="FrameMain">
+								exp
+							</a>
+
+				</li>
+
+						<li class="" id="floor" data="">
+							<a
+							href="floor.html"
+							target="FrameMain">
+								floor
+							</a>
+
+				</li>
+
+						<li class="" id="in" data="">
+							<a
+							href="in.html"
+							target="FrameMain">
+								in
+							</a>
+
+				</li>
+
+						<li class="" id="len1" data="">
+							<a
+							href="len1.html"
+							target="FrameMain">
+								len
+							</a>
+
+				</li>
+
+						<li class="" id="let" data="">
+							<a
+							href="let.html"
+							target="FrameMain">
+								let
+							</a>
+
+				</li>
+
+						<li class="" id="log" data="">
+							<a
+							href="log.html"
+							target="FrameMain">
+								log
+							</a>
+
+				</li>
+
+						<li class="" id="lookup" data="">
+							<a
+							href="lookup.html"
+							target="FrameMain">
+								lookup
+							</a>
+
+				</li>
+
+						<li class="" id="max" data="">
+							<a
+							href="max.html"
+							target="FrameMain">
+								max
+							</a>
+
+				</li>
+
+						<li class="" id="min" data="">
+							<a
+							href="min.html"
+							target="FrameMain">
+								min
+							</a>
+
+				</li>
+
+						<li class="" id="norm" data="">
+							<a
+							href="norm.html"
+							target="FrameMain">
+								norm
+							</a>
+
+				</li>
+
+						<li class="" id="pow" data="">
+							<a
+							href="pow.html"
+							target="FrameMain">
+								pow
+							</a>
+
+				</li>
+
+						<li class="" id="rands" data="">
+							<a
+							href="rands.html"
+							target="FrameMain">
+								rands
+							</a>
+
+				</li>
+
+						<li class="" id="round" data="">
+							<a
+							href="round.html"
+							target="FrameMain">
+								round
+							</a>
+
+				</li>
+
+						<li class="" id="sign" data="">
+							<a
+							href="sign.html"
+							target="FrameMain">
+								sign
+							</a>
+
+				</li>
+
+						<li class="" id="sqrt" data="">
+							<a
+							href="sqrt.html"
+							target="FrameMain">
+								sqrt
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="InfinitesandNaNs" data="">
+							<a
+							href="InfinitesandNaNs.html"
+							target="FrameMain">
+								Infinites and NaNs
+							</a>
+
+				</li>
+
+						<li class="folder" id="StringFunctions" data="">
+							<a
+							href="StringFunctions.html"
+							target="FrameMain">
+								String Functions
+							</a>
+
+				<ul>
+
+						<li class="" id="str" data="">
+							<a
+							href="str.html"
+							target="FrameMain">
+								str
+							</a>
+
+				</li>
+
+						<li class="" id="chr" data="">
+							<a
+							href="chr.html"
+							target="FrameMain">
+								chr
+							</a>
+
+				</li>
+
+						<li class="" id="ord" data="">
+							<a
+							href="ord.html"
+							target="FrameMain">
+								ord
+							</a>
+
+				</li>
+
+						<li class="" id="Alsoseesearch" data="">
+							<a
+							href="Alsoseesearch.html"
+							target="FrameMain">
+								Also see search()
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="ListComprehensions" data="">
+							<a
+							href="ListComprehensions.html"
+							target="FrameMain">
+								List Comprehensions
+							</a>
+
+				<ul>
+
+						<li class="folder" id="BasicSyntax" data="">
+							<a
+							href="BasicSyntax.html"
+							target="FrameMain">
+								Basic Syntax
+							</a>
+
+				<ul>
+
+						<li class="" id="Multiplegeneratorexpressions" data="">
+							<a
+							href="Multiplegeneratorexpressions.html"
+							target="FrameMain">
+								Multiple generator expressions
+							</a>
+
+				</li>
+
+						<li class="" id="for" data="">
+							<a
+							href="for.html"
+							target="FrameMain">
+								for
+							</a>
+
+				</li>
+
+						<li class="" id="each" data="">
+							<a
+							href="each.html"
+							target="FrameMain">
+								each
+							</a>
+
+				</li>
+
+						<li class="" id="if" data="">
+							<a
+							href="if.html"
+							target="FrameMain">
+								if
+							</a>
+
+				</li>
+
+						<li class="" id="ifelse" data="">
+							<a
+							href="ifelse.html"
+							target="FrameMain">
+								if/else
+							</a>
+
+				</li>
+
+						<li class="" id="let1" data="">
+							<a
+							href="let1.html"
+							target="FrameMain">
+								let
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="Nestedloops" data="">
+							<a
+							href="Nestedloops.html"
+							target="FrameMain">
+								Nested loops
+							</a>
+
+				</li>
+
+						<li class="folder" id="AdvancedExamples" data="">
+							<a
+							href="AdvancedExamples.html"
+							target="FrameMain">
+								Advanced Examples
+							</a>
+
+				<ul>
+
+						<li class="" id="Generatingverticesforapolygon" data="">
+							<a
+							href="Generatingverticesforapolygon.html"
+							target="FrameMain">
+								Generating vertices for a polygon
+							</a>
+
+				</li>
+
+						<li class="" id="Flatteninganestedvector" data="">
+							<a
+							href="Flatteninganestedvector.html"
+							target="FrameMain">
+								Flattening a nested vector
+							</a>
+
+				</li>
+
+						<li class="" id="Sortingavector" data="">
+							<a
+							href="Sortingavector.html"
+							target="FrameMain">
+								Sorting a vector
+							</a>
+
+				</li>
+
+						<li class="" id="Selectingelementsofavector" data="">
+							<a
+							href="Selectingelementsofavector.html"
+							target="FrameMain">
+								Selecting elements of a vector
+							</a>
+
+				</li>
+
+						<li class="" id="Concatenatingtwovectors" data="">
+							<a
+							href="Concatenatingtwovectors.html"
+							target="FrameMain">
+								Concatenating two vectors
+							</a>
+
+				</li></ul></li></ul></li>
+
+						<li class="folder" id="OtherLanguageFeatures" data="">
+							<a
+							href="OtherLanguageFeatures.html"
+							target="FrameMain">
+								Other Language Features
+							</a>
+
+				<ul>
+
+						<li class="folder" id="SpecialVariables1" data="">
+							<a
+							href="SpecialVariables1.html"
+							target="FrameMain">
+								Special Variables
+							</a>
+
+				<ul>
+
+						<li class="" id="fafsandfn" data="">
+							<a
+							href="fafsandfn.html"
+							target="FrameMain">
+								$fa, $fs and $fn
+							</a>
+
+				</li>
+
+						<li class="" id="t" data="">
+							<a
+							href="t.html"
+							target="FrameMain">
+								$t
+							</a>
+
+				</li>
+
+						<li class="" id="vprvptandvpd" data="">
+							<a
+							href="vprvptandvpd.html"
+							target="FrameMain">
+								$vpr, $vpt and $vpd
+							</a>
+
+				</li>
+
+						<li class="" id="preview" data="">
+							<a
+							href="preview.html"
+							target="FrameMain">
+								$preview
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="EchoStatements1" data="">
+							<a
+							href="EchoStatements1.html"
+							target="FrameMain">
+								Echo Statements
+							</a>
+
+				<ul>
+
+						<li class="" id="Usageexamples" data="">
+							<a
+							href="Usageexamples.html"
+							target="FrameMain">
+								Usage examples
+							</a>
+
+				</li>
+
+						<li class="" id="Roundingexamples" data="">
+							<a
+							href="Roundingexamples.html"
+							target="FrameMain">
+								Rounding examples
+							</a>
+
+				</li>
+
+						<li class="" id="SmallandlargeNumbers" data="">
+							<a
+							href="SmallandlargeNumbers.html"
+							target="FrameMain">
+								Small and large Numbers
+							</a>
+
+				</li>
+
+						<li class="" id="HTML" data="">
+							<a
+							href="HTML.html"
+							target="FrameMain">
+								HTML
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="EchoFunction" data="">
+							<a
+							href="EchoFunction.html"
+							target="FrameMain">
+								Echo Function
+							</a>
+
+				</li>
+
+						<li class="" id="Render1" data="">
+							<a
+							href="Render1.html"
+							target="FrameMain">
+								Render
+							</a>
+
+				</li>
+
+						<li class="folder" id="Surface1" data="">
+							<a
+							href="Surface1.html"
+							target="FrameMain">
+								Surface
+							</a>
+
+				<ul>
+
+						<li class="" id="Textfileformat1" data="">
+							<a
+							href="Textfileformat1.html"
+							target="FrameMain">
+								Text file format
+							</a>
+
+				</li>
+
+						<li class="" id="Images1" data="">
+							<a
+							href="Images1.html"
+							target="FrameMain">
+								Images
+							</a>
+
+				</li>
+
+						<li class="" id="Examples3" data="">
+							<a
+							href="Examples3.html"
+							target="FrameMain">
+								Examples
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="Search" data="">
+							<a
+							href="Search.html"
+							target="FrameMain">
+								Search
+							</a>
+
+				<ul>
+
+						<li class="" id="SearchUsage" data="">
+							<a
+							href="SearchUsage.html"
+							target="FrameMain">
+								Search Usage
+							</a>
+
+				</li>
+
+						<li class="" id="SearchArguments" data="">
+							<a
+							href="SearchArguments.html"
+							target="FrameMain">
+								Search Arguments
+							</a>
+
+				</li>
+
+						<li class="folder" id="SearchUsageExamples" data="">
+							<a
+							href="SearchUsageExamples.html"
+							target="FrameMain">
+								Search Usage Examples
+							</a>
+
+				<ul>
+
+						<li class="" id="Indexvaluesreturnaslist" data="">
+							<a
+							href="Indexvaluesreturnaslist.html"
+							target="FrameMain">
+								Index values return as list
+							</a>
+
+				</li>
+
+						<li class="" id="Searchondifferentcolumnreturnind" data="">
+							<a
+							href="Searchondifferentcolumnreturnind.html"
+							target="FrameMain">
+								Search on different column; return index values
+							</a>
+
+				</li>
+
+						<li class="" id="Searchonlistofvalues" data="">
+							<a
+							href="Searchonlistofvalues.html"
+							target="FrameMain">
+								Search on list of values
+							</a>
+
+				</li>
+
+						<li class="" id="Searchonlistofstrings" data="">
+							<a
+							href="Searchonlistofstrings.html"
+							target="FrameMain">
+								Search on list of strings
+							</a>
+
+				</li>
+
+						<li class="" id="Gettingtherightresult" data="">
+							<a
+							href="Gettingtherightresult.html"
+							target="FrameMain">
+								Getting the right result
+							</a>
+
+				</li></ul></li></ul></li>
+
+						<li class="" id="OpenSCADVersion" data="">
+							<a
+							href="OpenSCADVersion.html"
+							target="FrameMain">
+								OpenSCAD Version
+							</a>
+
+				</li>
+
+						<li class="" id="parent_modulenandparent_modules" data="">
+							<a
+							href="parent_modulenandparent_modules.html"
+							target="FrameMain">
+								parent_module(n) and $parent_modules
+							</a>
+
+				</li>
+
+						<li class="folder" id="assert" data="">
+							<a
+							href="assert.html"
+							target="FrameMain">
+								assert
+							</a>
+
+				<ul>
+
+						<li class="" id="Example1" data="">
+							<a
+							href="Example1.html"
+							target="FrameMain">
+								Example
+							</a>
+
+				</li>
+
+						<li class="" id="Checkingparameters" data="">
+							<a
+							href="Checkingparameters.html"
+							target="FrameMain">
+								Checking parameters
+							</a>
+
+				</li>
+
+						<li class="" id="Addingmessage" data="">
+							<a
+							href="Addingmessage.html"
+							target="FrameMain">
+								Adding message
+							</a>
+
+				</li>
+
+						<li class="" id="Usingassertionsinfunctions" data="">
+							<a
+							href="Usingassertionsinfunctions.html"
+							target="FrameMain">
+								Using assertions in functions
+							</a>
+
+				</li></ul></li></ul></li></ul></li>
+
+						<li class="folder" id="UserDefinedFunctionsandModules" data="">
+							<a
+							href="UserDefinedFunctionsandModules.html"
+							target="FrameMain">
+								User Defined Functions and Modules
+							</a>
+
+				<ul>
+
+						<li class="" id="Introduction2" data="">
+							<a
+							href="Introduction2.html"
+							target="FrameMain">
+								Introduction
+							</a>
+
+				</li>
+
+						<li class="" id="Scope" data="">
+							<a
+							href="Scope.html"
+							target="FrameMain">
+								Scope
+							</a>
+
+				</li>
+
+						<li class="folder" id="Functions" data="">
+							<a
+							href="Functions.html"
+							target="FrameMain">
+								Functions
+							</a>
+
+				<ul>
+
+						<li class="" id="RecursiveFunctions" data="">
+							<a
+							href="RecursiveFunctions.html"
+							target="FrameMain">
+								Recursive Functions
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="FunctionLiterals" data="">
+							<a
+							href="FunctionLiterals.html"
+							target="FrameMain">
+								Function Literals
+							</a>
+
+				</li>
+
+						<li class="folder" id="Modules" data="">
+							<a
+							href="Modules.html"
+							target="FrameMain">
+								Modules
+							</a>
+
+				<ul>
+
+						<li class="" id="Objectmodules" data="">
+							<a
+							href="Objectmodules.html"
+							target="FrameMain">
+								Object modules
+							</a>
+
+				</li>
+
+						<li class="" id="OperatorModules" data="">
+							<a
+							href="OperatorModules.html"
+							target="FrameMain">
+								Operator Modules
+							</a>
+
+				</li>
+
+						<li class="" id="Children" data="">
+							<a
+							href="Children.html"
+							target="FrameMain">
+								Children
+							</a>
+
+				</li>
+
+						<li class="" id="FurtherModuleExamples" data="">
+							<a
+							href="FurtherModuleExamples.html"
+							target="FrameMain">
+								Further Module Examples
+							</a>
+
+				</li>
+
+						<li class="" id="RecursiveModules" data="">
+							<a
+							href="RecursiveModules.html"
+							target="FrameMain">
+								Recursive Modules
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="Overwritingbult-inmodules" data="">
+							<a
+							href="Overwritingbult-inmodules.html"
+							target="FrameMain">
+								Overwriting bult-in modules
+							</a>
+
+				</li>
+
+						<li class="" id="Overwritingbuiltfunctions" data="">
+							<a
+							href="Overwritingbuiltfunctions.html"
+							target="FrameMain">
+								Overwriting built functions
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="DebuggingAids" data="">
+							<a
+							href="DebuggingAids.html"
+							target="FrameMain">
+								Debugging Aids
+							</a>
+
+				<ul>
+
+						<li class="" id="AdvancedConcept1" data="">
+							<a
+							href="AdvancedConcept1.html"
+							target="FrameMain">
+								Advanced Concept
+							</a>
+
+				</li>
+
+						<li class="" id="BackgroundModifier" data="">
+							<a
+							href="BackgroundModifier.html"
+							target="FrameMain">
+								Background Modifier
+							</a>
+
+				</li>
+
+						<li class="" id="DebugModifier" data="">
+							<a
+							href="DebugModifier.html"
+							target="FrameMain">
+								Debug Modifier
+							</a>
+
+				</li>
+
+						<li class="" id="RootModifier" data="">
+							<a
+							href="RootModifier.html"
+							target="FrameMain">
+								Root Modifier
+							</a>
+
+				</li>
+
+						<li class="" id="DisableModifier" data="">
+							<a
+							href="DisableModifier.html"
+							target="FrameMain">
+								Disable Modifier
+							</a>
+
+				</li>
+
+						<li class="" id="EchoStatements" data="">
+							<a
+							href="EchoStatements.html"
+							target="FrameMain">
+								Echo Statements
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="ExternalLibrariesandcodefiles" data="">
+							<a
+							href="ExternalLibrariesandcodefiles.html"
+							target="FrameMain">
+								External Libraries and code files
+							</a>
+
+				<ul>
+
+						<li class="folder" id="UseandInclude" data="">
+							<a
+							href="UseandInclude.html"
+							target="FrameMain">
+								Use and Include
+							</a>
+
+				<ul>
+
+						<li class="" id="Directoryseparators" data="">
+							<a
+							href="Directoryseparators.html"
+							target="FrameMain">
+								Directory separators
+							</a>
+
+				</li>
+
+						<li class="folder" id="Variables1" data="">
+							<a
+							href="Variables1.html"
+							target="FrameMain">
+								Variables
+							</a>
+
+				<ul>
+
+						<li class="" id="ScopeofVariables1" data="">
+							<a
+							href="ScopeofVariables1.html"
+							target="FrameMain">
+								Scope of Variables
+							</a>
+
+				</li>
+
+						<li class="" id="Overwritingvariables" data="">
+							<a
+							href="Overwritingvariables.html"
+							target="FrameMain">
+								Overwriting variables
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="ExampleRing-Library" data="">
+							<a
+							href="ExampleRing-Library.html"
+							target="FrameMain">
+								Example &quot;Ring-Library&quot;
+							</a>
+
+				</li>
+
+						<li class="" id="NestedIncludeandUse" data="">
+							<a
+							href="NestedIncludeandUse.html"
+							target="FrameMain">
+								Nested Include and Use
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="Import" data="">
+							<a
+							href="Import.html"
+							target="FrameMain">
+								Import
+							</a>
+
+				<ul>
+
+						<li class="folder" id="Parameters1" data="">
+							<a
+							href="Parameters1.html"
+							target="FrameMain">
+								Parameters
+							</a>
+
+				<ul>
+
+						<li class="" id="Convexity" data="">
+							<a
+							href="Convexity.html"
+							target="FrameMain">
+								Convexity
+							</a>
+
+				</li>
+
+						<li class="" id="Notes" data="">
+							<a
+							href="Notes.html"
+							target="FrameMain">
+								Notes
+							</a>
+
+				</li></ul></li></ul></li>
+
+						<li class="" id="ImportDXF" data="">
+							<a
+							href="ImportDXF.html"
+							target="FrameMain">
+								Import DXF
+							</a>
+
+				</li>
+
+						<li class="" id="ImportSTL" data="">
+							<a
+							href="ImportSTL.html"
+							target="FrameMain">
+								Import STL
+							</a>
+
+				</li>
+
+						<li class="folder" id="surface" data="">
+							<a
+							href="surface.html"
+							target="FrameMain">
+								surface
+							</a>
+
+				<ul>
+
+						<li class="" id="Parameters2" data="">
+							<a
+							href="Parameters2.html"
+							target="FrameMain">
+								Parameters
+							</a>
+
+				</li>
+
+						<li class="" id="TextfileFormat" data="">
+							<a
+							href="TextfileFormat.html"
+							target="FrameMain">
+								Text file Format
+							</a>
+
+				</li>
+
+						<li class="" id="Images" data="">
+							<a
+							href="Images.html"
+							target="FrameMain">
+								Images
+							</a>
+
+				</li>
+
+						<li class="" id="Examples2" data="">
+							<a
+							href="Examples2.html"
+							target="FrameMain">
+								Examples
+							</a>
+
+				</li></ul></li></ul></li></ul></li>
+
+						<li class="folder" id="MCADLibrary" data="">
+							<a
+							href="MCADLibrary.html"
+							target="FrameMain">
+								MCAD Library
+							</a>
+
+				<ul>
+
+						<li class="folder" id="regular_shapesscad" data="">
+							<a
+							href="regular_shapesscad.html"
+							target="FrameMain">
+								regular_shapes.scad
+							</a>
+
+				<ul>
+
+						<li class="folder" id="2Dregularshapes" data="">
+							<a
+							href="2Dregularshapes.html"
+							target="FrameMain">
+								2D regular shapes
+							</a>
+
+				<ul>
+
+						<li class="" id="regular_polygonsidesradius" data="">
+							<a
+							href="regular_polygonsidesradius.html"
+							target="FrameMain">
+								regular_polygon(sides, radius)
+							</a>
+
+				</li>
+
+						<li class="folder" id="n-gons2Dshapes" data="">
+							<a
+							href="n-gons2Dshapes.html"
+							target="FrameMain">
+								n-gons 2D shapes
+							</a>
+
+				<ul>
+
+						<li class="" id="triangleradius" data="">
+							<a
+							href="triangleradius.html"
+							target="FrameMain">
+								triangle(radius)
+							</a>
+
+				</li>
+
+						<li class="" id="pentagonradius" data="">
+							<a
+							href="pentagonradius.html"
+							target="FrameMain">
+								pentagon(radius)
+							</a>
+
+				</li>
+
+						<li class="" id="hexagonradius" data="">
+							<a
+							href="hexagonradius.html"
+							target="FrameMain">
+								hexagon(radius)
+							</a>
+
+				</li>
+
+						<li class="" id="heptagonradius" data="">
+							<a
+							href="heptagonradius.html"
+							target="FrameMain">
+								heptagon(radius)
+							</a>
+
+				</li>
+
+						<li class="" id="octagonradius" data="">
+							<a
+							href="octagonradius.html"
+							target="FrameMain">
+								octagon(radius)
+							</a>
+
+				</li>
+
+						<li class="" id="nonagonradius" data="">
+							<a
+							href="nonagonradius.html"
+							target="FrameMain">
+								nonagon(radius)
+							</a>
+
+				</li>
+
+						<li class="" id="decagonradius" data="">
+							<a
+							href="decagonradius.html"
+							target="FrameMain">
+								decagon(radius)
+							</a>
+
+				</li>
+
+						<li class="" id="hendecagonradius" data="">
+							<a
+							href="hendecagonradius.html"
+							target="FrameMain">
+								hendecagon(radius)
+							</a>
+
+				</li>
+
+						<li class="" id="dodecagonradius" data="">
+							<a
+							href="dodecagonradius.html"
+							target="FrameMain">
+								dodecagon(radius)
+							</a>
+
+				</li></ul></li>
+
+						<li class="" id="ringinside_diameterthickness" data="">
+							<a
+							href="ringinside_diameterthickness.html"
+							target="FrameMain">
+								ring(inside_diameter, thickness)
+							</a>
+
+				</li>
+
+						<li class="" id="ellipsewidthheight" data="">
+							<a
+							href="ellipsewidthheight.html"
+							target="FrameMain">
+								ellipse(width, height)
+							</a>
+
+				</li>
+
+						<li class="" id="egg_outlinewidththickness" data="">
+							<a
+							href="egg_outlinewidththickness.html"
+							target="FrameMain">
+								egg_outline(width, thickness)
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="3Dregularshapes" data="">
+							<a
+							href="3Dregularshapes.html"
+							target="FrameMain">
+								3D regular shapes
+							</a>
+
+				<ul>
+
+						<li class="" id="cone" data="">
+							<a
+							href="cone.html"
+							target="FrameMain">
+								cone
+							</a>
+
+				</li>
+
+						<li class="" id="oval_prism" data="">
+							<a
+							href="oval_prism.html"
+							target="FrameMain">
+								oval_prism
+							</a>
+
+				</li>
+
+						<li class="" id="oval_tube" data="">
+							<a
+							href="oval_tube.html"
+							target="FrameMain">
+								oval_tube
+							</a>
+
+				</li>
+
+						<li class="" id="cylinder_tube" data="">
+							<a
+							href="cylinder_tube.html"
+							target="FrameMain">
+								cylinder_tube
+							</a>
+
+				</li>
+
+						<li class="" id="triangle_prism" data="">
+							<a
+							href="triangle_prism.html"
+							target="FrameMain">
+								triangle_prism
+							</a>
+
+				</li>
+
+						<li class="" id="triangle_tube" data="">
+							<a
+							href="triangle_tube.html"
+							target="FrameMain">
+								triangle_tube
+							</a>
+
+				</li>
+
+						<li class="" id="pentagon_prism" data="">
+							<a
+							href="pentagon_prism.html"
+							target="FrameMain">
+								pentagon_prism
+							</a>
+
+				</li>
+
+						<li class="" id="pentagon_tube1" data="">
+							<a
+							href="pentagon_tube1.html"
+							target="FrameMain">
+								pentagon_tube
+							</a>
+
+				</li>
+
+						<li class="" id="hexagon_prism" data="">
+							<a
+							href="hexagon_prism.html"
+							target="FrameMain">
+								hexagon_prism
+							</a>
+
+				</li>
+
+						<li class="" id="hexagon_tube" data="">
+							<a
+							href="hexagon_tube.html"
+							target="FrameMain">
+								hexagon_tube
+							</a>
+
+				</li>
+
+						<li class="" id="heptagon_prism" data="">
+							<a
+							href="heptagon_prism.html"
+							target="FrameMain">
+								heptagon_prism
+							</a>
+
+				</li>
+
+						<li class="" id="heptagon_tube" data="">
+							<a
+							href="heptagon_tube.html"
+							target="FrameMain">
+								heptagon_tube
+							</a>
+
+				</li>
+
+						<li class="" id="octagon_prism" data="">
+							<a
+							href="octagon_prism.html"
+							target="FrameMain">
+								octagon_prism
+							</a>
+
+				</li>
+
+						<li class="" id="octagon_tube" data="">
+							<a
+							href="octagon_tube.html"
+							target="FrameMain">
+								octagon_tube
+							</a>
+
+				</li>
+
+						<li class="" id="nonagon_prism" data="">
+							<a
+							href="nonagon_prism.html"
+							target="FrameMain">
+								nonagon_prism
+							</a>
+
+				</li>
+
+						<li class="" id="decagon_prism" data="">
+							<a
+							href="decagon_prism.html"
+							target="FrameMain">
+								decagon_prism
+							</a>
+
+				</li>
+
+						<li class="" id="hendecagon_prism" data="">
+							<a
+							href="hendecagon_prism.html"
+							target="FrameMain">
+								hendecagon_prism
+							</a>
+
+				</li>
+
+						<li class="" id="dodecagon_prism" data="">
+							<a
+							href="dodecagon_prism.html"
+							target="FrameMain">
+								dodecagon_prism
+							</a>
+
+				</li>
+
+						<li class="" id="torus" data="">
+							<a
+							href="torus.html"
+							target="FrameMain">
+								torus
+							</a>
+
+				</li>
+
+						<li class="" id="torus2" data="">
+							<a
+							href="torus2.html"
+							target="FrameMain">
+								torus2
+							</a>
+
+				</li>
+
+						<li class="" id="oval_torus" data="">
+							<a
+							href="oval_torus.html"
+							target="FrameMain">
+								oval_torus
+							</a>
+
+				</li>
+
+						<li class="" id="triangle_pyramid" data="">
+							<a
+							href="triangle_pyramid.html"
+							target="FrameMain">
+								triangle_pyramid
+							</a>
+
+				</li>
+
+						<li class="" id="square_pyramid" data="">
+							<a
+							href="square_pyramid.html"
+							target="FrameMain">
+								square_pyramid
+							</a>
+
+				</li>
+
+						<li class="" id="egg" data="">
+							<a
+							href="egg.html"
+							target="FrameMain">
+								egg
+							</a>
+
+				</li></ul></li></ul></li>
+
+						<li class="folder" id="involute_gearsscad" data="">
+							<a
+							href="involute_gearsscad.html"
+							target="FrameMain">
+								involute_gears.scad
+							</a>
+
+				<ul>
+
+						<li class="" id="bevel_gear_pair" data="">
+							<a
+							href="bevel_gear_pair.html"
+							target="FrameMain">
+								bevel_gear_pair()
+							</a>
+
+				</li>
+
+						<li class="" id="bevel_gear" data="">
+							<a
+							href="bevel_gear.html"
+							target="FrameMain">
+								bevel_gear()
+							</a>
+
+				</li>
+
+						<li class="" id="gear" data="">
+							<a
+							href="gear.html"
+							target="FrameMain">
+								gear()
+							</a>
+
+				</li>
+
+						<li class="folder" id="Tests" data="">
+							<a
+							href="Tests.html"
+							target="FrameMain">
+								Tests
+							</a>
+
+				<ul>
+
+						<li class="" id="test_gears" data="">
+							<a
+							href="test_gears.html"
+							target="FrameMain">
+								test_gears()
+							</a>
+
+				</li>
+
+						<li class="" id="test_meshing_double_helix" data="">
+							<a
+							href="test_meshing_double_helix.html"
+							target="FrameMain">
+								test_meshing_double_helix()
+							</a>
+
+				</li>
+
+						<li class="" id="test_bevel_gear" data="">
+							<a
+							href="test_bevel_gear.html"
+							target="FrameMain">
+								test_bevel_gear()
+							</a>
+
+				</li>
+
+						<li class="" id="test_bevel_gear_pair" data="">
+							<a
+							href="test_bevel_gear_pair.html"
+							target="FrameMain">
+								test_bevel_gear_pair()
+							</a>
+
+				</li>
+
+						<li class="" id="test_backlash" data="">
+							<a
+							href="test_backlash.html"
+							target="FrameMain">
+								test_backlash()
+							</a>
+
+				</li></ul></li></ul></li></ul></li>
+
+						<li class="folder" id="dotSCADLibrary" data="">
+							<a
+							href="dotSCADLibrary.html"
+							target="FrameMain">
+								dotSCAD Library
+							</a>
+
+				<ul>
+
+						<li class="folder" id="2Dmodules" data="">
+							<a
+							href="2Dmodules.html"
+							target="FrameMain">
+								2D modules
+							</a>
+
+				<ul>
+
+						<li class="" id="arc" data="">
+							<a
+							href="arc.html"
+							target="FrameMain">
+								arc
+							</a>
+
+				</li>
+
+						<li class="" id="pie" data="">
+							<a
+							href="pie.html"
+							target="FrameMain">
+								pie
+							</a>
+
+				</li>
+
+						<li class="" id="rounded_square" data="">
+							<a
+							href="rounded_square.html"
+							target="FrameMain">
+								rounded_square
+							</a>
+
+				</li>
+
+						<li class="" id="line2d" data="">
+							<a
+							href="line2d.html"
+							target="FrameMain">
+								line2d
+							</a>
+
+				</li>
+
+						<li class="" id="polyline2d" data="">
+							<a
+							href="polyline2d.html"
+							target="FrameMain">
+								polyline2d
+							</a>
+
+				</li>
+
+						<li class="" id="hull_polyline2d" data="">
+							<a
+							href="hull_polyline2d.html"
+							target="FrameMain">
+								hull_polyline2d
+							</a>
+
+				</li>
+
+						<li class="" id="hexagons" data="">
+							<a
+							href="hexagons.html"
+							target="FrameMain">
+								hexagons
+							</a>
+
+				</li>
+
+						<li class="" id="polytransversals" data="">
+							<a
+							href="polytransversals.html"
+							target="FrameMain">
+								polytransversals
+							</a>
+
+				</li>
+
+						<li class="" id="multi_line_text" data="">
+							<a
+							href="multi_line_text.html"
+							target="FrameMain">
+								multi_line_text
+							</a>
+
+				</li>
+
+						<li class="" id="voronoi2d" data="">
+							<a
+							href="voronoi2d.html"
+							target="FrameMain">
+								voronoi2d
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="3Dmodules" data="">
+							<a
+							href="3Dmodules.html"
+							target="FrameMain">
+								3D modules
+							</a>
+
+				<ul>
+
+						<li class="" id="rounded_cube" data="">
+							<a
+							href="rounded_cube.html"
+							target="FrameMain">
+								rounded_cube
+							</a>
+
+				</li>
+
+						<li class="" id="rounded_cylinder" data="">
+							<a
+							href="rounded_cylinder.html"
+							target="FrameMain">
+								rounded_cylinder
+							</a>
+
+				</li>
+
+						<li class="" id="crystal_ball" data="">
+							<a
+							href="crystal_ball.html"
+							target="FrameMain">
+								crystal_ball
+							</a>
+
+				</li>
+
+						<li class="" id="line3d" data="">
+							<a
+							href="line3d.html"
+							target="FrameMain">
+								line3d
+							</a>
+
+				</li>
+
+						<li class="" id="polyline3d" data="">
+							<a
+							href="polyline3d.html"
+							target="FrameMain">
+								polyline3d
+							</a>
+
+				</li>
+
+						<li class="" id="hull_polyline3d" data="">
+							<a
+							href="hull_polyline3d.html"
+							target="FrameMain">
+								hull_polyline3d
+							</a>
+
+				</li>
+
+						<li class="" id="function_grapher" data="">
+							<a
+							href="function_grapher.html"
+							target="FrameMain">
+								function_grapher
+							</a>
+
+				</li>
+
+						<li class="" id="sweep" data="">
+							<a
+							href="sweep.html"
+							target="FrameMain">
+								sweep
+							</a>
+
+				</li>
+
+						<li class="" id="loft" data="">
+							<a
+							href="loft.html"
+							target="FrameMain">
+								loft
+							</a>
+
+				</li>
+
+						<li class="" id="starburst" data="">
+							<a
+							href="starburst.html"
+							target="FrameMain">
+								starburst
+							</a>
+
+				</li>
+
+						<li class="" id="voronoi3d" data="">
+							<a
+							href="voronoi3d.html"
+							target="FrameMain">
+								voronoi3d
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="Transformations" data="">
+							<a
+							href="Transformations.html"
+							target="FrameMain">
+								Transformations
+							</a>
+
+				<ul>
+
+						<li class="" id="along_width" data="">
+							<a
+							href="along_width.html"
+							target="FrameMain">
+								along_width
+							</a>
+
+				</li>
+
+						<li class="" id="hollow_out" data="">
+							<a
+							href="hollow_out.html"
+							target="FrameMain">
+								hollow_out
+							</a>
+
+				</li>
+
+						<li class="" id="bend" data="">
+							<a
+							href="bend.html"
+							target="FrameMain">
+								bend
+							</a>
+
+				</li>
+
+						<li class="" id="shear" data="">
+							<a
+							href="shear.html"
+							target="FrameMain">
+								shear
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="2Dfunctions" data="">
+							<a
+							href="2Dfunctions.html"
+							target="FrameMain">
+								2D functions
+							</a>
+
+				<ul>
+
+						<li class="" id="in_shape" data="">
+							<a
+							href="in_shape.html"
+							target="FrameMain">
+								in_shape
+							</a>
+
+				</li>
+
+						<li class="" id="bijection_offset" data="">
+							<a
+							href="bijection_offset.html"
+							target="FrameMain">
+								bijection_offset
+							</a>
+
+				</li>
+
+						<li class="" id="trim_shape" data="">
+							<a
+							href="trim_shape.html"
+							target="FrameMain">
+								trim_shape
+							</a>
+
+				</li>
+
+						<li class="" id="triangulate" data="">
+							<a
+							href="triangulate.html"
+							target="FrameMain">
+								triangulate
+							</a>
+
+				</li>
+
+						<li class="" id="contours" data="">
+							<a
+							href="contours.html"
+							target="FrameMain">
+								contours
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="2D3Dfunctions" data="">
+							<a
+							href="2D3Dfunctions.html"
+							target="FrameMain">
+								2D/3D functions
+							</a>
+
+				<ul>
+
+						<li class="" id="cross_sections" data="">
+							<a
+							href="cross_sections.html"
+							target="FrameMain">
+								cross_sections
+							</a>
+
+				</li>
+
+						<li class="" id="paths2sections" data="">
+							<a
+							href="paths2sections.html"
+							target="FrameMain">
+								paths2sections
+							</a>
+
+				</li>
+
+						<li class="" id="path_scaling_sections" data="">
+							<a
+							href="path_scaling_sections.html"
+							target="FrameMain">
+								path_scaling_sections
+							</a>
+
+				</li>
+
+						<li class="" id="bezier_surface" data="">
+							<a
+							href="bezier_surface.html"
+							target="FrameMain">
+								bezier_surface
+							</a>
+
+				</li>
+
+						<li class="" id="bezier_smooth" data="">
+							<a
+							href="bezier_smooth.html"
+							target="FrameMain">
+								bezier_smooth
+							</a>
+
+				</li>
+
+						<li class="" id="midpt_smooth" data="">
+							<a
+							href="midpt_smooth.html"
+							target="FrameMain">
+								midpt_smooth
+							</a>
+
+				</li>
+
+						<li class="" id="in_polyline" data="">
+							<a
+							href="in_polyline.html"
+							target="FrameMain">
+								in_polyline
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="Paths" data="">
+							<a
+							href="Paths.html"
+							target="FrameMain">
+								Paths
+							</a>
+
+				<ul>
+
+						<li class="" id="arc_path" data="">
+							<a
+							href="arc_path.html"
+							target="FrameMain">
+								arc_path
+							</a>
+
+				</li>
+
+						<li class="" id="bspline_curve" data="">
+							<a
+							href="bspline_curve.html"
+							target="FrameMain">
+								bspline_curve
+							</a>
+
+				</li>
+
+						<li class="" id="bezier_curve" data="">
+							<a
+							href="bezier_curve.html"
+							target="FrameMain">
+								bezier_curve
+							</a>
+
+				</li>
+
+						<li class="" id="helix" data="">
+							<a
+							href="helix.html"
+							target="FrameMain">
+								helix
+							</a>
+
+				</li>
+
+						<li class="" id="golden_spiral" data="">
+							<a
+							href="golden_spiral.html"
+							target="FrameMain">
+								golden_spiral
+							</a>
+
+				</li>
+
+						<li class="" id="archimedean_spiral" data="">
+							<a
+							href="archimedean_spiral.html"
+							target="FrameMain">
+								archimedean_spiral
+							</a>
+
+				</li>
+
+						<li class="" id="sphere_spiral" data="">
+							<a
+							href="sphere_spiral.html"
+							target="FrameMain">
+								sphere_spiral
+							</a>
+
+				</li>
+
+						<li class="" id="torus_knot" data="">
+							<a
+							href="torus_knot.html"
+							target="FrameMain">
+								torus_knot
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="Extrusion" data="">
+							<a
+							href="Extrusion.html"
+							target="FrameMain">
+								Extrusion
+							</a>
+
+				<ul>
+
+						<li class="" id="box_extrude" data="">
+							<a
+							href="box_extrude.html"
+							target="FrameMain">
+								box_extrude
+							</a>
+
+				</li>
+
+						<li class="" id="ellipse_extrude" data="">
+							<a
+							href="ellipse_extrude.html"
+							target="FrameMain">
+								ellipse_extrude
+							</a>
+
+				</li>
+
+						<li class="" id="stereographic_extrude" data="">
+							<a
+							href="stereographic_extrude.html"
+							target="FrameMain">
+								stereographic_extrude
+							</a>
+
+				</li>
+
+						<li class="" id="rounded_extrude" data="">
+							<a
+							href="rounded_extrude.html"
+							target="FrameMain">
+								rounded_extrude
+							</a>
+
+				</li>
+
+						<li class="" id="bend_extrude" data="">
+							<a
+							href="bend_extrude.html"
+							target="FrameMain">
+								bend_extrude
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="2DShape" data="">
+							<a
+							href="2DShape.html"
+							target="FrameMain">
+								2D Shape
+							</a>
+
+				<ul>
+
+						<li class="" id="shape_taiwan" data="">
+							<a
+							href="shape_taiwan.html"
+							target="FrameMain">
+								shape_taiwan
+							</a>
+
+				</li>
+
+						<li class="" id="shape_arc" data="">
+							<a
+							href="shape_arc.html"
+							target="FrameMain">
+								shape_arc
+							</a>
+
+				</li>
+
+						<li class="" id="shape_pie" data="">
+							<a
+							href="shape_pie.html"
+							target="FrameMain">
+								shape_pie
+							</a>
+
+				</li>
+
+						<li class="" id="shape_circle" data="">
+							<a
+							href="shape_circle.html"
+							target="FrameMain">
+								shape_circle
+							</a>
+
+				</li>
+
+						<li class="" id="shape_ellipse" data="">
+							<a
+							href="shape_ellipse.html"
+							target="FrameMain">
+								shape_ellipse
+							</a>
+
+				</li>
+
+						<li class="" id="shape_square" data="">
+							<a
+							href="shape_square.html"
+							target="FrameMain">
+								shape_square
+							</a>
+
+				</li>
+
+						<li class="" id="shape_trapezium" data="">
+							<a
+							href="shape_trapezium.html"
+							target="FrameMain">
+								shape_trapezium
+							</a>
+
+				</li>
+
+						<li class="" id="shape_cyclicpolygon" data="">
+							<a
+							href="shape_cyclicpolygon.html"
+							target="FrameMain">
+								shape_cyclicpolygon
+							</a>
+
+				</li>
+
+						<li class="" id="shape_pentagram" data="">
+							<a
+							href="shape_pentagram.html"
+							target="FrameMain">
+								shape_pentagram
+							</a>
+
+				</li>
+
+						<li class="" id="shape_starbusrst" data="">
+							<a
+							href="shape_starbusrst.html"
+							target="FrameMain">
+								shape_starbusrst
+							</a>
+
+				</li>
+
+						<li class="" id="shape_superformula" data="">
+							<a
+							href="shape_superformula.html"
+							target="FrameMain">
+								shape_superformula
+							</a>
+
+				</li>
+
+						<li class="" id="shape_glue2circles" data="">
+							<a
+							href="shape_glue2circles.html"
+							target="FrameMain">
+								shape_glue2circles
+							</a>
+
+				</li>
+
+						<li class="" id="shape_path_extend" data="">
+							<a
+							href="shape_path_extend.html"
+							target="FrameMain">
+								shape_path_extend
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="2DShapeextrusions" data="">
+							<a
+							href="2DShapeextrusions.html"
+							target="FrameMain">
+								2D Shape extrusions
+							</a>
+
+				<ul>
+
+						<li class="" id="path_extrude" data="">
+							<a
+							href="path_extrude.html"
+							target="FrameMain">
+								path_extrude
+							</a>
+
+				</li>
+
+						<li class="" id="ring_extrude" data="">
+							<a
+							href="ring_extrude.html"
+							target="FrameMain">
+								ring_extrude
+							</a>
+
+				</li>
+
+						<li class="" id="helix_extrude" data="">
+							<a
+							href="helix_extrude.html"
+							target="FrameMain">
+								helix_extrude
+							</a>
+
+				</li>
+
+						<li class="" id="golden_spiral_extrude" data="">
+							<a
+							href="golden_spiral_extrude.html"
+							target="FrameMain">
+								golden_spiral_extrude
+							</a>
+
+				</li>
+
+						<li class="" id="archimedean_spiral_extrude" data="">
+							<a
+							href="archimedean_spiral_extrude.html"
+							target="FrameMain">
+								archimedean_spiral_extrude
+							</a>
+
+				</li>
+
+						<li class="" id="sphere_spiral_extrude" data="">
+							<a
+							href="sphere_spiral_extrude.html"
+							target="FrameMain">
+								sphere_spiral_extrude
+							</a>
+
+				</li></ul></li>
+
+						<li class="folder" id="Utils" data="">
+							<a
+							href="Utils.html"
+							target="FrameMain">
+								Utils
+							</a>
+
+				<ul>
+
+						<li class="" id="utilsub_str" data="">
+							<a
+							href="utilsub_str.html"
+							target="FrameMain">
+								util/sub_str
+							</a>
+
+				</li>
+
+						<li class="" id="Newtopic1" data="">
+							<a
+							href="Newtopic1.html"
+							target="FrameMain">
+								New topic
+							</a>
+
+				</li>
+
+						<li class="" id="Newtopic2" data="">
+							<a
+							href="Newtopic2.html"
+							target="FrameMain">
+								New topic
+							</a>
+
+				</li>
+
+						<li class="" id="Newtopic3" data="">
+							<a
+							href="Newtopic3.html"
+							target="FrameMain">
+								New topic
+							</a>
+
+				</li>
+
+						<li class="" id="Newtopic4" data="">
+							<a
+							href="Newtopic4.html"
+							target="FrameMain">
+								New topic
+							</a>
+
+				</li>
+
+						<li class="" id="Newtopic5" data="">
+							<a
+							href="Newtopic5.html"
+							target="FrameMain">
+								New topic
+							</a>
+
+				</li>
+
+						<li class="" id="Newtopic6" data="">
+							<a
+							href="Newtopic6.html"
+							target="FrameMain">
+								New topic
+							</a>
+
+				</li>
+
+						<li class="" id="Newtopic7" data="">
+							<a
+							href="Newtopic7.html"
+							target="FrameMain">
+								New topic
+							</a>
+
+				</li>
+
+						<li class="" id="Newtopic8" data="">
+							<a
+							href="Newtopic8.html"
+							target="FrameMain">
+								New topic
+							</a>
+
+				</li>
+
+						<li class="" id="Newtopic9" data="">
+							<a
+							href="Newtopic9.html"
+							target="FrameMain">
+								New topic
+							</a>
+
+				</li>
+
+						<li class="" id="Newtopic10" data="">
+							<a
+							href="Newtopic10.html"
+							target="FrameMain">
+								New topic
+							</a>
+
+				</li>
+
+						<li class="" id="Newtopic11" data="">
+							<a
+							href="Newtopic11.html"
+							target="FrameMain">
+								New topic
+							</a>
+
+				</li></ul></li></ul></li>
+
+						<li class="" id="BOSLLibrary" data="">
+							<a
+							href="BOSLLibrary.html"
+							target="FrameMain">
+								BOSL Library
+							</a>
+
+				</li>
+
+						<li class="" id="NutJobLibrary" data="">
+							<a
+							href="NutJobLibrary.html"
+							target="FrameMain">
+								Nut Job Library
+							</a>
+
+				</li>
+				
+				</ul>
+		</div>
+		
+		
+		
+		<div id="tab-keywords">
+			<ul id="keywords">
+
+				
+				
+			</ul>
+		</div>
+		
+		
+		
+		<div id="tab-search">
+			<form onsubmit="PerformSearch(); return false;">
+				<label for="search_value">Search:</label>
+				<input id="search_value" name="search_value"></input>
+				<input type="submit" value="Search"/>
+			</form>
+			<div id="search_results"></div>
+		</div>
+		
+		
+		
+	</div>
+    
+</body>
+
+</html>
+

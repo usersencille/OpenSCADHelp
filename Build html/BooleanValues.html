@@ -1,0 +1,126 @@
+﻿
+
+<html>
+	
+<head>
+	<title>Boolean Values</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 6.4.1.367">
+	<meta name="description" content="" /> 
+	<meta name="keywords" content="">
+	
+	
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "OpenSCAD Help.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("BooleanValues");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	
+</head>
+
+<body>
+
+
+
+	
+		<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Boolean Values</h1>
+				
+				
+				<div id="topic_breadcrumb">
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="TheOpenSCADLanguage.html">The OpenSCAD Language</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; 
+				</div>
+				
+			</div>
+			
+			<div id="topic_header_nav">
+				
+				
+				<a href="ValuesandDataTypes.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				
+				
+				<a href="Numbers.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				
+				
+				<a href="Strings.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				
+			</div>
+			
+			<div class="clear"></div>
+		</div>
+	
+	
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts28">Boolean Values</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts21">Booleans are truth values. There are two Boolean values, namely&nbsp;</span><span class="rvts31">true</span><span class="rvts21">&nbsp;and&nbsp;</span><span class="rvts31">false</span><span class="rvts21">. A Boolean is passed as the argument to conditional statement 'if()'. conditional operator '?&nbsp;:', and logical operators '!' (not), '&amp;&amp;' (and), and '||' (or). In all of these contexts, you can actually pass any quantity. Most values are converted to 'true' in a Boolean context, the values that count as 'false' are:</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps14"><span class="rvts29">false</span></li>
+<li style="margin-left: 0px" class="rvps14"><span class="rvts29">0 and -0</span></li>
+<li style="margin-left: 0px" class="rvps14"><span class="rvts29">""</span></li>
+<li style="margin-left: 0px" class="rvps14"><span class="rvts29">[]</span></li>
+<li style="margin-left: 0px" class="rvps14"><span class="rvts29">undef</span></li>
+</ul></ul>
+<p class="rvps14"><span class="rvts29"><br/></span></p>
+<p class="rvps2"><span class="rvts21">Note that&nbsp;</span><span class="rvts30">"false"</span><span class="rvts21">&nbsp;(the string),&nbsp;</span><span class="rvts30">[0]</span><span class="rvts21">&nbsp;(a numeric vector),&nbsp;</span><span class="rvts30">[ [] ]</span><span class="rvts21">&nbsp;(a vector containing an empty vector),&nbsp;</span><span class="rvts30">[false]</span><span class="rvts21">&nbsp;(a vector containing the Boolean value false) and 0/0 (Not A Number) all count as true.</span></p>
+<p></p>
+<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour">Easily create EPub books</a></p>
+
+	</div>
+	
+	
+		<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				2020 by Juan C.Cilleruelo. GPL License
+			</div>
+		</div>
+	
+	
+
+	
+</body>
+	
+</html>
+

@@ -1,0 +1,138 @@
+﻿
+
+<html>
+	
+<head>
+	<title>Ranges</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 6.4.1.367">
+	<meta name="description" content="" /> 
+	<meta name="keywords" content="">
+	
+	
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "OpenSCAD Help.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Ranges");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	
+</head>
+
+<body>
+
+
+
+	
+		<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Ranges</h1>
+				
+				
+				<div id="topic_breadcrumb">
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="TheOpenSCADLanguage.html">The OpenSCAD Language</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; 
+				</div>
+				
+			</div>
+			
+			<div id="topic_header_nav">
+				
+				
+				<a href="ValuesandDataTypes.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				
+				
+				<a href="Strings.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				
+				
+				<a href="TheUndefinedValue.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				
+			</div>
+			
+			<div class="clear"></div>
+		</div>
+	
+	
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts28">Ranges</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts21">Ranges are used by&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Conditional_and_Iterator_Functions#For_Loop">for() loops</a><span class="rvts21">&nbsp;and&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/User-Defined_Functions_and_Modules#Children">children()</a><span class="rvts21">. They have 2 varieties:</span></p>
+<p class="rvps2"><span class="rvts29"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps2"><span class="rvts29">[&lt;start&gt;:&lt;end&gt;]</span></li>
+<li class="rvps2"><span class="rvts29">[&lt;start&gt;:&lt;increment&gt;:&lt;end&gt;]</span></li>
+<li class="rvps2"><span class="rvts21"></span></li>
+</ul>
+<p class="rvps2"><span class="rvts21">Although enclosed in square brackets [] , they are not vectors. They use colons&nbsp;: for separators rather than commas.</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps12"><span class="rvts29">r1 = [0:10]; </span></p>
+<p class="rvps12"><span class="rvts29">r2 = [0.5:2.5:20]; </span></p>
+<p class="rvps12"><span class="rvts29">echo(r1); // ECHO: [0: 1: 10] </span></p>
+<p class="rvps12"><span class="rvts29">echo(r2); // ECHO: [0.5: 2.5: 20]</span></p>
+<p class="rvps12"><span class="rvts32"><br/></span></p>
+<p class="rvps2"><span class="rvts21">You should avoid step values that cannot be represented exactly as binary floating point numbers. Integers are okay, as are fractional values whose denominator is a power of two. For example, 0.25 (1/4) and 0.125 (1/8) are safe, but 0.2 (2/10) should be avoided. The problem with these step values is that your range may have too many or too few elements, due to inexact arithmetic.</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts21">A missing &lt;</span><span class="rvts25">increment</span><span class="rvts21">&gt; defaults to 1. </span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts21">A range in the form [&lt;</span><span class="rvts25">start</span><span class="rvts21">&gt;:&lt;</span><span class="rvts25">end</span><span class="rvts21">&gt;] with &lt;</span><span class="rvts25">start</span><span class="rvts21">&gt; greater than &lt;</span><span class="rvts25">end</span><span class="rvts21">&gt; generates a warning and is equivalent to [&lt;</span><span class="rvts25">end</span><span class="rvts21">&gt;: 1: &lt;</span><span class="rvts25">start</span><span class="rvts21">&gt;]. </span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts21">A range in the form [&lt;</span><span class="rvts25">start</span><span class="rvts21">&gt;:1:&lt;</span><span class="rvts25">end</span><span class="rvts21">&gt;] with &lt;</span><span class="rvts25">start</span><span class="rvts21">&gt; greater than &lt;</span><span class="rvts25">end</span><span class="rvts21">&gt; does not generate a warning and is equivalent to []. </span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts21">The &lt;</span><span class="rvts25">increment</span><span class="rvts21">&gt; in a range may be negative.</span></p>
+<p></p>
+<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/help-authoring-tool">Single source CHM, PDF, DOC and HTML Help creation</a></p>
+
+	</div>
+	
+	
+		<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				2020 by Juan C.Cilleruelo. GPL License
+			</div>
+		</div>
+	
+	
+
+	
+</body>
+	
+</html>
+

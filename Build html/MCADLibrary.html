@@ -1,0 +1,176 @@
+﻿
+
+<html>
+	
+<head>
+	<title>MCAD Library</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 6.4.1.367">
+	<meta name="description" content="" /> 
+	<meta name="keywords" content="">
+	
+	
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "OpenSCAD Help.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("MCADLibrary");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	
+</head>
+
+<body>
+
+
+
+	
+		<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">MCAD Library</h1>
+				
+				
+			</div>
+			
+			<div id="topic_header_nav">
+				
+				
+				<a href="Examples2.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				
+				
+				<a href="regular_shapesscad.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				
+			</div>
+			
+			<div class="clear"></div>
+		</div>
+	
+	
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts28">MCAD Library</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts40">This library contains components commonly used in designing and mocking up mechanical designs. It is currently unfinished and you can expect some API changes, however many things are already working.</span></p>
+<p class="rvps2"><span class="rvts40"><br/></span></p>
+<p class="rvps2"><span class="rvts40">This library was created by various authors as named in the individual files' comments. All the files are licensed under the LGPL 2.1 (see </span><a class="rvts44" href="http://creativecommons.org/licenses/LGPL/2.1/">http://creativecommons.org/licenses/LGPL/2.1/</a><span class="rvts40">&nbsp;or the included file lgpl-2.1.txt), some of them allow distribution under more permissive terms (as described in the files' comments).</span></p>
+<p class="rvps2"><span class="rvts43"><br/></span></p>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts47">Usage</span></span></h2>
+<p class="rvps2"><span class="rvts42"><br/></span></p>
+<p class="rvps2"><span class="rvts40">You can import these files in your scripts with </span><span class="rvts41">use &lt;MCAD/filename.scad&gt;</span><span class="rvts40">, where 'filename' is one of the files listed below like 'motors' or 'servos'. Some files include useful constants which will be available with </span><span class="rvts41">include &lt;MCAD/filename.scad&gt;</span><span class="rvts40">, which should be safe to use on all included files (ie. no top level code should create geometry). </span></p>
+<p class="rvps2"><span class="rvts40"><br/></span></p>
+<p class="rvps2"><span class="rvts40">(There is a bug/feature that prevents including constants from files that "include" other files - see the openscad mailing list archives for more details. Since the maintainers aren't very responsive, may have to work around this somehow)</span></p>
+<p class="rvps2"><span class="rvts40"><br/></span></p>
+<p class="rvps2"><span class="rvts40">If you host your project in git, you can do </span><span class="rvts41">git submodule add URL PATH</span><span class="rvts40">&nbsp;in your repo to import this library as a git submodule for easy usage. Then you need to do a </span><span class="rvts41">git submodule update --init</span><span class="rvts40">&nbsp;after cloning. When you want to update the submodule, do </span><span class="rvts41">cd PATH; git checkout master; git pull</span><span class="rvts40">. See </span><span class="rvts41">git help submodule</span><span class="rvts40">&nbsp;for more info.</span></p>
+<p class="rvps2"><span class="rvts40"><br/></span></p>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts45">Currently Provided Tools:</span></span></h2>
+<p class="rvps13"><span class="rvts40">regular_shapes.scad</span></p>
+<p class="rvps15"><span class="rvts40">regular polygons, ie. 2D</span></p>
+<p class="rvps15"><span class="rvts40">regular polyhedrons, ie. 3D</span></p>
+<p class="rvps13"><span class="rvts40">involute_gears.scad (</span><a class="rvts44" href="http://www.thingiverse.com/thing:3575">http://www.thingiverse.com/thing:3575</a><span class="rvts40">):</span></p>
+<p class="rvps15"><span class="rvts40">gear()</span></p>
+<p class="rvps15"><span class="rvts40">bevel_gear()</span></p>
+<p class="rvps15"><span class="rvts40">bevel_gear_pair()</span></p>
+<p class="rvps13"><span class="rvts40">gears.scad (Old version):</span></p>
+<p class="rvps13"><span class="rvts40">&nbsp;</span><span class="rvts40"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts40">gear(number_of_teeth, circular_pitch OR diametrial_pitch, pressure_angle OPTIONAL, clearance OPTIONAL)</span></p>
+<p class="rvps13"><span class="rvts40">motors.scad:</span></p>
+<p class="rvps15"><span class="rvts40">stepper_motor_mount(nema_standard, slide_distance OPTIONAL, mochup OPTIONAL)</span></p>
+<p class="rvps15"><span class="rvts40"><br/></span></p>
+<h3 class="rvps17"><span class="rvts0"><span class="rvts46">Tools (alpha and beta quality):</span></span></h3>
+<p class="rvps13"><span class="rvts40">nuts_and_bolts.scad: for creating metric and imperial bolt/nut holes</span></p>
+<p class="rvps13"><span class="rvts40">bearing.scad: standard/custom bearings</span></p>
+<p class="rvps13"><span class="rvts40">screw.scad: screws and augers</span></p>
+<p class="rvps13"><span class="rvts40">materials.scad: color definitions for different materials</span></p>
+<p class="rvps13"><span class="rvts40">stepper.scad: NEMA standard stepper outlines</span></p>
+<p class="rvps13"><span class="rvts40">servos.scad: servo outlines</span></p>
+<p class="rvps13"><span class="rvts40">boxes.scad: box with rounded corners</span></p>
+<p class="rvps13"><span class="rvts40">triangles.scad: simple triangles</span></p>
+<p class="rvps13"><span class="rvts40">3d_triangle.scad: more advanced triangles</span></p>
+<p class="rvps13"><span class="rvts40"><br/></span></p>
+<h3 class="rvps17"><span class="rvts0"><span class="rvts46">Very generally useful functions and constants:</span></span></h3>
+<p class="rvps13"><span class="rvts40">math.scad: general math functions</span></p>
+<p class="rvps13"><span class="rvts40">constants.scad: mathematical constants</span></p>
+<p class="rvps13"><span class="rvts40">curves.scad: mathematical functions defining curves</span></p>
+<p class="rvps13"><span class="rvts40">units.scad: easy metric units</span></p>
+<p class="rvps13"><span class="rvts40">utilities.scad: geometric funtions and misc. useful stuff</span></p>
+<p class="rvps13"><span class="rvts40">teardrop.scad (</span><a class="rvts44" href="http://www.thingiverse.com/thing:3457">http://www.thingiverse.com/thing:3457</a><span class="rvts40">): parametric teardrop module</span></p>
+<p class="rvps13"><span class="rvts40">shapes.scad: DEPRECATED simple shapes by Catarina Mota</span></p>
+<p class="rvps13"><span class="rvts40">polyholes.scad: holes that should come out well when printed</span></p>
+<p class="rvps2"><span class="rvts40"><br/></span></p>
+<h3 class="rvps17"><span class="rvts0"><span class="rvts46">Other:</span></span></h3>
+<p class="rvps13"><span class="rvts40">alphabet_block.scad</span></p>
+<p class="rvps13"><span class="rvts40">bitmap.scad</span></p>
+<p class="rvps13"><span class="rvts40">letter_necklace.scad</span></p>
+<p class="rvps13"><span class="rvts40">name_tag.scad</span></p>
+<p class="rvps13"><span class="rvts40">height_map.scad</span></p>
+<p class="rvps13"><span class="rvts40">trochoids.scad</span></p>
+<p class="rvps13"><span class="rvts40">libtriangles.scad</span></p>
+<p class="rvps13"><span class="rvts40">layouts.scad</span></p>
+<p class="rvps13"><span class="rvts40">transformations.scad</span></p>
+<p class="rvps13"><span class="rvts40">2Dshapes.scad</span></p>
+<p class="rvps13"><span class="rvts40">gridbeam.scad</span></p>
+<p class="rvps13"><span class="rvts40">fonts.scad</span></p>
+<p class="rvps13"><span class="rvts40">unregular_shapes.scad</span></p>
+<p class="rvps13"><span class="rvts40">metric_fastners.scad</span></p>
+<p class="rvps13"><span class="rvts40">lego_compatibility.scad</span></p>
+<p class="rvps13"><span class="rvts40">multiply.scad</span></p>
+<p class="rvps13"><span class="rvts40">hardware.scad</span></p>
+<p class="rvps13"><span class="rvts40"><br/></span></p>
+<h3 class="rvps17"><span class="rvts0"><span class="rvts46">External utils that generate and process openscad code:</span></span></h3>
+<p class="rvps13"><span class="rvts40">openscad_testing.py: testing code, see below</span></p>
+<p class="rvps13"><span class="rvts40">openscad_utils.py: code for scraping function names etc.</span></p>
+<p class="rvps2"><span class="rvts43"><br/></span></p>
+<p></p>
+<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Free Kindle producer</a></p>
+
+	</div>
+	
+	
+		<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				2020 by Juan C.Cilleruelo. GPL License
+			</div>
+		</div>
+	
+	
+
+	
+</body>
+	
+</html>
+

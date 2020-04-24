@@ -1,0 +1,128 @@
+﻿
+
+<html>
+	
+<head>
+	<title>Strings</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 6.4.1.367">
+	<meta name="description" content="" /> 
+	<meta name="keywords" content="">
+	
+	
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "OpenSCAD Help.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Strings");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	
+</head>
+
+<body>
+
+
+
+	
+		<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Strings</h1>
+				
+				
+				<div id="topic_breadcrumb">
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="TheOpenSCADLanguage.html">The OpenSCAD Language</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; 
+				</div>
+				
+			</div>
+			
+			<div id="topic_header_nav">
+				
+				
+				<a href="ValuesandDataTypes.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				
+				
+				<a href="BooleanValues.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				
+				
+				<a href="Ranges.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				
+			</div>
+			
+			<div class="clear"></div>
+		</div>
+	
+	
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts28">Strings</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts21">A string is a sequence of zero or more </span><span class="rvts21">unicode</span><span class="rvts21">&nbsp;characters. String values are used to specify file names when importing a file, and to display text for debugging purposes when using echo(). Strings can also be used with the&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Text">text()</a><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Text">&nbsp;primitive.</a></p>
+<p class="rvps2"><span class="rvts21">A string literal is written as a sequence of characters enclosed in quotation marks&nbsp;</span><span class="rvts30">"</span><span class="rvts21">, like this:&nbsp;</span><span class="rvts30">""</span><span class="rvts21">&nbsp;(an empty string), or&nbsp;</span><span class="rvts30">"this is a string"</span><span class="rvts21">.</span></p>
+<p class="rvps2"><span class="rvts21">To include a&nbsp;</span><span class="rvts30">"</span><span class="rvts21">&nbsp;character in a string literal, use&nbsp;</span><span class="rvts30">\"</span><span class="rvts21">. To include a&nbsp;</span><span class="rvts30">\</span><span class="rvts21">&nbsp;character in a string literal, use&nbsp;</span><span class="rvts30">\\</span><span class="rvts21">. The following escape sequences beginning with&nbsp;</span><span class="rvts30">\</span><span class="rvts21">&nbsp;can be used within string literals:</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts29">\" → "</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts29">\\ → \</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts29">\t → tab</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts29">\n → newline</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts29">\r → carriage return</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts29">\u03a9 → Ω - see&nbsp;text()&nbsp;for further information on unicode characters</span></li>
+</ul></ul>
+<p class="rvps10"><span class="rvts29"><br/></span></p>
+<p></p>
+<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Produce online help for Qt applications</a></p>
+
+	</div>
+	
+	
+		<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				2020 by Juan C.Cilleruelo. GPL License
+			</div>
+		</div>
+	
+	
+
+	
+</body>
+	
+</html>
+
