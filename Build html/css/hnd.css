@@ -289,6 +289,58 @@ span.rvts47
  font-weight: bold;
  color: #1b1f22;
 }
+span.rvts48
+{
+ font-size: 12pt;
+ font-family: 'segoe ui';
+ color: #24292e;
+ background-color: #ffffff;
+}
+span.rvts49
+{
+ font-size: 12pt;
+ font-family: 'segoe ui';
+ font-style: italic;
+ font-weight: bold;
+ color: #24292e;
+ background-color: #ffffff;
+}
+span.rvts50
+{
+ font-size: 12pt;
+ font-family: 'segoe ui';
+ font-weight: bold;
+ color: #24292e;
+}
+span.rvts51
+{
+ font-size: 12pt;
+ font-family: 'segoe ui';
+ color: #24292e;
+}
+span.rvts52
+{
+ font-size: 11pt;
+ font-family: 'consolas';
+ color: #24292e;
+}
+span.rvts53
+{
+ font-size: 11pt;
+ font-family: 'Consolas';
+}
+span.rvts54
+{
+ font-size: 14pt;
+ font-style: italic;
+ font-weight: bold;
+}
+span.rvts55
+{
+ font-size: 15pt;
+ font-family: 'segoe ui';
+ color: #24292e;
+}
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
 {
@@ -389,6 +441,32 @@ p,ul,ol /* Paragraph Style */
  padding: 0px 0px 0px 0px;
  margin: 16px 0px 4px 0px;
 }
+.rvps18
+{
+ background: #ffffff;
+ margin: 0px 0px 16px 0px;
+}
+.rvps19
+{
+ background: #ffffff;
+ padding: 0px 0px 0px 32px;
+}
+.rvps20
+{
+ background: #ffffff;
+ padding: 0px 0px 0px 32px;
+ margin: 4px 0px 0px 0px;
+}
+.rvps21
+{
+ margin: 0px 0px 16px 0px;
+}
+.rvps22
+{
+ background: #f6f8fa;
+ padding: 16px 16px 16px 16px;
+ margin: 0px 0px 16px 0px;
+}
 /* ========== Lists ========== */
 .list0 {text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;}
 .list1 {text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: circle;}
@@ -401,3 +479,6 @@ p,ul,ol /* Paragraph Style */
 .list8 {text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside; list-style-type: circle;}
 .list9 {text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside; list-style-type: square;}
 .list10 {text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;}
+.list11 {text-indent: 0px; padding: 0; margin: 0 0 0 32px; list-style-position: outside; list-style-type: disc;}
+.list12 {text-indent: 0px; padding: 0; margin: 0 0 0 32px; list-style-position: outside; list-style-type: circle;}
+.list13 {text-indent: 0px; padding: 0; margin: 0 0 0 32px; list-style-position: outside; list-style-type: square;}

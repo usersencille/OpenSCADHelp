@@ -1,0 +1,160 @@
+﻿
+
+<html>
+	
+<head>
+	<title>move()</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 6.4.1.367">
+	<meta name="description" content="" /> 
+	<meta name="keywords" content="">
+	
+	
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("move");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	
+</head>
+
+<body>
+
+
+
+	
+		<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">move()</h1>
+				
+				
+				<div id="topic_breadcrumb">
+					<a href="BOSLLibrary.html">BOSL Library</a> &rsaquo;&rsaquo; <a href="CommonlyUsed.html">Commonly Used</a> &rsaquo;&rsaquo; <a href="transformsscad.html">transforms.scad</a> &rsaquo;&rsaquo; <a href="Translations.html">Translations</a> &rsaquo;&rsaquo; 
+				</div>
+				
+			</div>
+			
+			<div id="topic_header_nav">
+				
+				
+				<a href="Translations.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				
+				
+				<a href="Translations.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				
+				
+				<a href="xmove.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				
+			</div>
+			
+			<div class="clear"></div>
+		</div>
+	
+	
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts28">move()</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts54">use&lt;transforms.scad&gt;</span></span></h2>
+<p class="rvps2"><span class="rvts55"><br/></span></p>
+<p class="rvps18"><span class="rvts50">Usage</span><span class="rvts51">:</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 32px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps19"><span class="rvts51">move([x], [y], [z]) ...</span></li>
+<li class="rvps20"><span class="rvts51">move([x, y, z]) ...</span></li>
+</ul>
+<p class="rvps20"><span class="rvts51"><br/></span></p>
+<p class="rvps18"><span class="rvts50">Description</span><span class="rvts51">: Moves/translates children.</span></p>
+<div class="rvps21"><table width="727" border="1" cellpadding="10" cellspacing="-1" style="border-width: 0px; background-color: #ffffff; border-collapse: collapse;">
+<tr valign="top">
+<td valign="middle" style="border-width : 1px; border-color: #dfe2e5; border-style: solid; padding: 6px 13px;"><p class="rvps2"><span class="rvts50">Argument</span></p>
+</td>
+<td valign="middle" style="border-width : 1px; border-color: #dfe2e5; border-style: solid; padding: 6px 13px;"><p class="rvps2"><span class="rvts50">What it does</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-width : 1px; border-color: #dfe2e5; border-style: solid; padding: 6px 13px;"><p class="rvps2"><span class="rvts53">x</span></p>
+</td>
+<td valign="middle" style="border-width : 1px; border-color: #dfe2e5; border-style: solid; padding: 6px 13px;"><p class="rvps2"><span class="rvts51">X axis translation.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-width : 1px; border-color: #dfe2e5; border-style: solid; padding: 6px 13px; background-color: #f6f8fa;"><p class="rvps2"><span class="rvts53">y</span></p>
+</td>
+<td valign="middle" style="border-width : 1px; border-color: #dfe2e5; border-style: solid; padding: 6px 13px; background-color: #f6f8fa;"><p class="rvps2"><span class="rvts51">Y axis translation.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-width : 1px; border-color: #dfe2e5; border-style: solid; padding: 6px 13px;"><p class="rvps2"><span class="rvts53">z</span></p>
+</td>
+<td valign="middle" style="border-width : 1px; border-color: #dfe2e5; border-style: solid; padding: 6px 13px;"><p class="rvps2"><span class="rvts51">Z axis translation.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps18"><span class="rvts50">Example 1</span><span class="rvts51">:</span></p>
+<p class="rvps22"><span class="rvts52">#sphere(d = 10);</span><br/><span class="rvts52">move([0, 20, 30]) sphere(d = 10);</span></p>
+<p class="rvps18"><img alt="move() Example 1" style="vertical-align: text-bottom;" src="lib/move.png"></p>
+<p class="rvps18"><span class="rvts50">Example 2</span><span class="rvts51">:</span></p>
+<p class="rvps22"><span class="rvts52">#sphere(d = 10);</span><br/><span class="rvts52">move(y = 20) sphere(d = 10);</span></p>
+<p class="rvps18"><img alt="" style="padding : 1px;" src="lib/move_2.png"></p>
+<p class="rvps18"><span class="rvts50">Example 3</span><span class="rvts51">:</span></p>
+<p class="rvps22"><span class="rvts52">#sphere(d = 10);</span><br/><span class="rvts52">move(x = -10, y = -5) sphere(d = 10);</span></p>
+<p class="rvps18"><img alt="" style="padding : 1px;" src="lib/move_3.png"></p>
+<p></p>
+<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour">Easily create Help documents</a></p>
+
+	</div>
+	
+	
+		<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				2020 by Juan C.Cilleruelo. GPL License
+			</div>
+		</div>
+	
+	
+
+	
+</body>
+	
+</html>
+
