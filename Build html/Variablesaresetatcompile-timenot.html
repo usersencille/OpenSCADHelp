@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="TheOpenSCADLanguage.html">The OpenSCAD Language</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; <a href="Variables.html">Variables</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; <a href="Variables.html">Variables</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,16 +91,16 @@
 	<div id="topic_content">
 		
 <p></p>
-<h1 class="rvps4"><span class="rvts0"><span class="rvts28">Variables are set at compile-time, not at run-time</span></span></h1>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts26">Variables are set at compile-time, not at run-time</span></span></h1>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts21">Because OpenSCAD calculates its variable values at compile-time, not run-time,</span><span class="rvts20">&nbsp;the last variable assignment, within a scope apply everywhere in that scope, or inner scopes thereof</span><span class="rvts21">. It may be helpful to think of them as override-able constants rather than as variables.</span></p>
 <p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps13"><span class="rvts29">// The value of 'a' reflects only the last set value </span></p>
-<p class="rvps13"><span class="rvts29">a = 0; </span></p>
-<p class="rvps13"><span class="rvts29">echo(a); // 5 </span></p>
-<p class="rvps13"><span class="rvts29">a = 3; </span></p>
-<p class="rvps13"><span class="rvts29">echo(a); // 5 a = 5;</span></p>
-<p class="rvps2"><span class="rvts29"><br/></span></p>
+<p class="rvps13"><span class="rvts34">// The value of 'a' reflects only the last set value </span></p>
+<p class="rvps13"><span class="rvts34">a = 0; </span></p>
+<p class="rvps13"><span class="rvts34">echo(a); // 5 </span></p>
+<p class="rvps13"><span class="rvts34">a = 3; </span></p>
+<p class="rvps13"><span class="rvts34">echo(a); // 5 a = 5;</span></p>
+<p class="rvps2"><span class="rvts34"><br/></span></p>
 <p class="rvps2"><span class="rvts21">While this appears to be counter-intuitive, it allows you to do some interesting things: for instance, if you set up your shared library files to have default values defined as variables at their root level, when you include that file in your own code, you can 're-define' or override those constants by simply assigning a new value to them.</span></p>
 <p></p>
 <p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpauthoringsoftware.com">News and information about help authoring tools and software</a></p>

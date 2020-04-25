@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="TheOpenSCADLanguage.html">The OpenSCAD Language</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; <a href="Variables.html">Variables</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; <a href="Variables.html">Variables</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,42 +91,42 @@
 	<div id="topic_content">
 		
 <p></p>
-<h1 class="rvps4"><span class="rvts0"><span class="rvts28">Scope of variables</span></span></h1>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts26">Scope of variables</span></span></h1>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts21">When operators such as translate() and color() need to encompass more than one action ( actions end in&nbsp;;), braces {} are needed to group the actions, creating a new, inner scope. When there is only one semicolon, braces are usually optional.</span></p>
 <p class="rvps2"><span class="rvts21"><br/></span></p>
 <p class="rvps2"><span class="rvts21">Each pair of braces creates a new scope inside the scope where they were used.&nbsp;New variables can be created within this new scope. New values can be given to variables which were created in an outer scope . These variables and their values are also available to further inner scopes created within this scope, but are&nbsp;</span><span class="rvts20">not available</span><span class="rvts21">&nbsp;to any thing outside this scope. Variables still have only the last value assigned within a scope.</span></p>
 <p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps15"><span class="rvts29">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// scope 1 </span></p>
-<p class="rvps13"><span class="rvts29">a = 6; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // create a </span></p>
-<p class="rvps13"><span class="rvts29">echo(a, b); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6, undef </span></p>
-<p class="rvps13"><span class="rvts29">translate([5, 0, 0]){ &nbsp;// scope 1.1 </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp;a = 10; </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp;b = 16; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // create b </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp;echo(a, b); &nbsp; &nbsp; &nbsp; &nbsp; // &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100, 16 a=10; was overridden by later a = 100;</span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp;color("blue") { &nbsp; &nbsp; // scope 1.1.1 </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp; &nbsp; echo(a, b); &nbsp; &nbsp; &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100, 20 </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp; &nbsp; cube(); </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp; &nbsp; b=20; </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp;} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // back to 1.1 </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp;echo(a, b); &nbsp; &nbsp; &nbsp; &nbsp; // 100, 16 </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp;a = 100; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// override a in 1.1 </span></p>
-<p class="rvps13"><span class="rvts29">} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// back to 1 </span></p>
-<p class="rvps13"><span class="rvts29">echo(a, b); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// 6, undef </span></p>
-<p class="rvps13"><span class="rvts29">color("red"){ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// scope 1.2 </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp;cube(); </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp;echo(a,b); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// 6, undef </span></p>
-<p class="rvps13"><span class="rvts29">} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// back to 1 </span></p>
-<p class="rvps13"><span class="rvts29">echo(a, b); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// 6, undef </span></p>
-<p class="rvps13"><span class="rvts29"><br/></span></p>
-<p class="rvps13"><span class="rvts29">//In this example, scopes 1 and 1.1 are outer scopes to 1.1.1 but 1.2 is not.</span></p>
-<p class="rvps10"><span class="rvts29"><br/></span></p>
+<p class="rvps15"><span class="rvts34">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// scope 1 </span></p>
+<p class="rvps13"><span class="rvts34">a = 6; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // create a </span></p>
+<p class="rvps13"><span class="rvts34">echo(a, b); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6, undef </span></p>
+<p class="rvps13"><span class="rvts34">translate([5, 0, 0]){ &nbsp;// scope 1.1 </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp;a = 10; </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp;b = 16; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // create b </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp;echo(a, b); &nbsp; &nbsp; &nbsp; &nbsp; // &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100, 16 a=10; was overridden by later a = 100;</span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp;color("blue") { &nbsp; &nbsp; // scope 1.1.1 </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp; &nbsp; echo(a, b); &nbsp; &nbsp; &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100, 20 </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp; &nbsp; cube(); </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp; &nbsp; b=20; </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp;} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // back to 1.1 </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp;echo(a, b); &nbsp; &nbsp; &nbsp; &nbsp; // 100, 16 </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp;a = 100; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// override a in 1.1 </span></p>
+<p class="rvps13"><span class="rvts34">} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// back to 1 </span></p>
+<p class="rvps13"><span class="rvts34">echo(a, b); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// 6, undef </span></p>
+<p class="rvps13"><span class="rvts34">color("red"){ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// scope 1.2 </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp;cube(); </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp;echo(a,b); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// 6, undef </span></p>
+<p class="rvps13"><span class="rvts34">} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// back to 1 </span></p>
+<p class="rvps13"><span class="rvts34">echo(a, b); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// 6, undef </span></p>
+<p class="rvps13"><span class="rvts34"><br/></span></p>
+<p class="rvps13"><span class="rvts34">//In this example, scopes 1 and 1.1 are outer scopes to 1.1.1 but 1.2 is not.</span></p>
+<p class="rvps9"><span class="rvts34"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
 <li class="rvps2"><span class="rvts20">Anonymous scopes</span><span class="rvts21">&nbsp;are not considered scopes:</span></li>
 <li class="rvps2"><span class="rvts21"></span></li>
 </ul>
-<p class="rvps10"><span class="rvts29">{ angle = 45; } rotate(angle) square(10);</span></p>
-<p class="rvps2"><span class="rvts32"><br/></span></p>
+<p class="rvps9"><span class="rvts34">{ angle = 45; } rotate(angle) square(10);</span></p>
+<p class="rvps2"><span class="rvts37"><br/></span></p>
 <p class="rvps2"><span class="rvts20">For() loops are not an exception</span><span class="rvts21">&nbsp;to the rule about variables having only one value within a scope. A copy of loop contents is created for each pass. Each pass is given its own scope, allowing any variables to have unique values for that pass. No, you still can't do a=a+1;</span></p>
 <p></p>
 <p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create help files for the Qt Help Framework</a></p>

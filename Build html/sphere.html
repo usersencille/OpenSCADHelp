@@ -91,6 +91,46 @@
 	<div id="topic_content">
 		
 <p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts26">sphere</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps7"><span class="rvts21">Creates a sphere at the origin of the coordinate system. The r argument name is optional. To use d instead of r, d must be named.</span></p>
+<p class="rvps7"><span class="rvts20">Parameters</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">r&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Radius. This is the radius of the sphere. The resolution of the sphere is based on the size of the sphere and the $fa, $fs and $fn variables. For more information on these special variables look at:&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Other_Language_Features">OpenSCAD_User_Manual/Other_Language_Features</a></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">d&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Diameter. This is the diameter of the sphere.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">$fa&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Fragment angle in degrees</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">$fs&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Fragment size in mm</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">$fn&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Resolution</span></li>
+</ul>
+<p class="rvps17"><span class="rvts37">default values: sphere(); yields: sphere($fn = 0, $fa = 12, $fs = 2, r = 1);</span></p>
+<p class="rvps7"><span class="rvts20">Usage Examples</span></p>
+<p class="rvps17"><span class="rvts37">sphere(r = 1); sphere(r = 5); sphere(r = 10); sphere(d = 2); sphere(d = 10); sphere(d = 20);</span></p>
+<p class="rvps17"><span class="rvts37">// this creates a high resolution sphere with a 2mm radius sphere(2, $fn=100);</span></p>
+<p class="rvps17"><span class="rvts37">// also creates a 2mm high resolution sphere but this one // does not have as many small triangles on the poles of the sphere sphere(2, $fa=5, $fs=0.1);</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/Openscad-sphere.jpg"></p>
 <p></p>
 <p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour">Easily create EPub books</a></p>
 

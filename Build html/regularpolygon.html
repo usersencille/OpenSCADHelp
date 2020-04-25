@@ -91,6 +91,15 @@
 	<div id="topic_content">
 		
 <p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts26">regular polygon</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps7"><span class="rvts21">A regular polygon of 3 or more sides can be created by using circle() with $fn set to the number of sides. The following two pieces of code are equivalent.</span></p>
+<p class="rvps17"><span class="rvts37">circle(r=1, $fn=4);</span></p>
+<p class="rvps17"><span class="rvts37">module regular_polygon(order = 4, r=1){ angles=[ for (i = [0:order-1]) i*(360/order) ]; coords=[ for (th=angles) [r*cos(th), r*sin(th)] ]; polygon(coords); } regular_polygon();</span></p>
+<p class="rvps7"><span class="rvts21">These result in the following shapes, where the polygon is inscribed within the circle with all sides (and angles) equal. One corner points to the positive x direction. For irregular shapes see the polygon primitive below.</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_regular_polygon_using_circle.jpg"></p>
+<p class="rvps17"><span class="rvts37">script for these examples translate([-42, 0]){circle(20,$fn=3);%circle(20,$fn=90);} translate([ 0, 0]) circle(20,$fn=4); translate([ 42, 0]) circle(20,$fn=5); translate([-42,-42]) circle(20,$fn=6); translate([ 0,-42]) circle(20,$fn=8); translate([ 42,-42]) circle(20,$fn=12);</span></p>
+<p class="rvps17"><span class="rvts37">color("black"){ translate([-42, 0,1])text("3",7,,center); translate([ 0, 0,1])text("4",7,,center); translate([ 42, 0,1])text("5",7,,center); translate([-42,-42,1])text("6",7,,center); translate([ 0,-42,1])text("8",7,,center); translate([ 42,-42,1])text("12",7,,center); }</span></p>
 <p></p>
 <p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour">Full-featured Help generator</a></p>
 

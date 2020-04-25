@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="TheOpenSCADLanguage.html">The OpenSCAD Language</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,7 +91,7 @@
 	<div id="topic_content">
 		
 <p></p>
-<h1 class="rvps4"><span class="rvts0"><span class="rvts28">Getting input</span></span></h1>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts26">Getting input</span></span></h1>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts21">Now we have variables, it would be nice to be able to get input into them instead of setting the values from code. There are a few functions to read data from DXF files, or you can set a variable with the -D switch on the command line.</span></p>
 <p class="rvps2"><span class="rvts21"><br/></span></p>
@@ -99,20 +99,20 @@
 <p class="rvps2"><span class="rvts20"><br/></span></p>
 <p class="rvps2"><span class="rvts21">Getting a point is useful for reading an origin point in a 2D view in a technical drawing. The function dxf_cross reads the intersection of two lines on a layer you specify and returns the intersection point. This means that the point must be given with two lines in the DXF file, and not a point entity.</span></p>
 <p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps13"><span class="rvts29">OriginPoint = dxf_cross(file &nbsp; = "drawing.dxf", </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; layer &nbsp;= "SCAD.Origin", </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; origin = [0, 0], scale = 1);</span></p>
-<p class="rvps2"><span class="rvts39"><br/></span></p>
+<p class="rvps13"><span class="rvts34">OriginPoint = dxf_cross(file &nbsp; = "drawing.dxf", </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; layer &nbsp;= "SCAD.Origin", </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; origin = [0, 0], scale = 1);</span></p>
+<p class="rvps2"><span class="rvts44"><br/></span></p>
 <p class="rvps2"><span class="rvts20">Getting a dimension value</span></p>
 <p class="rvps2"><span class="rvts20"><br/></span></p>
 <p class="rvps2"><span class="rvts21">You can read dimensions from a technical drawing. This can be useful to read a rotation angle, an extrusion height, or spacing between parts. In the drawing, create a dimension that does not show the dimension value, but an identifier. To read the value, you specify this identifier from your program:</span></p>
 <p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps13"><span class="rvts29">TotalWidth = dxf_dim(file &nbsp; = "drawing.dxf", </span></p>
-<p class="rvps13"><span class="rvts29">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;name &nbsp; = "TotalWidth",</span></p>
-<p class="rvps2"><span class="rvts29">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;layer &nbsp;= "SCAD.Origin", </span></p>
-<p class="rvps2"><span class="rvts29">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;origin = [0, 0], </span></p>
-<p class="rvps2"><span class="rvts29">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;scale &nbsp;= 1);</span></p>
-<p class="rvps2"><span class="rvts39"><br/></span></p>
+<p class="rvps13"><span class="rvts34">TotalWidth = dxf_dim(file &nbsp; = "drawing.dxf", </span></p>
+<p class="rvps13"><span class="rvts34">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;name &nbsp; = "TotalWidth",</span></p>
+<p class="rvps2"><span class="rvts34">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;layer &nbsp;= "SCAD.Origin", </span></p>
+<p class="rvps2"><span class="rvts34">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;origin = [0, 0], </span></p>
+<p class="rvps2"><span class="rvts34">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;scale &nbsp;= 1);</span></p>
+<p class="rvps2"><span class="rvts44"><br/></span></p>
 <p class="rvps2"><span class="rvts21">For a nice example of both functions, see Example009 and the image on the&nbsp;</span><a class="rvts22" href="http://www.openscad.org/">homepage of OpenSCAD</a><span class="rvts21">.</span></p>
 <p></p>
 <p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour">Easily create EBooks</a></p>

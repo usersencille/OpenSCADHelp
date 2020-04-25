@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="TheOpenSCADLanguage.html">The OpenSCAD Language</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ValuesandDataTypes.html">Values and Data Types</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,15 +91,15 @@
 	<div id="topic_content">
 		
 <p></p>
-<h1 class="rvps4"><span class="rvts0"><span class="rvts28">Vectors</span></span></h1>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts26">Vectors</span></span></h1>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps7"><span class="rvts21">A vector is a sequence of zero or more OpenSCAD values. Vectors are a collection (or list or table) of numeric or boolean values, variables, vectors, strings or any combination thereof. They can also be expressions which evaluate to one of these. </span></p>
 <p class="rvps7"><span class="rvts21">Vectors handle the role of arrays found in many imperative languages. The information here also applies to lists and tables which use vectors for their data.</span></p>
 <p class="rvps7"><span class="rvts21">A vector has square brackets, [] enclosing zero or more items (elements or members), separated by commas. A vector can contain vectors, which contain vectors, etc.</span></p>
 <p class="rvps7"><span class="rvts21"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps9"><span class="rvts20">examples</span></li>
-<li style="margin-left: 0px" class="rvps9"><span class="rvts20"></span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts20">examples</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts20"></span></li>
 </ul>
 <p class="rvps13"><span class="rvts6">[1, 2, 3] </span></p>
 <p class="rvps13"><span class="rvts6">[a, 5, b] </span></p>
@@ -116,8 +116,8 @@
 <p class="rvps13"><span class="rvts6">translate( [x, y, z] ) </span></p>
 <p class="rvps13"><span class="rvts6">polygon( [ [x0, y0], [x1, y1], [x2, y2] ] );</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps9"><span class="rvts20"></span></li>
-<li style="margin-left: 0px" class="rvps9"><span class="rvts20">creation</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts20"></span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts20">creation</span></li>
 </ul>
 <p class="rvps7"><span class="rvts21">Vectors are created by writing the list of elements, separated by commas, and enclosed in square brackets. Variables are replaced by their values.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -133,10 +133,10 @@
 </ul>
 <p class="rvps7"><span class="rvts21">Elements within vectors are numbered from 0 to n-1 where n is the length returned by&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language#len">len()</a><span class="rvts21">. Address elements within vectors with the following notation:</span></p>
 <p class="rvps7"><span class="rvts21"><br/></span></p>
-<p class="rvps13"><span class="rvts29">e[5] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// element no 5 (sixth) at 1st nesting level </span></p>
-<p class="rvps13"><span class="rvts29">e[5][2] &nbsp; &nbsp; &nbsp; // element 2 of element 5 2nd nesting level </span></p>
-<p class="rvps13"><span class="rvts29">e[5][2][0] &nbsp; &nbsp;// element 0 of 2 of 5 3rd nesting level </span></p>
-<p class="rvps13"><span class="rvts29">e[5][2][0][1] // element 1 of 0 of 2 of 5 4th nesting level</span></p>
+<p class="rvps13"><span class="rvts34">e[5] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// element no 5 (sixth) at 1st nesting level </span></p>
+<p class="rvps13"><span class="rvts34">e[5][2] &nbsp; &nbsp; &nbsp; // element 2 of element 5 2nd nesting level </span></p>
+<p class="rvps13"><span class="rvts34">e[5][2][0] &nbsp; &nbsp;// element 0 of 2 of 5 3rd nesting level </span></p>
+<p class="rvps13"><span class="rvts34">e[5][2][0][1] // element 1 of 0 of 2 of 5 4th nesting level</span></p>
 <p class="rvps16"><span class="rvts21"><br/></span></p>
 <p class="rvps16"><span class="rvts21">example elements with lengths from len()</span></p>
 <p class="rvps16"><span class="rvts21"><br/></span></p>
@@ -157,8 +157,8 @@
 <p class="rvps13"><span class="rvts6">s[a] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">undef </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">5 </span></p>
 <p class="rvps13"><span class="rvts6">e[s[a]] </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">3 </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">[[10, 11], [12, 13, 14], [[15, 16], [17]]]</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps9"><span class="rvts20"></span></li>
-<li style="margin-left: 0px" class="rvps9"><span class="rvts20">alternate dot notation</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts20"></span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts20">alternate dot notation</span></li>
 </ul>
 <p class="rvps7"><span class="rvts21"><br/></span></p>
 <p class="rvps7"><span class="rvts21">The first three elements of a vector can be accessed with an alternate dot notation:</span></p>

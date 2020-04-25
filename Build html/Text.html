@@ -75,7 +75,7 @@
 				
 				
 				
-				<a href="import_dxf.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				<a href="polygon.html"><img src="img/arrow_left.png" alt="Previous"/></a>
 				
 				
 				
@@ -91,6 +91,83 @@
 	<div id="topic_content">
 		
 <p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts26">Text</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps7"><span class="rvts21">The&nbsp;</span><span class="rvts35">text</span><span class="rvts21">&nbsp;module creates text as a 2D geometric object, using fonts installed on the local system or provided as separate font file.</span></p>
+<p class="rvps7"><span class="rvts20">Parameters</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">text&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">String. The text to generate.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">size&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Decimal. The generated text has an ascent (height above the baseline) of approximately the given value. Default is 10. Different fonts can vary somewhat and may not fill the size specified exactly, typically they render slightly smaller.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">font&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">String. The name of the font that should be used. This is not the name of the font file, but the logical font name (internally handled by the fontconfig library). This can also include a style parameter, see below. A list of installed fonts &amp; styles can be obtained using the font list dialog (Help -&gt; Font List).</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">halign&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">String. The horizontal alignment for the text. Possible values are "left", "center" and "right". Default is "left".</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">valign&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">String. The vertical alignment for the text. Possible values are "top", "center", "baseline" and "bottom". Default is "baseline".</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">spacing&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Decimal. Factor to increase/decrease the character spacing. The default value of 1 results in the normal spacing for the font, giving a value greater than 1 causes the letters to be spaced further apart.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">direction</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">String. Direction of the text flow. Possible values are "ltr" (left-to-right), "rtl" (right-to-left), "ttb" (top-to-bottom) and "btt" (bottom-to-top). Default is "ltr".</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">language</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">String. The language of the text. Default is "en".</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">script</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">String. The script of the text. Default is "latin".</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">$fn</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">used for subdividing the curved path segments provided by freetype</span></li>
+</ul>
+<p class="rvps7"><span class="rvts20">Example</span></p>
+<p class="rvps17"><span class="rvts37">text("OpenSCAD");</span></p>
+<p class="rvps7"><span class="rvts21"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts20">Note</span></li>
+</ul>
+<p class="rvps7"><span class="rvts21">To allow specification of particular&nbsp;</span><a class="rvts22" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a><span class="rvts21">&nbsp;characters you can specify them in a string with the following escape codes;</span></p>
+<p class="rvps7"><span class="rvts21">\x03 - single hex character (only allowed values are 01h - 7fh)</span></p>
+<p class="rvps7"><span class="rvts21">\u0123 - unicode char with 4 hexadecimal digits (note: Lowercase)</span></p>
+<p class="rvps7"><span class="rvts21">\U012345 - unicode char with 6 hexadecimal digits (note: Uppercase)</span></p>
+<p class="rvps7"><span class="rvts21"></span><br/><span class="rvts20">Example</span></p>
+<p class="rvps17"><span class="rvts37">t="\u20AC10 \u263A"; // 10 euro and a smilie</span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_text_example.png"><br/><span class="rvts49">Example 1: Result.</span></p>
 <p></p>
 <p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EPub generator</a></p>
 
