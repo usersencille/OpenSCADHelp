@@ -91,8 +91,15 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Scales the 2D shape by this value over the height of the extrusion. Scale can be a scalar or a vector:</span></p>
+<p class="rvps17"><span class="rvts36">linear_extrude(height = 10, center = true, convexity = 10, scale=3) translate([2, 0, 0]) circle(r = 1);</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/Openscad_linext_09.png"></p>
+<p class="rvps17"><span class="rvts36">linear_extrude(height = 10, center = true, convexity = 10, scale=[1,5], $fn=100) translate([2, 0, 0]) circle(r = 1);</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/OpenScad_linear_extrude_scale_example2.png"></p>
+<p class="rvps7"><span class="rvts22">Note that if scale is a vector, the resulting side walls may be nonplanar. Use&nbsp;</span><span class="rvts34">twist=0</span><span class="rvts22">&nbsp;and the&nbsp;</span><span class="rvts34">slices</span><span class="rvts22">&nbsp;parameter to avoid&nbsp;</span><a class="rvts23" href="https://github.com/openscad/openscad/issues/1341">asymmetry</a><span class="rvts22">.</span></p>
+<p class="rvps17"><span class="rvts36">linear_extrude(height=10, scale=[1,0.1], slices=20, twist=0) polygon(points=[[0,0],[20,10],[20,-10]]);</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/iphone-website-generation">Free iPhone documentation generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/iphone-website-generation">Free iPhone documentation generator</a></p>
 
 	</div>
 	

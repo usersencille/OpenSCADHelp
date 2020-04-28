@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherMathematicalFunctions.html">Other Mathematical Functions</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherMathematicalFunctions.html">Other Mathematical Functions</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,27 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps2"><span class="rvts6">Look up value in table, and linearly interpolate if there's no exact match. The first argument is the value to look up. The second is the lookup table -- a vector of key-value pairs.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Parameters</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">key </span></p>
+<p class="rvps2"><span class="rvts6">A lookup key</span></p>
+<p class="rvps2"><span class="rvts6">&lt;key,value&gt; array </span></p>
+<p class="rvps2"><span class="rvts6">keys and values</span></p>
+<p class="rvps2"><span class="rvts6">Notes</span></p>
+<p class="rvps2"><span class="rvts6">There is a bug in which out-of-range keys return the first value in the list. Newer versions of Openscad should use the top or bottom end of the table as appropriate instead.</span></p>
+<p class="rvps2"><span class="rvts6">Usage example:</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 25px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps38"><span class="rvts55">Create a 3D chart made from cylinders of different heights.</span></li>
+</ul>
+<p class="rvps27"><span class="rvts61">function</span><span class="rvts43">&nbsp;get_cylinder_h(p) </span><span class="rvts50">=</span><span class="rvts43">&nbsp;lookup(p, [</span><br/><span class="rvts43">[ </span><span class="rvts50">-200</span><span class="rvts43">, </span><span class="rvts50">5</span><span class="rvts43">&nbsp;],</span><br/><span class="rvts43">[ </span><span class="rvts50">-50</span><span class="rvts43">, </span><span class="rvts50">20</span><span class="rvts43">&nbsp;],</span><br/><span class="rvts43">[ </span><span class="rvts50">-20</span><span class="rvts43">, </span><span class="rvts50">18</span><span class="rvts43">&nbsp;],</span><br/><span class="rvts43">[ </span><span class="rvts50">+80</span><span class="rvts43">, </span><span class="rvts50">25</span><span class="rvts43">&nbsp;],</span><br/><span class="rvts43">[ </span><span class="rvts50">+150</span><span class="rvts43">, </span><span class="rvts50">2</span><span class="rvts43">&nbsp;]</span><br/><span class="rvts43">]);</span><br/><span class="rvts61">for</span><span class="rvts43">&nbsp;(i </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[</span><span class="rvts50">-100:5:+100</span><span class="rvts43">]) {</span><br/><span class="rvts49">// echo(i, get_cylinder_h(i));</span><br/><span class="rvts43">translate([ i, </span><span class="rvts50">0</span><span class="rvts43">, </span><span class="rvts50">-30</span><span class="rvts43">&nbsp;]) cylinder(r1 </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">6</span><span class="rvts43">, r2 </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">2</span><span class="rvts43">, h </span><span class="rvts50">=</span><span class="rvts43">&nbsp;get_cylinder_h(i)</span><span class="rvts50">*3</span><span class="rvts43">);</span><br/><span class="rvts43">}</span></p>
+<p class="rvps2"><span class="rvts55"><br/></span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/220px-OpenSCAD_Lookup_Function1.png"><br/><span class="rvts74">OpenSCAD Lookup Function</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/help-authoring-tool">Full-featured multi-format Help generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/help-authoring-tool">Full-featured multi-format Help generator</a></p>
 
 	</div>
 	

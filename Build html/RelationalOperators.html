@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="MathematicalOperators.html">Mathematical Operators</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="MathematicalOperators.html">Mathematical Operators</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,55 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Relational operators produce a Boolean result from two operands.</span></p>
+<div class="rvps37"><table border="1" cellpadding="4" cellspacing="-1" style="border-color: #a2a9b1; border-style: solid; background-color: #f8f9fa; border-collapse: collapse;">
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">&lt;</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">less than</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">&lt;=</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">less or equal</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">==</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">equal</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">!=</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">not equal</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">&gt;=</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">greater or equal</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">&gt;</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">greater than</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps7"><span class="rvts22">If both operands are simple numbers, the meaning is self-evident.</span></p>
+<p class="rvps7"><span class="rvts22">If both operands are strings, alphabetical sorting determines equality and order. E.g., "ab" &gt; "aa" &gt; "a".</span></p>
+<p class="rvps7"><span class="rvts22">If both operands are Booleans,&nbsp;</span><span class="rvts26">true</span><span class="rvts22">&nbsp;&gt;&nbsp;</span><span class="rvts26">false</span><span class="rvts22">. In an inequality comparison between a Boolean and a number&nbsp;</span><span class="rvts26">true</span><span class="rvts22">&nbsp;is treated as 1 and&nbsp;</span><span class="rvts26">false</span><span class="rvts22">&nbsp;is treated as 0. Other inequality tests involving Booleans return false.</span></p>
+<p class="rvps7"><span class="rvts22">If both operands are vectors, an equality test returns&nbsp;</span><span class="rvts26">true</span><span class="rvts22">&nbsp;when the vectors are identical and&nbsp;</span><span class="rvts26">false</span><span class="rvts22">&nbsp;otherwise. Inequality tests involving one or two vectors always return&nbsp;</span><span class="rvts26">false</span><span class="rvts22">, so for example [1] &lt; [2] is&nbsp;</span><span class="rvts26">false</span><span class="rvts22">.</span></p>
+<p class="rvps7"><span class="rvts22">Dissimilar types always test as unequal with '==' and '!='. Inequality comparisons between dissimilar types, except for Boolean and numbers as noted above, always result in&nbsp;</span><span class="rvts26">false</span><span class="rvts22">. Note that [1] and 1 are different types so [1] == 1 is false.</span></p>
+<p class="rvps7"><span class="rvts26">undef</span><span class="rvts22">&nbsp;doesn't equal anything but&nbsp;</span><span class="rvts26">undef</span><span class="rvts22">. Inequality comparisons involving&nbsp;</span><span class="rvts26">undef</span><span class="rvts22">&nbsp;result in&nbsp;</span><span class="rvts26">false</span><span class="rvts22">.</span></p>
+<p class="rvps7"><span class="rvts26">nan</span><span class="rvts22">&nbsp;doesn't equal anything (not even itself) and inequality tests all produce&nbsp;</span><span class="rvts26">false</span><span class="rvts22">. See&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/General#Numbers">Numbers</a><span class="rvts22">.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/help-authoring-tool">Create HTML Help, DOC, PDF and print manuals from 1 single source</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/help-authoring-tool">Create HTML Help, DOC, PDF and print manuals from 1 single source</a></p>
 
 	</div>
 	

@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; <a href="SpecialVariables1.html">Special Variables</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; <a href="SpecialVariables1.html">Special Variables</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,35 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">The $t variable is used for animation. If you enable the animation frame with view-&gt;animate and give a value for "FPS" and "Steps", the "Time" field shows the current value of $t. With this information in mind, you can animate your design. The design is recompiled every 1/"FPS" seconds with $t incremented by 1/"Steps" for "Steps" times, ending at either $t=1 or $t=1-1/steps.</span></p>
+<p class="rvps7"><span class="rvts22">If "Dump Pictures" is checked, then images are created in the same directory as the .scad file, using the following $t values, and with the following naming convention:</span></p>
+<p class="rvps7"><span class="rvts22">Naming Convention</span></p>
+<hr style="height: 1px; color : #222222;  background-color : #222222; border-width : 0px;">
+<p class="rvps7"><span class="rvts22">Pattern 1:</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps8"><span class="rvts22">$t=0/Steps filename="frame00001.png"</span></li>
+<li class="rvps8"><span class="rvts22">$t=1/Steps filename="frame00002.png</span></li>
+<li class="rvps8"><span class="rvts22">$t=2/Steps filename="frame00003.png"</span></li>
+<li class="rvps8"><span class="rvts22">. . .</span></li>
+<li class="rvps8"><span class="rvts22">$t=1-3/Steps filename="frame&lt;Steps-2&gt;.png"</span></li>
+<li class="rvps8"><span class="rvts22">$t=1-2/Steps filename="frame&lt;Steps-1&gt;.png"</span></li>
+<li class="rvps8"><span class="rvts22">$t=1-1/Steps filename="frame00000.png"</span></li>
+</ul>
+<p class="rvps7"><span class="rvts22">Or, for other values of Steps, it follows this pattern:</span></p>
+<p class="rvps7"><span class="rvts22">Pattern2:</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps8"><span class="rvts22">$t=0/Steps filename="frame00001.png"</span></li>
+<li class="rvps8"><span class="rvts22">$t=1/Steps filename="frame00002.png</span></li>
+<li class="rvps8"><span class="rvts22">$t=2/Steps filename="frame00003.png"</span></li>
+<li class="rvps8"><span class="rvts22">. . .</span></li>
+<li class="rvps8"><span class="rvts22">$t=1-3/Steps filename="frame&lt;Steps-2&gt;.png"</span></li>
+<li class="rvps8"><span class="rvts22">$t=1-2/Steps filename="frame&lt;Steps-1&gt;.png"</span></li>
+<li class="rvps8"><span class="rvts22">$t=1-1/Steps filename="frame&lt;Steps-0&gt;.png"</span></li>
+<li class="rvps8"><span class="rvts22">$t=1-0/Steps filename="frame00000.png"</span></li>
+</ul>
+<p class="rvps7"><span class="rvts22">Which pattern it chooses appears to be an unpredictable, but consistent determined by Steps. For example, when Steps=4, it follows the first pattern, and outputs a total of 4 files. When Steps=3, it follows the second pattern, and also outputs 4 files. It always outputs either Steps or Steps+1 files, though it may not be predictable which. When finished, it wraps around and recreate each of the files, looping through and recreating them forever.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Produce online help for Qt applications</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Produce online help for Qt applications</a></p>
 
 	</div>
 	

@@ -79,7 +79,7 @@
 				
 				
 				
-				<a href="Functionsignature.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="multimatrix.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,29 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Mirrors the child element on a plane through the origin. The argument to mirror() is the normal vector of a plane intersecting the origin through which to mirror the object.</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Function signature:</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Transformations&action=edit&section=T-9">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps17"><span class="rvts36">mirror(v= [x, y, z] ) { ... }</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Examples</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Transformations&action=edit&section=T-10">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts22">The original is on the right side. Note that mirror doesn't make a copy. Like rotate and scale, it changes the object.</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps32"><img alt="" style="padding : 1px;" src="lib/Mirror-x.png"></li>
+</ul>
+<p class="rvps20"><span class="rvts62">hand(); // original</span><br/><span class="rvts62">mirror([1,0,0]) hand();</span></p>
+<p class="rvps18"><span class="rvts22">&nbsp;</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps32"><img alt="" style="padding : 1px;" src="lib/Mirror-x-y.png"></li>
+</ul>
+<p class="rvps20"><span class="rvts62">hand(); // original</span><br/><span class="rvts62">mirror([1,1,0]) hand();</span></p>
+<p class="rvps18"><span class="rvts22">&nbsp;</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps32"><img alt="" style="padding : 1px;" src="lib/Mirror-x-y-z.png"></li>
+</ul>
+<p class="rvps20"><span class="rvts62">hand(); // original</span><br/><span class="rvts62">mirror([1,1,1]) hand();</span></p>
+<p class="rvps17"><span class="rvts36">rotate([0,0,10]) cube([3,2,1]); mirror([1,0,0]) translate([1,0,0]) rotate([0,0,10]) cube([3,2,1]);</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_mirror_example.jpg"></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour">Full-featured Help generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour">Full-featured Help generator</a></p>
 
 	</div>
 	

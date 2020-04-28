@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -75,7 +75,7 @@
 				
 				
 				
-				<a href="HTML.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				<a href="EchoStatements1.html"><img src="img/arrow_left.png" alt="Previous"/></a>
 				
 				
 				
@@ -91,8 +91,14 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Echo can be used in expression context to print information while the function/expression is evaluated. The output is generated before the expression evaluation to allow debugging of recursive functions.</span></p>
+<p class="rvps7"><span class="rvts21">Example</span></p>
+<p class="rvps17"><span class="rvts36">a = 3; b = 5; // echo() prints values before evaluating the expression r1 = echo(a, b) a * b; // ECHO: 3, 5 // using let it's still easy to output the result r2 = let(r = 2 * a * b) echo(r) r; // ECHO: 30 // use echo statement for showing results echo(r1, r2); // ECHO: 15, 30</span></p>
+<p class="rvps7"><span class="rvts22">A more complex example shows how echo() can be used in both descending and ascending path of a recursive function. The result() helper function is a simple way to output the value of an expression after evaluation.</span></p>
+<p class="rvps7"><span class="rvts21">Example printing both input values and result of recursive sum()</span></p>
+<p class="rvps17"><span class="rvts36">v = [4, 7, 9, 12]; function result(x) = echo(result = x) x; function sum(x, i = 0) = echo(str("x[", i, "]=", x[i])) result(len(x) &gt; i&nbsp;? x[i] + sum(x, i + 1)&nbsp;: 0); echo("sum(v) = ", sum(v)); // ECHO: "x[0]=4" // ECHO: "x[1]=7" // ECHO: "x[2]=9" // ECHO: "x[3]=12" // ECHO: "x[4]=undef" // ECHO: result = 0 // ECHO: result = 12 // ECHO: result = 21 // ECHO: result = 28 // ECHO: result = 32 // ECHO: "sum(v) = ", 32</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Produce online help for Qt applications</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Produce online help for Qt applications</a></p>
 
 	</div>
 	

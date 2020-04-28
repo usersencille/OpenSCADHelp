@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="ListComprehensions.html">List Comprehensions</a> &rsaquo;&rsaquo; <a href="BasicSyntax.html">Basic Syntax</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ListComprehensions.html">List Comprehensions</a> &rsaquo;&rsaquo; <a href="BasicSyntax.html">Basic Syntax</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,14 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">The let element allows sequential assignment of variables inside a list comprehension definition.</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">[ for (i = list) let (assignments) a ]</span></li>
+</ul>
+<p class="rvps7"><span class="rvts26">Example</span></p>
+<p class="rvps27"><span class="rvts43">list </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[ </span><span class="rvts61">for</span><span class="rvts43">&nbsp;(a </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[ </span><span class="rvts50">1</span><span class="rvts43">&nbsp;</span><span class="rvts50">:</span><span class="rvts43">&nbsp;</span><span class="rvts50">4</span><span class="rvts43">&nbsp;]) </span><span class="rvts61">let</span><span class="rvts43">&nbsp;(b </span><span class="rvts50">=</span><span class="rvts43">&nbsp;a</span><span class="rvts50">*</span><span class="rvts43">a, c </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">2</span><span class="rvts43">&nbsp;</span><span class="rvts50">*</span><span class="rvts43">&nbsp;b) [ a, b, c ] ];</span><br/><span class="rvts43">echo(list); </span><span class="rvts49">// ECHO: [[1, 1, 2], [2, 4, 8], [3, 9, 18], [4, 16, 32]]</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/create-epub-ebooks">Write EPub books for the iPad</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/create-epub-ebooks">Write EPub books for the iPad</a></p>
 
 	</div>
 	

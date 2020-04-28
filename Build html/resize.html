@@ -91,8 +91,19 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Modifies the size of the child object to match the given x,y, and z.</span></p>
+<p class="rvps7"><span class="rvts22">resize() is a CGAL operation, and like others such as render() operates with full geometry, so even in preview this takes time to process.</span></p>
+<p class="rvps7"><span class="rvts22"></span><br/><span class="rvts60">Usage Example:</span></p>
+<p class="rvps27"><span class="rvts49">// resize the sphere to extend 30 in x, 60 in y, and 10 in the z directions.</span><br/><span class="rvts43">resize(newsize</span><span class="rvts50">=</span><span class="rvts43">[</span><span class="rvts50">30</span><span class="rvts43">,</span><span class="rvts50">60</span><span class="rvts43">,</span><span class="rvts50">10</span><span class="rvts43">]) sphere(r</span><span class="rvts50">=10</span><span class="rvts43">);</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/400px-OpenSCAD_Resize_example_elipse.jpg"></p>
+<p class="rvps7"><span class="rvts22">If x,y, or z is 0 then that dimension is left as-is.</span></p>
+<p class="rvps27"><span class="rvts49">// resize the 1x1x1 cube to 2x2x1</span><br/><span class="rvts43">resize([</span><span class="rvts50">2</span><span class="rvts43">,</span><span class="rvts50">2</span><span class="rvts43">,</span><span class="rvts50">0</span><span class="rvts43">]) cube();</span></p>
+<p class="rvps7"><span class="rvts22">If the 'auto' parameter is set to true, it auto-scales any 0-dimensions to match. For example.</span></p>
+<p class="rvps27"><span class="rvts49">// resize the 1x2x0.5 cube to 7x14x3.5</span><br/><span class="rvts43">resize([</span><span class="rvts50">7</span><span class="rvts43">,</span><span class="rvts50">0</span><span class="rvts43">,</span><span class="rvts50">0</span><span class="rvts43">], auto</span><span class="rvts50">=</span><span class="rvts61">true</span><span class="rvts43">) cube([</span><span class="rvts50">1</span><span class="rvts43">,</span><span class="rvts50">2</span><span class="rvts43">,</span><span class="rvts50">0.5</span><span class="rvts43">]);</span></p>
+<p class="rvps7"><span class="rvts22">The 'auto' parameter can also be used if you only wish to auto-scale a single dimension, and leave the other as-is.</span></p>
+<p class="rvps27"><span class="rvts49">// resize to 10x8x1. Note that the z dimension is left alone.</span><br/><span class="rvts43">resize([</span><span class="rvts50">10</span><span class="rvts43">,</span><span class="rvts50">0</span><span class="rvts43">,</span><span class="rvts50">0</span><span class="rvts43">], auto</span><span class="rvts50">=</span><span class="rvts43">[</span><span class="rvts61">true</span><span class="rvts43">,</span><span class="rvts61">true</span><span class="rvts43">,</span><span class="rvts61">false</span><span class="rvts43">]) cube([</span><span class="rvts50">5</span><span class="rvts43">,</span><span class="rvts50">4</span><span class="rvts43">,</span><span class="rvts50">1</span><span class="rvts43">]);</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpauthoringsoftware.com">What is a Help Authoring tool?</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpauthoringsoftware.com">What is a Help Authoring tool?</a></p>
 
 	</div>
 	

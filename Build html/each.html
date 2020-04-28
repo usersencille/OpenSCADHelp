@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="ListComprehensions.html">List Comprehensions</a> &rsaquo;&rsaquo; <a href="BasicSyntax.html">Basic Syntax</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ListComprehensions.html">List Comprehensions</a> &rsaquo;&rsaquo; <a href="BasicSyntax.html">Basic Syntax</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,12 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts26">each</span><span class="rvts22">&nbsp;embeds the values of a list given as argument directly, effectively unwrapping the argument list.</span></p>
+<p class="rvps27"><span class="rvts49">// Without using "each", a nested list is generated</span><br/><span class="rvts43">echo([ </span><span class="rvts61">for</span><span class="rvts43">&nbsp;(a </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[</span><span class="rvts50">1</span><span class="rvts43">&nbsp;</span><span class="rvts50">:</span><span class="rvts43">&nbsp;</span><span class="rvts50">4</span><span class="rvts43">]) [a, a </span><span class="rvts50">*</span><span class="rvts43">&nbsp;a] ]);</span><br/><span class="rvts49">// ECHO: [[1, 1], [2, 4], [3, 9], [4, 16]]</span><br/><span class="rvts49">// Adding "each" unwraps the inner list, producing a flat list as result</span><br/><span class="rvts43">echo([ </span><span class="rvts61">for</span><span class="rvts43">&nbsp;(a </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[</span><span class="rvts50">1</span><span class="rvts43">&nbsp;</span><span class="rvts50">:</span><span class="rvts43">&nbsp;</span><span class="rvts50">4</span><span class="rvts43">]) each [a, a </span><span class="rvts50">*</span><span class="rvts43">&nbsp;a] ]);</span><br/><span class="rvts49">// ECHO: [1, 1, 2, 4, 3, 9, 4, 16]</span></p>
+<p class="rvps7"><span class="rvts26">each</span><span class="rvts22">&nbsp;unwraps ranges and helps to build more general&nbsp;</span><span class="rvts26">for</span><span class="rvts22">&nbsp;lists when combined with multiple generator expressions.</span></p>
+<p class="rvps27"><span class="rvts43">A </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[</span><span class="rvts50">-2</span><span class="rvts43">, each [</span><span class="rvts50">1:2:5</span><span class="rvts43">], each [</span><span class="rvts50">6:-2:0</span><span class="rvts43">], </span><span class="rvts50">-1</span><span class="rvts43">];</span><br/><span class="rvts43">echo([ </span><span class="rvts61">for</span><span class="rvts43">&nbsp;(a </span><span class="rvts50">=</span><span class="rvts43">&nbsp;A) </span><span class="rvts50">2</span><span class="rvts43">&nbsp;</span><span class="rvts50">*</span><span class="rvts43">&nbsp;a ]);</span><br/><span class="rvts49">// ECHO: [-4, 2, 6, 10, 12, 8, 4, 0, -2]</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create help files for the Qt Help Framework</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create help files for the Qt Help Framework</a></p>
 
 	</div>
 	

@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -79,7 +79,7 @@
 				
 				
 				
-				<a href="Textfileformat1.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="Search.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,70 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Surface reads&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/Heightmap">Heightmap</a><span class="rvts22">&nbsp;information from text or image files.</span></p>
+<p class="rvps7"><span class="rvts21">Parameters</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">file&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">String. The path to the file containing the heightmap data.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">center&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Boolean. This determines the positioning of the generated object. If true, object is centered in X- and Y-axis. Otherwise, the object is placed in the positive quadrant. Defaults to false.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">invert&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Boolean. Inverts how the color values of imported images are translated into height values. This has no effect when importing text data files. Defaults to false.&nbsp;</span><span class="rvts21">[</span><span class="rvts44">Note:</span><span class="rvts21">&nbsp;</span><span class="rvts26">Requires version&nbsp;</span><span class="rvts38">2015.03</span><span class="rvts21">]</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">convexity&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Integer. The convexity parameter specifies the maximum number of front sides (back sides) a ray intersecting the object might penetrate. This parameter is only needed for correctly displaying the object in OpenCSG preview mode and has no effect on the final rendering.</span></li>
+</ul>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Text file format</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-14">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts22">The format for text based heightmaps is a matrix of numbers that represent the height for a specific point. Rows are mapped to the Y-axis, columns to the X axis. The numbers must be separated by spaces or tabs. Empty lines and lines starting with a # character are ignored.</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Images</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-15">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts21">[</span><span class="rvts44">Note:</span><span class="rvts21">&nbsp;</span><span class="rvts26">Requires version&nbsp;</span><span class="rvts38">2015.03</span><span class="rvts21">]</span></p>
+<p class="rvps7"><span class="rvts22">Currently only PNG images are supported. Alpha channel information of the image is ignored and the height for the pixel is determined by converting the color value to&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/Grayscale">Grayscale</a><span class="rvts22">&nbsp;using the linear luminance for the sRGB color space (Y = 0.2126R + 0.7152G + 0.0722B). The gray scale values are scaled to be in the range 0 to 100.</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Examples</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-16">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts21">Example 1:</span></p>
+<p class="rvps17"><span class="rvts36">//surface.scad surface(file = "surface.dat", center = true, convexity = 5); %translate([0,0,5])cube([10,10,10], center =true);</span></p>
+<p class="rvps17"><span class="rvts36">#surface.dat 10 9 8 7 6 5 5 5 5 5 9 8 7 6 6 4 3 2 1 0 8 7 6 6 4 3 2 1 0 0 7 6 6 4 3 2 1 0 0 0 6 6 4 3 2 1 1 0 0 0 6 6 3 2 1 1 1 0 0 0 6 6 2 1 1 1 1 0 0 0 6 6 1 0 0 0 0 0 0 0 3 1 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0</span></p>
+<p class="rvps7"><span class="rvts22">Result:</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/Openscad_surface_example_x1.png"></p>
+<p class="rvps7"><span class="rvts21">Example 2</span></p>
+<p class="rvps17"><span class="rvts36">// example010.dat generated using octave: // d = (sin(1:0.2:10)' * cos(1:0.2:10)) * 10; // save("example010.dat", "d"); intersection() { surface(file = "example010.dat", center = true, convexity = 5); rotate(45, [0, 0, 1]) surface(file = "example010.dat", center = true, convexity = 5); }</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/Openscad_surface_example_x2.png"></p>
+<p class="rvps7"><span class="rvts21">Example 3:</span></p>
+<p class="rvps7"><span class="rvts21">[</span><span class="rvts44">Note:</span><span class="rvts21">&nbsp;</span><span class="rvts26">Requires version&nbsp;</span><span class="rvts38">2015.03</span><span class="rvts21">]</span></p>
+<p class="rvps17"><span class="rvts36">// Example 3a scale([1, 1, 0.1]) surface(file = "smiley.png", center = true);</span></p>
+<p class="rvps17"><span class="rvts36">// Example 3b scale([1, 1, 0.1]) surface(file = "smiley.png", center = true, invert = true);</span></p>
+<p class="rvps25"><span class="rvts48">Example 3: Using surface() with a PNG image as heightmap input.</span></p>
+<p class="rvps33"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_surface_example_input_image.png"></p>
+<p class="rvps25"><span class="rvts48">Input image</span></p>
+<p class="rvps33"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_surface_example.png"></p>
+<p class="rvps25"><span class="rvts48">Example 3a: surface(invert = false)</span></p>
+<p class="rvps33"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_surface_example_inverted.png"></p>
+<p class="rvps25"><span class="rvts48">Example 3b: surface (invert = true)</span></p>
+<p class="rvps7"><span class="rvts21">Example 4:</span></p>
+<p class="rvps17"><span class="rvts36">// Example 4 surface(file = "BRGY-Grey.png", center = true, invert = false);</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps39"><img alt="" style="padding : 1px;" src="lib/BRGY-Grey.png"></li>
+</ul>
+<p class="rvps20"><span class="rvts45">PNG Test File</span></p>
+<p class="rvps18"><span class="rvts22">&nbsp;</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps40"><img alt="" style="padding : 1px;" src="lib/BRGY-Grey-3D.png"></li>
+</ul>
+<p class="rvps20"><span class="rvts45">3D Surface</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com">Free HTML Help documentation generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com">Free HTML Help documentation generator</a></p>
 
 	</div>
 	

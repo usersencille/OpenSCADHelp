@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="2DObjects1.html">2D Objects</a> &rsaquo;&rsaquo; <a href="Text.html">Text</a> &rsaquo;&rsaquo; <a href="Alignment.html">Alignment</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="2DObjects1.html">2D Objects</a> &rsaquo;&rsaquo; <a href="Text.html">Text</a> &rsaquo;&rsaquo; <a href="UsingFontsStyles.html">Using Fonts &amp; Styles</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -71,11 +71,11 @@
 			<div id="topic_header_nav">
 				
 				
-				<a href="Alignment.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				<a href="UsingFontsStyles.html"><img src="img/arrow_up.png" alt="Parent"/></a>
 				
 				
 				
-				<a href="Alignment.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				<a href="UsingFontsStyles.html"><img src="img/arrow_left.png" alt="Previous"/></a>
 				
 				
 				
@@ -91,8 +91,35 @@
 	<div id="topic_content">
 		
 <p></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">top&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">The text is aligned with the top of the bounding box at the given Y coordinate.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">center</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">The text is aligned with the center of the bounding box at the given Y coordinate.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">baseline</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">The text is aligned with the font baseline at the given Y coordinate. This is the default.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">bottom</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">The text is aligned with the bottom of the bounding box at the given Y coordinate.</span></li>
+</ul>
+<p class="rvps17"><span class="rvts36">text = "Align"; font = "Liberation Sans"; valign = [ [ 0, "top"], [ 40, "center"], [ 75, "baseline"], [110, "bottom"] ]; for (a = valign) { translate([10, 120 - a[0], 0]) { color("red") cube([135, 1, 0.1]); color("blue") cube([1, 20, 0.1]); linear_extrude(height = 0.5) { text(text = str(text,"_",a[1]), font = font, size = 20, valign = a[1]); } } }</span></p>
+<p class="rvps2"><span class="rvts55"><br/></span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_text_align_vertical.png"><br/><span class="rvts48">OpenSCAD vertical text alignment</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpauthoringsoftware.com">What is a Help Authoring tool?</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpauthoringsoftware.com">What is a Help Authoring tool?</a></p>
 
 	</div>
 	

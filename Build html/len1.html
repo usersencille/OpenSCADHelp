@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherMathematicalFunctions.html">Other Mathematical Functions</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherMathematicalFunctions.html">Other Mathematical Functions</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -75,7 +75,7 @@
 				
 				
 				
-				<a href="in.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				<a href="ln.html"><img src="img/arrow_left.png" alt="Previous"/></a>
 				
 				
 				
@@ -91,8 +91,65 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps2"><span class="rvts6">Mathematical length function. Returns the length of an array, a vector or a string parameter.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Usage examples:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">str1="abcdef"; len_str1=len(str1);</span></p>
+<p class="rvps2"><span class="rvts6">echo(str1,len_str1);</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">a=6; len_a=len(a);</span></p>
+<p class="rvps2"><span class="rvts6">echo(a,len_a);</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">array1=[1,2,3,4,5,6,7,8]; len_array1=len(array1);</span></p>
+<p class="rvps2"><span class="rvts6">echo(array1,len_array1);</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">array2=[[0,0],[0,1],[1,0],[1,1]]; len_array2=len(array2);</span></p>
+<p class="rvps2"><span class="rvts6">echo(array2,len_array2);</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">len_array2_2=len(array2[2]);</span></p>
+<p class="rvps2"><span class="rvts6">echo(array2[2],len_array2_2);</span></p>
+<p class="rvps2"><span class="rvts6">Results:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">ECHO: "abcdef", 6</span></p>
+<p class="rvps2"><span class="rvts6">ECHO: 6, undef</span></p>
+<p class="rvps2"><span class="rvts6">ECHO: [1, 2, 3, 4, 5, 6, 7, 8], 8</span></p>
+<p class="rvps2"><span class="rvts6">ECHO: [[0, 0], [0, 1], [1, 0], [1, 1]], 4</span></p>
+<p class="rvps2"><span class="rvts6">ECHO: [1, 0], 2</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This function allows (e.g.) the parsing of an array, a vector or a string.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Usage examples:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">str2="4711";</span></p>
+<p class="rvps2"><span class="rvts6">for (i=[0:len(str2)-1])</span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">echo(str("digit ",i+1," &nbsp;: &nbsp;",str2[i]));</span></p>
+<p class="rvps2"><span class="rvts6">Results:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">ECHO: "digit 1 &nbsp;: &nbsp;4"</span></p>
+<p class="rvps2"><span class="rvts6">ECHO: "digit 2 &nbsp;: &nbsp;7"</span></p>
+<p class="rvps2"><span class="rvts6">ECHO: "digit 3 &nbsp;: &nbsp;1"</span></p>
+<p class="rvps2"><span class="rvts6">ECHO: "digit 4 &nbsp;: &nbsp;1"</span></p>
+<p class="rvps2"><span class="rvts6">Note that the len() function is not defined when a simple variable is passed as the parameter.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This is useful when handling parameters to a module, similar to how shapes can be defined as a single number, or as an [x,y,z] vector; i.e. cube(5) or cube([5,5,5])</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">For example</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">module doIt(size) {</span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">if (len(size) == undef) {</span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">// size is a number, use it for x,y &amp; z. (or could be undef)</span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">do([size,size,size]);</span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">} else { </span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">// size is a vector, (could be a string but that would be stupid)</span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">do(size);</span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">}</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp;}</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp;</span></p>
+<p class="rvps2"><span class="rvts6">doIt(5);</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">// equivalent to [5,5,5]</span></p>
+<p class="rvps2"><span class="rvts6">doIt([5,5,5]);</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">// similar to cube(5) v's cube([5,5,5])</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour">Easily create CHM Help documents</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour">Easily create CHM Help documents</a></p>
 
 	</div>
 	

@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="ListComprehensions.html">List Comprehensions</a> &rsaquo;&rsaquo; <a href="AdvancedExamples.html">Advanced Examples</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ListComprehensions.html">List Comprehensions</a> &rsaquo;&rsaquo; <a href="AdvancedExamples.html">Advanced Examples</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,10 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">List comprehension can be used in a user-defined function to perform tasks on or for vectors. Here is a user-defined function that flattens a nested vector.</span></p>
+<p class="rvps27"><span class="rvts49">// input : nested list</span><br/><span class="rvts49">// output : list with the outer level nesting removed</span><br/><span class="rvts61">function</span><span class="rvts43">&nbsp;flatten(l) </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[ </span><span class="rvts61">for</span><span class="rvts43">&nbsp;(a </span><span class="rvts50">=</span><span class="rvts43">&nbsp;l) </span><span class="rvts61">for</span><span class="rvts43">&nbsp;(b </span><span class="rvts50">=</span><span class="rvts43">&nbsp;a) b ] ;</span><br/><span class="rvts43">nested_list </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[ [ </span><span class="rvts50">1</span><span class="rvts43">, </span><span class="rvts50">2</span><span class="rvts43">, </span><span class="rvts50">3</span><span class="rvts43">&nbsp;], [ </span><span class="rvts50">4</span><span class="rvts43">, </span><span class="rvts50">5</span><span class="rvts43">, </span><span class="rvts50">6</span><span class="rvts43">&nbsp;] ];</span><br/><span class="rvts43">echo(flatten(nested_list)); </span><span class="rvts49">// ECHO: [1, 2, 3, 4, 5, 6]</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Write eBooks for the Kindle</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Write eBooks for the Kindle</a></p>
 
 	</div>
 	

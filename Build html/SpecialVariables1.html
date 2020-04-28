@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,14 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Special variables provide an alternate means of passing arguments to modules and functions. All user, or OpenSCAD, defined variables starting with a '$' are special variables, similar to special variables in lisp. Modules and function see all outside variables in addition to those passed as arguments or defined internally.</span></p>
+<p class="rvps7"><span class="rvts22">The value for a regular variable is assigned at compile time and is thus static for all calls.</span></p>
+<p class="rvps7"><span class="rvts22">Special variables pass along their value from within the scope&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language#Scope_of_variables">(see scope of variables)</a><span class="rvts22">&nbsp;from which the module or function is called. This means that special variables can potentially have a different value each time a module or function is called.</span></p>
+<p class="rvps17"><span class="rvts36">regular = "regular global"; $special = "special global"; module show() echo(" in show ", regular," ", $special ); echo (" outside ", regular," ", $special ); // ECHO: " outside ", "regular global", " ", "special global" for ( regular = [0:1] ){ echo("in regular loop ", regular," ", $special ); show();} // ECHO: "in regular loop ", 0, " ", "special global" // ECHO: " in show ", "regular global", " ", "special global" // ECHO: "in regular loop ", 1, " ", "special global" // ECHO: " in show ", "regular global", " ", "special global" for ( $special = [5:6] ){ echo("in special loop ", regular," ", $special ); show();} // ECHO: "in special loop ", "regular global", " ", 5 // ECHO: " in show ", "regular global", " ", 5 // ECHO: "in special loop ", "regular global", " ", 6 // ECHO: " in show ", "regular global", " ", 6 show(); // ECHO: " in show ", "regular global", " ", "special global"</span></p>
+<p class="rvps7"><span class="rvts22">This is useful when multiple arguments need to be passed thru several layers of module calls.</span></p>
+<p class="rvps7"><span class="rvts22">Several special variables are already defined by OpenSCAD.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EPub generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EPub generator</a></p>
 
 	</div>
 	

@@ -83,79 +83,79 @@
 	<div id="topic_content">
 		
 <p></p>
-<h1 class="rvps4"><span class="rvts0"><span class="rvts26">MCAD Library</span></span></h1>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts78">MCAD Library</span></span></h1>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts55">This library contains components commonly used in designing and mocking up mechanical designs. It is currently unfinished and you can expect some API changes, however many things are already working.</span></p>
-<p class="rvps2"><span class="rvts55"><br/></span></p>
-<p class="rvps2"><span class="rvts55">This library was created by various authors as named in the individual files' comments. All the files are licensed under the LGPL 2.1 (see </span><a class="rvts59" href="http://creativecommons.org/licenses/LGPL/2.1/">http://creativecommons.org/licenses/LGPL/2.1/</a><span class="rvts55">&nbsp;or the included file lgpl-2.1.txt), some of them allow distribution under more permissive terms (as described in the files' comments).</span></p>
-<p class="rvps2"><span class="rvts58"><br/></span></p>
-<h2 class="rvps5"><span class="rvts0"><span class="rvts62">Usage</span></span></h2>
-<p class="rvps2"><span class="rvts57"><br/></span></p>
-<p class="rvps2"><span class="rvts55">You can import these files in your scripts with </span><span class="rvts56">use &lt;MCAD/filename.scad&gt;</span><span class="rvts55">, where 'filename' is one of the files listed below like 'motors' or 'servos'. Some files include useful constants which will be available with </span><span class="rvts56">include &lt;MCAD/filename.scad&gt;</span><span class="rvts55">, which should be safe to use on all included files (ie. no top level code should create geometry). </span></p>
-<p class="rvps2"><span class="rvts55"><br/></span></p>
-<p class="rvps2"><span class="rvts55">(There is a bug/feature that prevents including constants from files that "include" other files - see the openscad mailing list archives for more details. Since the maintainers aren't very responsive, may have to work around this somehow)</span></p>
-<p class="rvps2"><span class="rvts55"><br/></span></p>
-<p class="rvps2"><span class="rvts55">If you host your project in git, you can do </span><span class="rvts56">git submodule add URL PATH</span><span class="rvts55">&nbsp;in your repo to import this library as a git submodule for easy usage. Then you need to do a </span><span class="rvts56">git submodule update --init</span><span class="rvts55">&nbsp;after cloning. When you want to update the submodule, do </span><span class="rvts56">cd PATH; git checkout master; git pull</span><span class="rvts55">. See </span><span class="rvts56">git help submodule</span><span class="rvts55">&nbsp;for more info.</span></p>
-<p class="rvps2"><span class="rvts55"><br/></span></p>
-<h2 class="rvps5"><span class="rvts0"><span class="rvts60">Currently Provided Tools:</span></span></h2>
-<p class="rvps13"><span class="rvts55">regular_shapes.scad</span></p>
-<p class="rvps15"><span class="rvts55">regular polygons, ie. 2D</span></p>
-<p class="rvps15"><span class="rvts55">regular polyhedrons, ie. 3D</span></p>
-<p class="rvps13"><span class="rvts55">involute_gears.scad (</span><a class="rvts59" href="http://www.thingiverse.com/thing:3575">http://www.thingiverse.com/thing:3575</a><span class="rvts55">):</span></p>
-<p class="rvps15"><span class="rvts55">gear()</span></p>
-<p class="rvps15"><span class="rvts55">bevel_gear()</span></p>
-<p class="rvps15"><span class="rvts55">bevel_gear_pair()</span></p>
-<p class="rvps13"><span class="rvts55">gears.scad (Old version):</span></p>
-<p class="rvps13"><span class="rvts55">&nbsp;</span><span class="rvts55"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts55">gear(number_of_teeth, circular_pitch OR diametrial_pitch, pressure_angle OPTIONAL, clearance OPTIONAL)</span></p>
-<p class="rvps13"><span class="rvts55">motors.scad:</span></p>
-<p class="rvps15"><span class="rvts55">stepper_motor_mount(nema_standard, slide_distance OPTIONAL, mochup OPTIONAL)</span></p>
-<p class="rvps15"><span class="rvts55"><br/></span></p>
-<h3 class="rvps29"><span class="rvts0"><span class="rvts61">Tools (alpha and beta quality):</span></span></h3>
-<p class="rvps13"><span class="rvts55">nuts_and_bolts.scad: for creating metric and imperial bolt/nut holes</span></p>
-<p class="rvps13"><span class="rvts55">bearing.scad: standard/custom bearings</span></p>
-<p class="rvps13"><span class="rvts55">screw.scad: screws and augers</span></p>
-<p class="rvps13"><span class="rvts55">materials.scad: color definitions for different materials</span></p>
-<p class="rvps13"><span class="rvts55">stepper.scad: NEMA standard stepper outlines</span></p>
-<p class="rvps13"><span class="rvts55">servos.scad: servo outlines</span></p>
-<p class="rvps13"><span class="rvts55">boxes.scad: box with rounded corners</span></p>
-<p class="rvps13"><span class="rvts55">triangles.scad: simple triangles</span></p>
-<p class="rvps13"><span class="rvts55">3d_triangle.scad: more advanced triangles</span></p>
-<p class="rvps13"><span class="rvts55"><br/></span></p>
-<h3 class="rvps29"><span class="rvts0"><span class="rvts61">Very generally useful functions and constants:</span></span></h3>
-<p class="rvps13"><span class="rvts55">math.scad: general math functions</span></p>
-<p class="rvps13"><span class="rvts55">constants.scad: mathematical constants</span></p>
-<p class="rvps13"><span class="rvts55">curves.scad: mathematical functions defining curves</span></p>
-<p class="rvps13"><span class="rvts55">units.scad: easy metric units</span></p>
-<p class="rvps13"><span class="rvts55">utilities.scad: geometric funtions and misc. useful stuff</span></p>
-<p class="rvps13"><span class="rvts55">teardrop.scad (</span><a class="rvts59" href="http://www.thingiverse.com/thing:3457">http://www.thingiverse.com/thing:3457</a><span class="rvts55">): parametric teardrop module</span></p>
-<p class="rvps13"><span class="rvts55">shapes.scad: DEPRECATED simple shapes by Catarina Mota</span></p>
-<p class="rvps13"><span class="rvts55">polyholes.scad: holes that should come out well when printed</span></p>
-<p class="rvps2"><span class="rvts55"><br/></span></p>
-<h3 class="rvps29"><span class="rvts0"><span class="rvts61">Other:</span></span></h3>
-<p class="rvps13"><span class="rvts55">alphabet_block.scad</span></p>
-<p class="rvps13"><span class="rvts55">bitmap.scad</span></p>
-<p class="rvps13"><span class="rvts55">letter_necklace.scad</span></p>
-<p class="rvps13"><span class="rvts55">name_tag.scad</span></p>
-<p class="rvps13"><span class="rvts55">height_map.scad</span></p>
-<p class="rvps13"><span class="rvts55">trochoids.scad</span></p>
-<p class="rvps13"><span class="rvts55">libtriangles.scad</span></p>
-<p class="rvps13"><span class="rvts55">layouts.scad</span></p>
-<p class="rvps13"><span class="rvts55">transformations.scad</span></p>
-<p class="rvps13"><span class="rvts55">2Dshapes.scad</span></p>
-<p class="rvps13"><span class="rvts55">gridbeam.scad</span></p>
-<p class="rvps13"><span class="rvts55">fonts.scad</span></p>
-<p class="rvps13"><span class="rvts55">unregular_shapes.scad</span></p>
-<p class="rvps13"><span class="rvts55">metric_fastners.scad</span></p>
-<p class="rvps13"><span class="rvts55">lego_compatibility.scad</span></p>
-<p class="rvps13"><span class="rvts55">multiply.scad</span></p>
-<p class="rvps13"><span class="rvts55">hardware.scad</span></p>
-<p class="rvps13"><span class="rvts55"><br/></span></p>
-<h3 class="rvps29"><span class="rvts0"><span class="rvts61">External utils that generate and process openscad code:</span></span></h3>
-<p class="rvps13"><span class="rvts55">openscad_testing.py: testing code, see below</span></p>
-<p class="rvps13"><span class="rvts55">openscad_utils.py: code for scraping function names etc.</span></p>
-<p class="rvps2"><span class="rvts58"><br/></span></p>
+<p class="rvps2"><span class="rvts79">This library contains components commonly used in designing and mocking up mechanical designs. It is currently unfinished and you can expect some API changes, however many things are already working.</span></p>
+<p class="rvps2"><span class="rvts79"><br/></span></p>
+<p class="rvps2"><span class="rvts79">This library was created by various authors as named in the individual files' comments. All the files are licensed under the LGPL 2.1 (see </span><a class="rvts83" href="http://creativecommons.org/licenses/LGPL/2.1/">http://creativecommons.org/licenses/LGPL/2.1/</a><span class="rvts79">&nbsp;or the included file lgpl-2.1.txt), some of them allow distribution under more permissive terms (as described in the files' comments).</span></p>
+<p class="rvps2"><span class="rvts82"><br/></span></p>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts86">Usage</span></span></h2>
+<p class="rvps2"><span class="rvts81"><br/></span></p>
+<p class="rvps2"><span class="rvts79">You can import these files in your scripts with </span><span class="rvts80">use &lt;MCAD/filename.scad&gt;</span><span class="rvts79">, where 'filename' is one of the files listed below like 'motors' or 'servos'. Some files include useful constants which will be available with </span><span class="rvts80">include &lt;MCAD/filename.scad&gt;</span><span class="rvts79">, which should be safe to use on all included files (ie. no top level code should create geometry). </span></p>
+<p class="rvps2"><span class="rvts79"><br/></span></p>
+<p class="rvps2"><span class="rvts79">(There is a bug/feature that prevents including constants from files that "include" other files - see the openscad mailing list archives for more details. Since the maintainers aren't very responsive, may have to work around this somehow)</span></p>
+<p class="rvps2"><span class="rvts79"><br/></span></p>
+<p class="rvps2"><span class="rvts79">If you host your project in git, you can do </span><span class="rvts80">git submodule add URL PATH</span><span class="rvts79">&nbsp;in your repo to import this library as a git submodule for easy usage. Then you need to do a </span><span class="rvts80">git submodule update --init</span><span class="rvts79">&nbsp;after cloning. When you want to update the submodule, do </span><span class="rvts80">cd PATH; git checkout master; git pull</span><span class="rvts79">. See </span><span class="rvts80">git help submodule</span><span class="rvts79">&nbsp;for more info.</span></p>
+<p class="rvps2"><span class="rvts79"><br/></span></p>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts84">Currently Provided Tools:</span></span></h2>
+<p class="rvps13"><span class="rvts79">regular_shapes.scad</span></p>
+<p class="rvps15"><span class="rvts79">regular polygons, ie. 2D</span></p>
+<p class="rvps15"><span class="rvts79">regular polyhedrons, ie. 3D</span></p>
+<p class="rvps13"><span class="rvts79">involute_gears.scad (</span><a class="rvts83" href="http://www.thingiverse.com/thing:3575">http://www.thingiverse.com/thing:3575</a><span class="rvts79">):</span></p>
+<p class="rvps15"><span class="rvts79">gear()</span></p>
+<p class="rvps15"><span class="rvts79">bevel_gear()</span></p>
+<p class="rvps15"><span class="rvts79">bevel_gear_pair()</span></p>
+<p class="rvps13"><span class="rvts79">gears.scad (Old version):</span></p>
+<p class="rvps13"><span class="rvts79">&nbsp;</span><span class="rvts79"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts79">gear(number_of_teeth, circular_pitch OR diametrial_pitch, pressure_angle OPTIONAL, clearance OPTIONAL)</span></p>
+<p class="rvps13"><span class="rvts79">motors.scad:</span></p>
+<p class="rvps15"><span class="rvts79">stepper_motor_mount(nema_standard, slide_distance OPTIONAL, mochup OPTIONAL)</span></p>
+<p class="rvps15"><span class="rvts79"><br/></span></p>
+<h3 class="rvps42"><span class="rvts0"><span class="rvts85">Tools (alpha and beta quality):</span></span></h3>
+<p class="rvps13"><span class="rvts79">nuts_and_bolts.scad: for creating metric and imperial bolt/nut holes</span></p>
+<p class="rvps13"><span class="rvts79">bearing.scad: standard/custom bearings</span></p>
+<p class="rvps13"><span class="rvts79">screw.scad: screws and augers</span></p>
+<p class="rvps13"><span class="rvts79">materials.scad: color definitions for different materials</span></p>
+<p class="rvps13"><span class="rvts79">stepper.scad: NEMA standard stepper outlines</span></p>
+<p class="rvps13"><span class="rvts79">servos.scad: servo outlines</span></p>
+<p class="rvps13"><span class="rvts79">boxes.scad: box with rounded corners</span></p>
+<p class="rvps13"><span class="rvts79">triangles.scad: simple triangles</span></p>
+<p class="rvps13"><span class="rvts79">3d_triangle.scad: more advanced triangles</span></p>
+<p class="rvps13"><span class="rvts79"><br/></span></p>
+<h3 class="rvps42"><span class="rvts0"><span class="rvts85">Very generally useful functions and constants:</span></span></h3>
+<p class="rvps13"><span class="rvts79">math.scad: general math functions</span></p>
+<p class="rvps13"><span class="rvts79">constants.scad: mathematical constants</span></p>
+<p class="rvps13"><span class="rvts79">curves.scad: mathematical functions defining curves</span></p>
+<p class="rvps13"><span class="rvts79">units.scad: easy metric units</span></p>
+<p class="rvps13"><span class="rvts79">utilities.scad: geometric funtions and misc. useful stuff</span></p>
+<p class="rvps13"><span class="rvts79">teardrop.scad (</span><a class="rvts83" href="http://www.thingiverse.com/thing:3457">http://www.thingiverse.com/thing:3457</a><span class="rvts79">): parametric teardrop module</span></p>
+<p class="rvps13"><span class="rvts79">shapes.scad: DEPRECATED simple shapes by Catarina Mota</span></p>
+<p class="rvps13"><span class="rvts79">polyholes.scad: holes that should come out well when printed</span></p>
+<p class="rvps2"><span class="rvts79"><br/></span></p>
+<h3 class="rvps42"><span class="rvts0"><span class="rvts85">Other:</span></span></h3>
+<p class="rvps13"><span class="rvts79">alphabet_block.scad</span></p>
+<p class="rvps13"><span class="rvts79">bitmap.scad</span></p>
+<p class="rvps13"><span class="rvts79">letter_necklace.scad</span></p>
+<p class="rvps13"><span class="rvts79">name_tag.scad</span></p>
+<p class="rvps13"><span class="rvts79">height_map.scad</span></p>
+<p class="rvps13"><span class="rvts79">trochoids.scad</span></p>
+<p class="rvps13"><span class="rvts79">libtriangles.scad</span></p>
+<p class="rvps13"><span class="rvts79">layouts.scad</span></p>
+<p class="rvps13"><span class="rvts79">transformations.scad</span></p>
+<p class="rvps13"><span class="rvts79">2Dshapes.scad</span></p>
+<p class="rvps13"><span class="rvts79">gridbeam.scad</span></p>
+<p class="rvps13"><span class="rvts79">fonts.scad</span></p>
+<p class="rvps13"><span class="rvts79">unregular_shapes.scad</span></p>
+<p class="rvps13"><span class="rvts79">metric_fastners.scad</span></p>
+<p class="rvps13"><span class="rvts79">lego_compatibility.scad</span></p>
+<p class="rvps13"><span class="rvts79">multiply.scad</span></p>
+<p class="rvps13"><span class="rvts79">hardware.scad</span></p>
+<p class="rvps13"><span class="rvts79"><br/></span></p>
+<h3 class="rvps42"><span class="rvts0"><span class="rvts85">External utils that generate and process openscad code:</span></span></h3>
+<p class="rvps13"><span class="rvts79">openscad_testing.py: testing code, see below</span></p>
+<p class="rvps13"><span class="rvts79">openscad_utils.py: code for scraping function names etc.</span></p>
+<p class="rvps2"><span class="rvts82"><br/></span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Free Kindle producer</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Free Kindle producer</a></p>
 
 	</div>
 	

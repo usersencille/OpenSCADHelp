@@ -91,8 +91,27 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Rotates its child 'a' degrees about the axis of the coordinate system or around an arbitrary axis. The argument names are optional if the arguments are given in the same order as specified.</span></p>
+<p class="rvps27"><span class="rvts49">//Usage:</span><br/><span class="rvts43">rotate(a </span><span class="rvts50">=</span><span class="rvts43">&nbsp;deg_a, v </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[x, y, z]) { ... } </span><span class="rvts49">// or</span><br/><span class="rvts43">rotate(deg_a, [x, y, z]) { ... }</span><br/><span class="rvts43">rotate(a </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[deg_x, deg_y, deg_z]) { ... }</span><br/><span class="rvts43">rotate([deg_x, deg_y, deg_z]) { ... }</span></p>
+<p class="rvps7"><span class="rvts22">The 'a' argument (deg_a) can be an array, as expressed in the later usage above; when deg_a is an array, the 'v' argument is ignored. Where 'a' specifies&nbsp;</span><span class="rvts26">multiple axes</span><span class="rvts22">&nbsp;then the rotation is applied in the following order: x, y, z. That means the code:</span></p>
+<p class="rvps17"><span class="rvts36">rotate(a=[ax,ay,az]) {...}</span></p>
+<p class="rvps7"><span class="rvts22">is equivalent to:</span></p>
+<p class="rvps17"><span class="rvts36">rotate(a=[0,0,az]) rotate(a=[0,ay,0]) rotate(a=[ax,0,0]) {...}</span></p>
+<p class="rvps7"><span class="rvts22">The optional argument 'v' is a vector and allows you to set an arbitrary axis about which the object is rotated.</span></p>
+<p class="rvps7"><span class="rvts22">For example, to flip an object upside-down, you can rotate your object 180 degrees around the 'y' axis.</span></p>
+<p class="rvps17"><span class="rvts36">rotate(a=[0,180,0]) { ... }</span></p>
+<p class="rvps7"><span class="rvts22">This is frequently simplified to</span></p>
+<p class="rvps17"><span class="rvts36">rotate([0,180,0]) { ... }</span></p>
+<p class="rvps7"><span class="rvts22">When specifying a single axis the 'v' argument allows you to specify which axis is the basis for rotation. For example, the equivalent to the above, to rotate just around y</span></p>
+<p class="rvps17"><span class="rvts36">rotate(a=180, v=[0,1,0]) { ... }</span></p>
+<p class="rvps7"><span class="rvts22">When specifying a single axis, 'v' is a&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/Euler_vector">vector</a><span class="rvts22">&nbsp;defining an arbitrary axis for rotation; this is different from the&nbsp;</span><span class="rvts26">multiple axis</span><span class="rvts22">&nbsp;above. For example, rotate your object 45 degrees around the axis defined by the vector [1,1,0],</span></p>
+<p class="rvps17"><span class="rvts36">rotate(a=45, v=[1,1,0]) { ... }</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_rotate_example.jpg"></p>
+<p class="rvps7"><span class="rvts22">Rotate with a&nbsp;</span><span class="rvts26">single scalar argument</span><span class="rvts22">&nbsp;rotates around the Z axis. This is useful in 2D contexts where that is the only axis for rotation. For example:</span></p>
+<p class="rvps17"><span class="rvts36">rotate(45) square(10);</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/Example_2D_Rotate.jpg"></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/create-epub-ebooks">Produce electronic books easily</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/create-epub-ebooks">Produce electronic books easily</a></p>
 
 	</div>
 	

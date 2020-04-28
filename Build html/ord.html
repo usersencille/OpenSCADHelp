@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="StringFunctions.html">String Functions</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="StringFunctions.html">String Functions</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,24 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps2"><span class="rvts6">Convert a character to a number representing the Unicode code point. If the parameter is not a string, the ord() returns undef.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Parameters</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">ord(String) </span></p>
+<p class="rvps2"><span class="rvts6">Convert the first character of the given string to a Unicode code point.</span></p>
+<p class="rvps2"><span class="rvts6">Examples</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">echo(ord("a"));</span></p>
+<p class="rvps2"><span class="rvts6">// ECHO: 97</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">echo(ord("BCD"));</span></p>
+<p class="rvps2"><span class="rvts6">// ECHO: 66</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">echo([for (c = "Hello! 🙂") ord(c)]);</span></p>
+<p class="rvps2"><span class="rvts6">// ECHO: [72, 101, 108, 108, 111, 33, 32, 128578]</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com">Free PDF documentation generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com">Free PDF documentation generator</a></p>
 
 	</div>
 	

@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherMathematicalFunctions.html">Other Mathematical Functions</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherMathematicalFunctions.html">Other Mathematical Functions</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,26 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps2"><span class="rvts6">Return a new vector that is the result of appending the elements of the supplied vectors.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Where an argument is a vector the elements of the vector are individually appended to the result vector. Strings are distinct from vectors in this case.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Usage examples:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">echo(concat("a","b","c","d","e","f")); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// produces ECHO: ["a", "b", "c", "d", "e", "f"]</span></p>
+<p class="rvps2"><span class="rvts6">echo(concat(["a","b","c"],["d","e","f"])); &nbsp; &nbsp; &nbsp;// produces ECHO: ["a", "b", "c", "d", "e", "f"]</span></p>
+<p class="rvps2"><span class="rvts6">echo(concat(1,2,3,4,5,6)); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// produces ECHO: [1, 2, 3, 4, 5, 6]</span></p>
+<p class="rvps2"><span class="rvts6">Vector of vectors</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">echo(concat([ [1],[2] ], [ [3] ])); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // produces ECHO: [[1], [2], [3]]</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Contrast with strings</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">echo(concat([1,2,3],[4,5,6])); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // produces ECHO: [1, 2, 3, 4, 5, 6]</span></p>
+<p class="rvps2"><span class="rvts6">echo(concat("abc","def")); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // produces ECHO: ["abc", "def"]</span></p>
+<p class="rvps2"><span class="rvts6">echo(str("abc","def")); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// produces ECHO: "abcdef"</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/help-authoring-tool">Free help authoring environment</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/help-authoring-tool">Free help authoring environment</a></p>
 
 	</div>
 	

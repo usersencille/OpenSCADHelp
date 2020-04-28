@@ -79,7 +79,7 @@
 				
 				
 				
-				<a href="Parameters.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="Usage1.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,20 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Rotational extrusion spins a 2D shape around the Z-axis to form a solid which has rotational symmetry. One way to think of this operation is to imagine a Potter's wheel placed on the X-Y plane with its axis of rotation pointing up towards +Z. Then place the to-be-made object on this virtual Potter's wheel (possibly extended down below the X-Y plane towards -Z, take the cross-section of this object on the X-Z plane but keep only the right half (X &gt;= 0). That is the 2D shape that need to be fed to rotate_extrude() as the child in order to generate this solid.</span></p>
+<p class="rvps7"><span class="rvts22">Since a 2D shape is rendered by OpenSCAD on the X-Y plane, an alternative way to think of this operation is as follows: spins a 2D shape around the Y-axis to form a solid. The resultant solid is placed so that its axis of rotation lies along the Z-axis.</span></p>
+<p class="rvps7"><span class="rvts22">Just like the linear_extrude, the extrusion is always performed on the projection of the 2D polygon to the XY plane. Transformations like rotate, translate, etc. applied to the 2D polygon before extrusion modify the projection of the 2D polygon to the XY plane and therefore also modify the appearance of the final 3D object.</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps8"><span class="rvts22">A translation in Z of the 2D polygon has no effect on the result (as also the projection is not affected).</span></li>
+<li class="rvps8"><span class="rvts22">A translation in X increases the diameter of the final object.</span></li>
+<li class="rvps8"><span class="rvts22">A translation in Y results in a shift of the final object in Z direction.</span></li>
+<li class="rvps8"><span class="rvts22">A rotation about the X or Y axis distorts the cross section of the final object, as also the projection to the XY plane is distorted.</span></li>
+</ul>
+<p class="rvps7"><span class="rvts22">Don't get confused, as OpenSCAD renders 2D polygons with a certain height in the Z direction, so the 2D object (with it's height) apears to have a bigger projection to the XY plane. But for the projection to the XY plane and also for the later extrusion only the base polygon without height is used.</span></p>
+<p class="rvps7"><span class="rvts22">It can not be used to produce a helix or screw threads.</span></p>
+<p class="rvps7"><span class="rvts22">The 2D shape&nbsp;</span><span class="rvts21">must</span><span class="rvts22">&nbsp;lie completely on either the right (recommended) or the left side of the Y-axis. More precisely speaking,&nbsp;</span><span class="rvts21">every</span><span class="rvts22">&nbsp;vertex of the shape must have either x &gt;= 0 or x &lt;= 0. If the shape spans the X axis a warning appears in the console windows and the rotate_extrude() is ignored. If the 2D shape touches the Y axis, i.e. at x=0, it&nbsp;</span><span class="rvts21">must</span><span class="rvts22">&nbsp;be a line that touches, not a point, as a point results in a zero thickness 3D object, which is invalid and results in a CGAL error. For OpenSCAD versions prior to 2016.xxxx, if the shape is in the negative axis the the resulting faces are oriented inside-out, which may cause undesired effects.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create help files for the Qt Help Framework</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create help files for the Qt Help Framework</a></p>
 
 	</div>
 	

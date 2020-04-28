@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="ConditionandIteratorfunctions.html">Condition and Iterator functions</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ConditionandIteratorfunctions.html">Condition and Iterator functions</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,30 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">A function that uses a test to determine which of 2 values to return.</span></p>
+<p class="rvps17"><span class="rvts36">a = test&nbsp;? TrueValue&nbsp;: FalseValue&nbsp;; echo( test&nbsp;? TrueValue&nbsp;: FalseValue );</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Parameters</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">test</span><span class="rvts22">: Usually a boolean expression, but can be any value or variable.</span></li>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
+<li style="margin-left: 0px" class="rvps10"><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/General#Boolean_Values">See here for true or false state of values.</a></li>
+<li style="margin-left: 0px" class="rvps10"><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Mathematical_Operators#Relational_Operators">See here for boolean and logical operators</a></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Do not confuse assignment '=' with equal '=='</span></li>
+</ul>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">TrueValue</span><span class="rvts22">: the value to return when test is&nbsp;</span><span class="rvts21">true</span><span class="rvts22">.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">FalseValue</span><span class="rvts22">: the value to return when test is&nbsp;</span><span class="rvts21">false</span><span class="rvts22">.</span></li>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">A value in OpenSCAD is either a Number (like 42), a Boolean (like true), a String (like "foo"), a Vector (like [1,2,3]), or the Undefined value (undef). Values can be stored in variables, passed as function arguments, and returned as function results.</span></li>
+</ul></ul></ul>
+<p class="rvps7"><span class="rvts22">This works like the&nbsp;</span><span class="rvts63">?:</span><span class="rvts22">&nbsp;operator from the family of C-like programming languages.</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Examples</span></li>
+</ul>
+<p class="rvps17"><span class="rvts36">a=1; b=2; c= a==b&nbsp;? 4&nbsp;: 5&nbsp;; // 5 a=1; b=2; c= a==b&nbsp;? "a==b"&nbsp;: "a!=b"&nbsp;; // "a!=b" TrueValue = true; FalseValue = false; a=5; test = a==1; echo( test&nbsp;? TrueValue&nbsp;: FalseValue ); // false L = 75; R = 2; test = (L/R)&gt;25; TrueValue = [test,L,R,L/R,cos(30)]; FalseValue = [test,L,R,sin(15)]; a1 = test&nbsp;? TrueValue&nbsp;: FalseValue&nbsp;; // [true, 75, 2, 37.5, 0.866025]</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com">Easy EPub and documentation editor</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com">Easy EPub and documentation editor</a></p>
 
 	</div>
 	

@@ -91,35 +91,33 @@
 	<div id="topic_content">
 		
 <p></p>
-<h1 class="rvps4"><span class="rvts0"><span class="rvts26">circle</span></span></h1>
-<p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps7"><span class="rvts21">Creates a circle at the origin. All parameters, except r,&nbsp;</span><span class="rvts20">must</span><span class="rvts21">&nbsp;be named.</span></p>
-<p class="rvps17"><span class="rvts37">circle(r=radius | d=diameter);</span></p>
+<p class="rvps7"><span class="rvts22">Creates a circle at the origin. All parameters, except r,&nbsp;</span><span class="rvts21">must</span><span class="rvts22">&nbsp;be named.</span></p>
+<p class="rvps17"><span class="rvts36">circle(r=radius | d=diameter);</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">Parameters</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Parameters</span></li>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">r</span><span class="rvts21">&nbsp;: circle radius. r name is the only one optional with circle.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">r</span><span class="rvts22">&nbsp;: circle radius. r name is the only one optional with circle.</span></li>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts21">circle resolution is based on size, using $fa or $fs.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">circle resolution is based on size, using $fa or $fs.</span></li>
 </ul></ul></ul>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts21">For a small, high resolution circle you can make a large circle, then scale it down, or you could set $fn or other special variables. Note: These examples exceed the resolution of a 3d printer as well as of the display screen.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">For a small, high resolution circle you can make a large circle, then scale it down, or you could set $fn or other special variables. Note: These examples exceed the resolution of a 3d printer as well as of the display screen.</span></li>
 </ul>
-<p class="rvps17"><span class="rvts37">scale([1/100, 1/100, 1/100]) circle(200); // create a high resolution circle with a radius of 2. circle(2, $fn=50); // Another way.</span></p>
+<p class="rvps17"><span class="rvts36">scale([1/100, 1/100, 1/100]) circle(200); // create a high resolution circle with a radius of 2. circle(2, $fn=50); // Another way.</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">d</span><span class="rvts21">&nbsp;: circle diameter (only available in versions later than 2014.03).</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">d</span><span class="rvts22">&nbsp;: circle diameter (only available in versions later than 2014.03).</span></li>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">$fa</span><span class="rvts21">&nbsp;: minimum angle (in degrees) of each fragment.</span></li>
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">$fs</span><span class="rvts21">&nbsp;: minimum circumferential length of each fragment.</span></li>
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">$fn</span><span class="rvts21">&nbsp;:&nbsp;</span><span class="rvts20">fixed</span><span class="rvts21">&nbsp;number of fragments in 360 degrees. Values of 3 or more override $fa and $fs</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">$fa</span><span class="rvts22">&nbsp;: minimum angle (in degrees) of each fragment.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">$fs</span><span class="rvts22">&nbsp;: minimum circumferential length of each fragment.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">$fn</span><span class="rvts22">&nbsp;:&nbsp;</span><span class="rvts21">fixed</span><span class="rvts22">&nbsp;number of fragments in 360 degrees. Values of 3 or more override $fa and $fs</span></li>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts21">$fa, $fs and $fn must be named.&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Other_Language_Features">click here for more details,</a><span class="rvts21">.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">$fa, $fs and $fn must be named.&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Other_Language_Features">click here for more details,</a><span class="rvts22">.</span></li>
 </ul></ul></ul>
-<p class="rvps17"><span class="rvts37">defaults: circle(); yields: circle($fn = 0, $fa = 12, $fs = 2, r = 1);</span></p>
+<p class="rvps17"><span class="rvts36">defaults: circle(); yields: circle($fn = 0, $fa = 12, $fs = 2, r = 1);</span></p>
 <p class="rvps7"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_Circle_10.jpg"></p>
-<p class="rvps17"><span class="rvts37">equivalent scripts for this example circle(10); circle(r=10); circle(d=20); circle(d=2+9*2);</span></p>
+<p class="rvps17"><span class="rvts36">equivalent scripts for this example circle(10); circle(r=10); circle(d=20); circle(d=2+9*2);</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour">Easily create Web Help sites</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour">Easily create Web Help sites</a></p>
 
 	</div>
 	

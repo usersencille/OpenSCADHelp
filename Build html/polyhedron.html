@@ -91,61 +91,59 @@
 	<div id="topic_content">
 		
 <p></p>
-<h1 class="rvps4"><span class="rvts0"><span class="rvts26">polyhedron</span></span></h1>
-<p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps7"><span class="rvts21">A polyhedron is the most general 3D primitive solid. It can be used to create any regular or irregular shape including those with concave as well as convex features. Curved surfaces are approximated by a series of flat surfaces.</span></p>
-<p class="rvps17"><span class="rvts37">polyhedron( points = [ [X</span><span class="rvts47">0</span><span class="rvts37">, Y</span><span class="rvts47">0</span><span class="rvts37">, Z</span><span class="rvts47">0</span><span class="rvts37">], [X</span><span class="rvts47">1</span><span class="rvts37">, Y</span><span class="rvts47">1</span><span class="rvts37">, Z</span><span class="rvts47">1</span><span class="rvts37">], ... ], triangles = [ [P</span><span class="rvts47">0</span><span class="rvts37">, P</span><span class="rvts47">1</span><span class="rvts37">, P</span><span class="rvts47">2</span><span class="rvts37">], ... ], convexity = N); // before 2014.03 polyhedron( points = [ [X</span><span class="rvts47">0</span><span class="rvts37">, Y</span><span class="rvts47">0</span><span class="rvts37">, Z</span><span class="rvts47">0</span><span class="rvts37">], [X</span><span class="rvts47">1</span><span class="rvts37">, Y</span><span class="rvts47">1</span><span class="rvts37">, Z</span><span class="rvts47">1</span><span class="rvts37">], ... ], faces = [ [P</span><span class="rvts47">0</span><span class="rvts37">, P</span><span class="rvts47">1</span><span class="rvts37">, P</span><span class="rvts47">2</span><span class="rvts37">, P</span><span class="rvts47">3</span><span class="rvts37">, ...], ... ], convexity = N); // 2014.03 &amp; later</span></p>
+<p class="rvps7"><span class="rvts22">A polyhedron is the most general 3D primitive solid. It can be used to create any regular or irregular shape including those with concave as well as convex features. Curved surfaces are approximated by a series of flat surfaces.</span></p>
+<p class="rvps17"><span class="rvts36">polyhedron( points = [ [X</span><span class="rvts46">0</span><span class="rvts36">, Y</span><span class="rvts46">0</span><span class="rvts36">, Z</span><span class="rvts46">0</span><span class="rvts36">], [X</span><span class="rvts46">1</span><span class="rvts36">, Y</span><span class="rvts46">1</span><span class="rvts36">, Z</span><span class="rvts46">1</span><span class="rvts36">], ... ], triangles = [ [P</span><span class="rvts46">0</span><span class="rvts36">, P</span><span class="rvts46">1</span><span class="rvts36">, P</span><span class="rvts46">2</span><span class="rvts36">], ... ], convexity = N); // before 2014.03 polyhedron( points = [ [X</span><span class="rvts46">0</span><span class="rvts36">, Y</span><span class="rvts46">0</span><span class="rvts36">, Z</span><span class="rvts46">0</span><span class="rvts36">], [X</span><span class="rvts46">1</span><span class="rvts36">, Y</span><span class="rvts46">1</span><span class="rvts36">, Z</span><span class="rvts46">1</span><span class="rvts36">], ... ], faces = [ [P</span><span class="rvts46">0</span><span class="rvts36">, P</span><span class="rvts46">1</span><span class="rvts36">, P</span><span class="rvts46">2</span><span class="rvts36">, P</span><span class="rvts46">3</span><span class="rvts36">, ...], ... ], convexity = N); // 2014.03 &amp; later</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">Parameters</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Parameters</span></li>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">points</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">points</span></li>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Vector of 3d points or vertices. Each point is in turn a vector, [x,y,z], of its coordinates.</span></li>
-<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Points may be defined in any order. N points are referenced, in the order defined, as 0 to N-1.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Vector of 3d points or vertices. Each point is in turn a vector, [x,y,z], of its coordinates.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Points may be defined in any order. N points are referenced, in the order defined, as 0 to N-1.</span></li>
 </ul></ul></ul>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">triangles</span><span class="rvts21">&nbsp;[</span><span class="rvts48">Deprecated:</span><span class="rvts25">&nbsp;</span><span class="rvts39">triangles</span><span class="rvts25">&nbsp;will be removed in future releases.&nbsp;Use&nbsp;</span><span class="rvts39">faces</span><span class="rvts25">&nbsp;parameter instead</span><span class="rvts21">]</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">triangles</span><span class="rvts22">&nbsp;[</span><span class="rvts47">Deprecated:</span><span class="rvts26">&nbsp;</span><span class="rvts38">triangles</span><span class="rvts26">&nbsp;will be removed in future releases.&nbsp;Use&nbsp;</span><span class="rvts38">faces</span><span class="rvts26">&nbsp;parameter instead</span><span class="rvts22">]</span></li>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Vector of faces that collectively enclose the solid. Each face is a vector containing the indices (0 based) of 3 points from the points vector.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Vector of faces that collectively enclose the solid. Each face is a vector containing the indices (0 based) of 3 points from the points vector.</span></li>
 </ul></ul></ul>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">faces</span><span class="rvts21">&nbsp;</span><span class="rvts20">[</span><span class="rvts45">Note:</span><span class="rvts20">&nbsp;</span><span class="rvts25">Requires version&nbsp;</span><span class="rvts39">2014.03</span><span class="rvts20">]</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">faces</span><span class="rvts22">&nbsp;</span><span class="rvts21">[</span><span class="rvts44">Note:</span><span class="rvts21">&nbsp;</span><span class="rvts26">Requires version&nbsp;</span><span class="rvts38">2014.03</span><span class="rvts21">]</span></li>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Vector of faces that collectively enclose the solid. Each face is a vector containing the indices (0 based) of 3 or more points from the points vector.</span></li>
-<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Faces may be defined in any order. Define enough faces to fully enclose the solid, with no overlap.</span></li>
-<li style="margin-left: 0px" class="rvps10"><span class="rvts21">If points that describe a single face are not on the same plane, the face is automatically split into triangles as needed.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Vector of faces that collectively enclose the solid. Each face is a vector containing the indices (0 based) of 3 or more points from the points vector.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Faces may be defined in any order. Define enough faces to fully enclose the solid, with no overlap.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">If points that describe a single face are not on the same plane, the face is automatically split into triangles as needed.</span></li>
 </ul></ul></ul>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">convexity</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">convexity</span></li>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Integer. The convexity parameter specifies the maximum number of faces a ray intersecting the object might penetrate. This parameter is needed only for correct display of the object in OpenCSG preview mode. It has no effect on the polyhedron rendering. For display problems, setting it to 10 should work fine for most cases.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Integer. The convexity parameter specifies the maximum number of faces a ray intersecting the object might penetrate. This parameter is needed only for correct display of the object in OpenCSG preview mode. It has no effect on the polyhedron rendering. For display problems, setting it to 10 should work fine for most cases.</span></li>
 </ul></ul></ul>
-<p class="rvps17"><span class="rvts37">default values: polyhedron(); yields: polyhedron(points = undef, faces = undef, convexity = 1);</span></p>
-<p class="rvps7"><span class="rvts21"><br/></span></p>
-<p class="rvps7"><span class="rvts21">All faces must have points ordered in the same direction . OpenSCAD prefers&nbsp;</span><span class="rvts20">clockwise</span><span class="rvts21">&nbsp;when looking at each face from outside&nbsp;</span><span class="rvts20">inward</span><span class="rvts21">. The back is viewed from the back, the bottom from the bottom, etc.</span></p>
-<p class="rvps7"><span class="rvts21"><br/></span></p>
+<p class="rvps17"><span class="rvts36">default values: polyhedron(); yields: polyhedron(points = undef, faces = undef, convexity = 1);</span></p>
+<p class="rvps7"><span class="rvts22"><br/></span></p>
+<p class="rvps7"><span class="rvts22">All faces must have points ordered in the same direction . OpenSCAD prefers&nbsp;</span><span class="rvts21">clockwise</span><span class="rvts22">&nbsp;when looking at each face from outside&nbsp;</span><span class="rvts21">inward</span><span class="rvts22">. The back is viewed from the back, the bottom from the bottom, etc.</span></p>
+<p class="rvps7"><span class="rvts22"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">Example 1</span><span class="rvts21">&nbsp;Using polyhedron to generate cube( [ 10, 7, 5 ] );</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Example 1</span><span class="rvts22">&nbsp;Using polyhedron to generate cube( [ 10, 7, 5 ] );</span></li>
 </ul>
 <p class="rvps26"><img alt="" style="padding : 1px;" src="lib/Cube_numbers.jpg"><img alt="" style="padding : 1px;" src="lib/Cube_flat.jpg"></p>
-<p class="rvps25"><span class="rvts49">unfolded cube faces</span></p>
-<p class="rvps17"><span class="rvts37">CubePoints = [ [ 0, 0, 0 ], //0 [ 10, 0, 0 ], //1 [ 10, 7, 0 ], //2 [ 0, 7, 0 ], //3 [ 0, 0, 5 ], //4 [ 10, 0, 5 ], //5 [ 10, 7, 5 ], //6 [ 0, 7, 5 ]]; //7 CubeFaces = [ [0,1,2,3], // bottom [4,5,1,0], // front [7,6,5,4], // top [5,6,2,1], // right [6,7,3,2], // back [7,4,0,3]]; // left polyhedron( CubePoints, CubeFaces );</span></p>
-<p class="rvps17"><span class="rvts37">equivalent descriptions of the bottom face [0,1,2,3], [0,1,2,3,0], [1,2,3,0], [2,3,0,1], [3,0,1,2], [0,1,2],[2,3,0], // 2 triangles with no overlap [1,2,3],[3,0,1], [1,2,3],[0,1,3],</span></p>
+<p class="rvps25"><span class="rvts48">unfolded cube faces</span></p>
+<p class="rvps17"><span class="rvts36">CubePoints = [ [ 0, 0, 0 ], //0 [ 10, 0, 0 ], //1 [ 10, 7, 0 ], //2 [ 0, 7, 0 ], //3 [ 0, 0, 5 ], //4 [ 10, 0, 5 ], //5 [ 10, 7, 5 ], //6 [ 0, 7, 5 ]]; //7 CubeFaces = [ [0,1,2,3], // bottom [4,5,1,0], // front [7,6,5,4], // top [5,6,2,1], // right [6,7,3,2], // back [7,4,0,3]]; // left polyhedron( CubePoints, CubeFaces );</span></p>
+<p class="rvps17"><span class="rvts36">equivalent descriptions of the bottom face [0,1,2,3], [0,1,2,3,0], [1,2,3,0], [2,3,0,1], [3,0,1,2], [0,1,2],[2,3,0], // 2 triangles with no overlap [1,2,3],[3,0,1], [1,2,3],[0,1,3],</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">Example 2</span><span class="rvts21">&nbsp;A square base pyramid:</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Example 2</span><span class="rvts22">&nbsp;A square base pyramid:</span></li>
 </ul>
 <p class="rvps26"><img alt="" style="padding : 1px;" src="lib/Openscad-polyhedron-squarebasepyramid.png"></p>
-<p class="rvps25"><span class="rvts49">A simple polyhedron, square base pyramid</span></p>
-<p class="rvps17"><span class="rvts37">polyhedron( points=[ [10,10,0],[10,-10,0],[-10,-10,0],[-10,10,0], // the four points at base [0,0,10] ], // the apex point faces=[ [0,1,4],[1,2,4],[2,3,4],[3,0,4], // each triangle side [1,0,3],[2,1,3] ] // two triangles for square base );</span></p>
+<p class="rvps25"><span class="rvts48">A simple polyhedron, square base pyramid</span></p>
+<p class="rvps17"><span class="rvts36">polyhedron( points=[ [10,10,0],[10,-10,0],[-10,-10,0],[-10,10,0], // the four points at base [0,0,10] ], // the apex point faces=[ [0,1,4],[1,2,4],[2,3,4],[3,0,4], // each triangle side [1,0,3],[2,1,3] ] // two triangles for square base );</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li style="margin-left: 0px" class="rvps10"><span class="rvts20">Example 3</span><span class="rvts21">&nbsp;A triangular prism:</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Example 3</span><span class="rvts22">&nbsp;A triangular prism:</span></li>
 </ul>
-<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/Polyhedron_Prism.png"><br/><span class="rvts49">A polyhedron triangular prism</span></p>
-<p class="rvps17"><span class="rvts37">module prism(l, w, h){ polyhedron( points=[[0,0,0], [l,0,0], [l,w,0], [0,w,0], [0,w,h], [l,w,h]], faces=[[0,1,2,3],[5,4,3,2],[0,4,5,1],[0,3,4],[5,2,1]] ); // preview unfolded (do not include in your function z = 0.08; separation = 2; border = .2; translate([0,w+separation,0]) cube([l,w,z]); translate([0,w+separation+w+border,0]) cube([l,h,z]); translate([0,w+separation+w+border+h+border,0]) cube([l,sqrt(w*w+h*h),z]); translate([l+border,w+separation+w+border+h+border,0]) polyhedron( points=[[0,0,0],[h,0,0],[0,sqrt(w*w+h*h),0], [0,0,z],[h,0,z],[0,sqrt(w*w+h*h),z]], faces=[[0,1,2], [3,5,4], [0,3,4,1], [1,4,5,2], [2,5,3,0]] ); translate([0-border,w+separation+w+border+h+border,0]) polyhedron( points=[[0,0,0],[0-h,0,0],[0,sqrt(w*w+h*h),0], [0,0,z],[0-h,0,z],[0,sqrt(w*w+h*h),z]], faces=[[1,0,2],[5,3,4],[0,1,4,3],[1,2,5,4],[2,0,3,5]] ); } prism(10, 5, 3);</span></p>
-<p class="rvps26"><span class="rvts49"><br/></span></p>
-<p class="rvps25"><span class="rvts49">point numbers for cube</span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/Polyhedron_Prism.png"><br/><span class="rvts48">A polyhedron triangular prism</span></p>
+<p class="rvps17"><span class="rvts36">module prism(l, w, h){ polyhedron( points=[[0,0,0], [l,0,0], [l,w,0], [0,w,0], [0,w,h], [l,w,h]], faces=[[0,1,2,3],[5,4,3,2],[0,4,5,1],[0,3,4],[5,2,1]] ); // preview unfolded (do not include in your function z = 0.08; separation = 2; border = .2; translate([0,w+separation,0]) cube([l,w,z]); translate([0,w+separation+w+border,0]) cube([l,h,z]); translate([0,w+separation+w+border+h+border,0]) cube([l,sqrt(w*w+h*h),z]); translate([l+border,w+separation+w+border+h+border,0]) polyhedron( points=[[0,0,0],[h,0,0],[0,sqrt(w*w+h*h),0], [0,0,z],[h,0,z],[0,sqrt(w*w+h*h),z]], faces=[[0,1,2], [3,5,4], [0,3,4,1], [1,4,5,2], [2,5,3,0]] ); translate([0-border,w+separation+w+border+h+border,0]) polyhedron( points=[[0,0,0],[0-h,0,0],[0,sqrt(w*w+h*h),0], [0,0,z],[0-h,0,z],[0,sqrt(w*w+h*h),z]], faces=[[1,0,2],[5,3,4],[0,1,4,3],[1,2,5,4],[2,0,3,5]] ); } prism(10, 5, 3);</span></p>
+<p class="rvps26"><span class="rvts48"><br/></span></p>
+<p class="rvps25"><span class="rvts48">point numbers for cube</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com">Easy EBook and documentation generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com">Easy EBook and documentation generator</a></p>
 
 	</div>
 	

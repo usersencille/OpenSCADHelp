@@ -79,7 +79,7 @@
 				
 				
 				
-				<a href="Booleanoverview.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="union.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,50 @@
 	<div id="topic_content">
 		
 <p></p>
+<h5 class="rvps34"><span class="rvts0"><span class="rvts42">2D examples</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/CSG_Modelling&action=edit&section=T-2">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h5>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps35"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_Boolean_Union_2D1.jpg"></li>
+</ul>
+<p class="rvps20"><span class="rvts45">union ( or )</span><br/><span class="rvts45">circle + square</span></p>
+<p class="rvps18"><span class="rvts22">&nbsp;</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps35"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_Boolean_Difference_2D1.jpg"></li>
+</ul>
+<p class="rvps20"><span class="rvts45">difference ( and not )</span><br/><span class="rvts45">square - circle</span></p>
+<p class="rvps18"><span class="rvts22">&nbsp;</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps35"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_Boolean_Difference_1_2D.jpg"></li>
+</ul>
+<p class="rvps20"><span class="rvts45">difference ( and not )</span><br/><span class="rvts45">circle - square</span></p>
+<p class="rvps18"><span class="rvts22">&nbsp;</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps35"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_Boolean_Intersection_2D.jpg"></li>
+</ul>
+<p class="rvps20"><span class="rvts45">intersection ( and )</span><br/><span class="rvts45">circle - (circle - square)</span></p>
+<p class="rvps27"><span class="rvts43">union() {square(</span><span class="rvts50">10</span><span class="rvts43">);circle(</span><span class="rvts50">10</span><span class="rvts43">);} </span><span class="rvts49">// square or circle</span><br/><span class="rvts43">difference() {square(</span><span class="rvts50">10</span><span class="rvts43">);circle(</span><span class="rvts50">10</span><span class="rvts43">);} </span><span class="rvts49">// square and not circle</span><br/><span class="rvts43">difference() {circle(</span><span class="rvts50">10</span><span class="rvts43">);square(</span><span class="rvts50">10</span><span class="rvts43">);} </span><span class="rvts49">// circle and not square</span><br/><span class="rvts43">intersection(){square(</span><span class="rvts50">10</span><span class="rvts43">);circle(</span><span class="rvts50">10</span><span class="rvts43">);} </span><span class="rvts49">// square and circle</span></p>
+<h5 class="rvps34"><span class="rvts0"><span class="rvts42">3D examples</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/CSG_Modelling&action=edit&section=T-3">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h5>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps19"><img alt="" style="padding : 1px;" src="lib/OpenScad_Boolean_Union.jpg"></li>
+</ul>
+<p class="rvps20"><span class="rvts45">union ( or )</span><br/><span class="rvts45">sphere + cube</span></p>
+<p class="rvps18"><span class="rvts22">&nbsp;</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps19"><img alt="" style="padding : 1px;" src="lib/Boolean_Difference_1a.jpg"></li>
+</ul>
+<p class="rvps20"><span class="rvts45">difference ( and not )</span><br/><span class="rvts45">cube - sphere</span></p>
+<p class="rvps18"><span class="rvts22">&nbsp;</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps24"><img alt="" style="padding : 1px;" src="lib/OpenScad_Boolean_Difference_2.jpg"></li>
+</ul>
+<p class="rvps20"><span class="rvts45">difference ( and not )</span><br/><span class="rvts45">sphere - cube</span></p>
+<p class="rvps18"><span class="rvts22">&nbsp;</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps32"><img alt="" style="padding : 1px;" src="lib/OpenScad_Boolean_Intersection.jpg"></li>
+</ul>
+<p class="rvps20"><span class="rvts45">intersection ( and )</span><br/><span class="rvts45">sphere - (sphere - cube)</span></p>
+<p class="rvps27"><span class="rvts43">union() {cube(</span><span class="rvts50">12</span><span class="rvts43">, center</span><span class="rvts50">=</span><span class="rvts61">true</span><span class="rvts43">); sphere(</span><span class="rvts50">8</span><span class="rvts43">);} </span><span class="rvts49">// cube or sphere</span><br/><span class="rvts43">difference() {cube(</span><span class="rvts50">12</span><span class="rvts43">, center</span><span class="rvts50">=</span><span class="rvts61">true</span><span class="rvts43">); sphere(</span><span class="rvts50">8</span><span class="rvts43">);} </span><span class="rvts49">// cube and not sphere</span><br/><span class="rvts43">difference() {sphere(</span><span class="rvts50">8</span><span class="rvts43">); cube(</span><span class="rvts50">12</span><span class="rvts43">, center</span><span class="rvts50">=</span><span class="rvts61">true</span><span class="rvts43">);} </span><span class="rvts49">// sphere and not cube</span><br/><span class="rvts43">intersection(){cube(</span><span class="rvts50">12</span><span class="rvts43">, center</span><span class="rvts50">=</span><span class="rvts61">true</span><span class="rvts43">); sphere(</span><span class="rvts50">8</span><span class="rvts43">);} </span><span class="rvts49">// cube and sphere</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/create-epub-ebooks">Write EPub books for the iPad</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/create-epub-ebooks">Write EPub books for the iPad</a></p>
 
 	</div>
 	

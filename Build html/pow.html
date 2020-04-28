@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherMathematicalFunctions.html">Other Mathematical Functions</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherMathematicalFunctions.html">Other Mathematical Functions</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,32 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps2"><span class="rvts6">Mathematical power function.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Parameters</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&lt;base&gt; </span></p>
+<p class="rvps2"><span class="rvts6">Decimal. Base.</span></p>
+<p class="rvps2"><span class="rvts6">&lt;exponent&gt; </span></p>
+<p class="rvps2"><span class="rvts6">Decimal. Exponent.</span></p>
+<p class="rvps2"><span class="rvts6">Usage examples:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">for (i = [0:5]) {</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp;translate([i*25,0,0]) {</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;cylinder(h = pow(2,i)*5, r=10);</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;echo (i, pow(2,i));</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp;}</span></p>
+<p class="rvps2"><span class="rvts6">}</span></p>
+<p class="rvps2"><span class="rvts6">echo(pow(10,2)); // means 10^2 or 10*10</span></p>
+<p class="rvps2"><span class="rvts6">// result: ECHO: 100</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">echo(pow(10,3)); // means 10^3 or 10*10*10</span></p>
+<p class="rvps2"><span class="rvts6">// result: ECHO: 1000</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">echo(pow(125,1/3)); // means 125^(0.333...), which calculates the cube root of 125</span></p>
+<p class="rvps2"><span class="rvts6">// result: ECHO: 5</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/create-epub-ebooks">Free EPub producer</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/create-epub-ebooks">Free EPub producer</a></p>
 
 	</div>
 	

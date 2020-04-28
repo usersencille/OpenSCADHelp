@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="2DObjects1.html">2D Objects</a> &rsaquo;&rsaquo; <a href="2Dto3DProjection.html">2D to 3D Projection</a> &rsaquo;&rsaquo; <a href="Parameters.html">Parameters</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="2DObjects1.html">2D Objects</a> &rsaquo;&rsaquo; <a href="2Dto3DProjection.html">2D to 3D Projection</a> &rsaquo;&rsaquo; <a href="RotateExtrude.html">Rotate Extrude</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -71,7 +71,7 @@
 			<div id="topic_header_nav">
 				
 				
-				<a href="Parameters.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				<a href="RotateExtrude.html"><img src="img/arrow_up.png" alt="Parent"/></a>
 				
 				
 				
@@ -91,8 +91,20 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts56">→</span><img alt="" style="padding : 1px;" src="lib/Rotate_extrude_wiki_2D_C.jpg"></p>
+<p class="rvps7"><span class="rvts22">Increasing the number of fragments composing the 2D shape improves the quality of the mesh, but takes longer to render.</span></p>
+<p class="rvps17"><span class="rvts36">rotate_extrude(convexity = 10) translate([2, 0, 0]) circle(r = 1, $fn = 100);</span></p>
+<p class="rvps7"><span class="rvts56">→</span><img alt="" style="padding : 1px;" src="lib/400px-Openscad_rotext_02.jpg"></p>
+<p class="rvps7"><span class="rvts22">The number of fragments used by the extrusion can also be increased.</span></p>
+<p class="rvps17"><span class="rvts36">rotate_extrude(convexity = 10, $fn = 100) translate([2, 0, 0]) circle(r = 1, $fn = 100);</span></p>
+<p class="rvps7"><span class="rvts22">Using the parameter angle (with OpenSCAD versions 2016.xx), a hook can be modeled .</span></p>
+<p class="rvps17"><span class="rvts36">translate([0,60,0]) rotate_extrude(angle=270, convexity=10) translate([40, 0]) circle(10); rotate_extrude(angle=90, convexity=10) translate([20, 0]) circle(10); translate([20,0,0]) rotate([90,0,0]) cylinder(r=10,h=80);</span></p>
+<p class="rvps29"><a class="rvts25" href="https://commons.wikimedia.org/wiki/File:Rotate_extrude_wiki_2D_C.jpg"><br/></a></p>
+<p class="rvps29"><img alt="" style="padding : 1px;" src="lib/Rotate_extrude_wiki_2D_C1.jpg"></p>
+<p class="rvps29"><img alt="" style="padding : 1px;" src="lib/400px-Openscad_rotext_03.jpg"></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/Hook.png"><br/><span class="rvts48">OpenSCAD - a hook</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour">Easily create PDF Help documents</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour">Easily create PDF Help documents</a></p>
 
 	</div>
 	

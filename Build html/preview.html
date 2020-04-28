@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; <a href="SpecialVariables1.html">Special Variables</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; <a href="SpecialVariables1.html">Special Variables</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,16 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">$preview is true, when in OpenCSG preview (F5). $preview is false, when in render (F6).</span></p>
+<p class="rvps7"><span class="rvts22">This can, for example, be used to reduce detail during preview to save time, without losing detail in the final rendered result:</span></p>
+<p class="rvps17"><span class="rvts36">$fn = $preview&nbsp;? 12&nbsp;: 72; sphere(r = 1);</span></p>
+<p class="rvps7"><span class="rvts22">Note that the render module does not affect $preview:</span></p>
+<p class="rvps17"><span class="rvts36">render(){ $fn = $preview&nbsp;? 12&nbsp;: 72; sphere(r = 1); }</span></p>
+<p class="rvps7"><span class="rvts22">Another use could be to make the preview show an assembly view and the render generate just the printed parts laid out for printing.</span></p>
+<p class="rvps7"><span class="rvts22">If printed parts need extra features that are removed post printing, for example support for suspended holes, then the preview can omit these to show the finished part after post processing.</span></p>
+<p class="rvps7"><span class="rvts22">When OpenSCAD is run from the command line $preview is only true when generating a PNG image with OpenCSG. It is false when generating STL, DXF and SVG files with CGAL. It is also false when generating CSG and ECHO files. This may or may not be what you want, but you can always override it on the command line like any other variable with the -D option.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com">Full-featured Documentation generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com">Full-featured Documentation generator</a></p>
 
 	</div>
 	

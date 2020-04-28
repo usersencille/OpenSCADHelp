@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherMathematicalFunctions.html">Other Mathematical Functions</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherMathematicalFunctions.html">Other Mathematical Functions</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,37 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps2"><span class="rvts6">Random number generator. Generates a constant vector of pseudo random numbers, much like an array. The numbers are doubles not integers. When generating only one number, you still call it with variable[0]</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Parameters</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">min_value </span></p>
+<p class="rvps2"><span class="rvts6">Minimum value of random number range</span></p>
+<p class="rvps2"><span class="rvts6">max_value </span></p>
+<p class="rvps2"><span class="rvts6">Maximum value of random number range</span></p>
+<p class="rvps2"><span class="rvts6">value_count </span></p>
+<p class="rvps2"><span class="rvts6">Number of random numbers to return as a vector</span></p>
+<p class="rvps2"><span class="rvts6">seed_value (optional) </span></p>
+<p class="rvps2"><span class="rvts6">Seed value for random number generator for repeatable results. On versions before late 2015, seed_value gets rounded to the nearest integer</span></p>
+<p class="rvps2"><span class="rvts6">Usage Examples:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">// get a single number</span></p>
+<p class="rvps2"><span class="rvts6">single_rand = rands(0,10,1)[0];</span></p>
+<p class="rvps2"><span class="rvts6">echo(single_rand);</span></p>
+<p class="rvps2"><span class="rvts6">// get a vector of 4 numbers</span></p>
+<p class="rvps2"><span class="rvts6">seed=42;</span></p>
+<p class="rvps2"><span class="rvts6">random_vect=rands(5,15,4,seed);</span></p>
+<p class="rvps2"><span class="rvts6">echo( "Random Vector: ",random_vect);</span></p>
+<p class="rvps2"><span class="rvts6">sphere(r=5);</span></p>
+<p class="rvps2"><span class="rvts6">for(i=[0:3]) {</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp;rotate(360*i/4) {</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;translate([10+random_vect[i],0,0])</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp; &nbsp;sphere(r=random_vect[i]/2);</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp;}</span></p>
+<p class="rvps2"><span class="rvts6">}</span></p>
+<p class="rvps2"><span class="rvts6">// ECHO: "Random Vector: ", [8.7454, 12.9654, 14.5071, 6.83435]</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/help-authoring-tool">Free help authoring environment</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/help-authoring-tool">Free help authoring environment</a></p>
 
 	</div>
 	

@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; <a href="SpecialVariables1.html">Special Variables</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; <a href="SpecialVariables1.html">Special Variables</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,28 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">The $fa, $fs and $fn special variables control the number of facets used to generate an arc:</span></p>
+<p class="rvps7"><span class="rvts22">$fa is the minimum angle for a fragment. Even a huge circle does not have more fragments than 360 divided by this number. The default value is 12 (i.e. 30 fragments for a full circle). The minimum allowed value is 0.01. Attempting to set a lower value causes a warning.</span></p>
+<p class="rvps7"><span class="rvts22">$fs is the minimum size of a fragment. The default value is 2 so very small circles have a smaller number of fragments than specified using $fa. The minimum allowed value is 0.01. Attempting to set a lower value causes a warning.</span></p>
+<p class="rvps7"><span class="rvts22">$fn is usually the default value of 0. When this variable has a value greater than zero, the other two variables are ignored, and a full circle is rendered using this number of fragments.</span></p>
+<p class="rvps7"><span class="rvts22">The higher the number of fragments, the more memory and CPU consumed; large values can bring many systems to their knees. Depending on the design, $fn values, and the corresponding results of $fa &amp; $fs, should be kept small, at least until the design is finalised when it can be increased for the final result.&nbsp;</span><span class="rvts21">A $fn over 100 is not recommended</span><span class="rvts22">&nbsp;or only for specific circumstances, and below 50 would be advisable for performance.</span></p>
+<p class="rvps7"><span class="rvts21">TIP:</span><span class="rvts22">&nbsp;If you want to create a circle/cylinder/sphere which has an axis aligned integer bounding box (i.e. a bounding box that has integral dimensions, and an integral position) use a value of $fn that is divisible by 4.</span></p>
+<p class="rvps7"><span class="rvts22"></span><br/><span class="rvts22">When $fa and $fs are used to determine the number of fragments for a circle, then OpenSCAD never uses fewer than 5 fragments.</span></p>
+<p class="rvps7"><span class="rvts22">This is the C code that calculates the number of fragments in a circle:</span></p>
+<p class="rvps17"><span class="rvts36">int get_fragments_from_r(double r, double fn, double fs, double fa) { if (r &lt; GRID_FINE) return 3; if (fn &gt; 0.0) return (int)(fn &gt;= 3&nbsp;? fn&nbsp;: 3); return (int)ceil(fmax(fmin(360.0 / fa, r*2*M_PI / fs), 5)); }</span></p>
+<p class="rvps7"><span class="rvts22">Or you can embed this OpenSCAD version in your code to work out what's going on, you need to set r= to your size</span></p>
+<p class="rvps17"><span class="rvts36">echo(n=($fn&gt;0?($fn&gt;=3?$fn:3):ceil(max(min(360/$fa,r*2*PI/$fs),5))),a_based=360/$fa,s_based=r*2*PI/$fs);</span></p>
+<p class="rvps7"><span class="rvts22">Spheres are first sliced into as many slices as the number of fragments being used to render a circle of the sphere's radius, and then every slice is rendered into as many fragments as are needed for the slice radius. You might have recognized already that the pole of a sphere is usually a pentagon. This is why.</span></p>
+<p class="rvps7"><span class="rvts22">The number of fragments for a cylinder is determined using the greater of the two radii.</span></p>
+<p class="rvps7"><span class="rvts22">The method is also used when rendering circles and arcs from DXF files. The variables have no effect when importing STL files.</span></p>
+<p class="rvps7"><span class="rvts22">You can generate high resolution spheres by resetting the $fX values in the instantiating module:</span></p>
+<p class="rvps17"><span class="rvts36">$fs = 0.01; sphere(2);</span></p>
+<p class="rvps7"><span class="rvts22">or simply by passing the special variable as parameter:</span></p>
+<p class="rvps17"><span class="rvts36">sphere(2, $fs = 0.01);</span></p>
+<p class="rvps7"><span class="rvts22">You can even scale the special variable instead of resetting it:</span></p>
+<p class="rvps17"><span class="rvts36">sphere(2, $fs = $fs * 0.01);</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour">Easily create HTML Help documents</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour">Easily create HTML Help documents</a></p>
 
 	</div>
 	

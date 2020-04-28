@@ -91,33 +91,31 @@
 	<div id="topic_content">
 		
 <p></p>
-<h1 class="rvps4"><span class="rvts0"><span class="rvts26">Ranges</span></span></h1>
-<p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts21">Ranges are used by&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Conditional_and_Iterator_Functions#For_Loop">for() loops</a><span class="rvts21">&nbsp;and&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/User-Defined_Functions_and_Modules#Children">children()</a><span class="rvts21">. They have 2 varieties:</span></p>
-<p class="rvps2"><span class="rvts34"><br/></span></p>
+<p class="rvps2"><span class="rvts22">Ranges are used by&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Conditional_and_Iterator_Functions#For_Loop">for() loops</a><span class="rvts22">&nbsp;and&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/User-Defined_Functions_and_Modules#Children">children()</a><span class="rvts22">. They have 2 varieties:</span></p>
+<p class="rvps2"><span class="rvts33"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
-<li class="rvps2"><span class="rvts34">[&lt;start&gt;:&lt;end&gt;]</span></li>
-<li class="rvps2"><span class="rvts34">[&lt;start&gt;:&lt;increment&gt;:&lt;end&gt;]</span></li>
-<li class="rvps2"><span class="rvts21"></span></li>
+<li class="rvps2"><span class="rvts33">[&lt;start&gt;:&lt;end&gt;]</span></li>
+<li class="rvps2"><span class="rvts33">[&lt;start&gt;:&lt;increment&gt;:&lt;end&gt;]</span></li>
+<li class="rvps2"><span class="rvts22"></span></li>
 </ul>
-<p class="rvps2"><span class="rvts21">Although enclosed in square brackets [] , they are not vectors. They use colons&nbsp;: for separators rather than commas.</span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps12"><span class="rvts34">r1 = [0:10]; </span></p>
-<p class="rvps12"><span class="rvts34">r2 = [0.5:2.5:20]; </span></p>
-<p class="rvps12"><span class="rvts34">echo(r1); // ECHO: [0: 1: 10] </span></p>
-<p class="rvps12"><span class="rvts34">echo(r2); // ECHO: [0.5: 2.5: 20]</span></p>
-<p class="rvps12"><span class="rvts37"><br/></span></p>
-<p class="rvps2"><span class="rvts21">You should avoid step values that cannot be represented exactly as binary floating point numbers. Integers are okay, as are fractional values whose denominator is a power of two. For example, 0.25 (1/4) and 0.125 (1/8) are safe, but 0.2 (2/10) should be avoided. The problem with these step values is that your range may have too many or too few elements, due to inexact arithmetic.</span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">A missing &lt;</span><span class="rvts25">increment</span><span class="rvts21">&gt; defaults to 1. </span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">A range in the form [&lt;</span><span class="rvts25">start</span><span class="rvts21">&gt;:&lt;</span><span class="rvts25">end</span><span class="rvts21">&gt;] with &lt;</span><span class="rvts25">start</span><span class="rvts21">&gt; greater than &lt;</span><span class="rvts25">end</span><span class="rvts21">&gt; generates a warning and is equivalent to [&lt;</span><span class="rvts25">end</span><span class="rvts21">&gt;: 1: &lt;</span><span class="rvts25">start</span><span class="rvts21">&gt;]. </span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">A range in the form [&lt;</span><span class="rvts25">start</span><span class="rvts21">&gt;:1:&lt;</span><span class="rvts25">end</span><span class="rvts21">&gt;] with &lt;</span><span class="rvts25">start</span><span class="rvts21">&gt; greater than &lt;</span><span class="rvts25">end</span><span class="rvts21">&gt; does not generate a warning and is equivalent to []. </span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">The &lt;</span><span class="rvts25">increment</span><span class="rvts21">&gt; in a range may be negative.</span></p>
+<p class="rvps2"><span class="rvts22">Although enclosed in square brackets [] , they are not vectors. They use colons&nbsp;: for separators rather than commas.</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps12"><span class="rvts33">r1 = [0:10]; </span></p>
+<p class="rvps12"><span class="rvts33">r2 = [0.5:2.5:20]; </span></p>
+<p class="rvps12"><span class="rvts33">echo(r1); // ECHO: [0: 1: 10] </span></p>
+<p class="rvps12"><span class="rvts33">echo(r2); // ECHO: [0.5: 2.5: 20]</span></p>
+<p class="rvps12"><span class="rvts36"><br/></span></p>
+<p class="rvps2"><span class="rvts22">You should avoid step values that cannot be represented exactly as binary floating point numbers. Integers are okay, as are fractional values whose denominator is a power of two. For example, 0.25 (1/4) and 0.125 (1/8) are safe, but 0.2 (2/10) should be avoided. The problem with these step values is that your range may have too many or too few elements, due to inexact arithmetic.</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">A missing &lt;</span><span class="rvts26">increment</span><span class="rvts22">&gt; defaults to 1. </span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">A range in the form [&lt;</span><span class="rvts26">start</span><span class="rvts22">&gt;:&lt;</span><span class="rvts26">end</span><span class="rvts22">&gt;] with &lt;</span><span class="rvts26">start</span><span class="rvts22">&gt; greater than &lt;</span><span class="rvts26">end</span><span class="rvts22">&gt; generates a warning and is equivalent to [&lt;</span><span class="rvts26">end</span><span class="rvts22">&gt;: 1: &lt;</span><span class="rvts26">start</span><span class="rvts22">&gt;]. </span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">A range in the form [&lt;</span><span class="rvts26">start</span><span class="rvts22">&gt;:1:&lt;</span><span class="rvts26">end</span><span class="rvts22">&gt;] with &lt;</span><span class="rvts26">start</span><span class="rvts22">&gt; greater than &lt;</span><span class="rvts26">end</span><span class="rvts22">&gt; does not generate a warning and is equivalent to []. </span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">The &lt;</span><span class="rvts26">increment</span><span class="rvts22">&gt; in a range may be negative.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/help-authoring-tool">Single source CHM, PDF, DOC and HTML Help creation</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/help-authoring-tool">Single source CHM, PDF, DOC and HTML Help creation</a></p>
 
 	</div>
 	

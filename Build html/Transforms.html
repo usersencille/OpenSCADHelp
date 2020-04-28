@@ -75,11 +75,11 @@
 				
 				
 				
-				<a href="Extrudeparametersforlinearextrus.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				<a href="DescriptionofextrudeParameters.html"><img src="img/arrow_left.png" alt="Previous"/></a>
 				
 				
 				
-				<a href="Basicconcept.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="scale1.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,18 @@
 	<div id="topic_content">
 		
 <p></p>
+<h3 class="rvps31"><span class="rvts0"><span class="rvts59">Basic concept</span></span></h3>
+<p class="rvps7"><span class="rvts22">Transformation affect the child nodes and as the name implies transforms them in various ways such as moving/rotating or scaling the child. Cascading transformations are used to apply a variety of transforms to a final child. Cascading is achieved by nesting statements i.e.</span></p>
+<p class="rvps17"><span class="rvts36">rotate([45,45,45]) translate([10,20,30]) cube(10);</span></p>
+<p class="rvps7"><span class="rvts22">Transformations can be applied to a group of child nodes by using '{' and '}' to enclose the subtree e.g.</span></p>
+<p class="rvps27"><span class="rvts43">translate([</span><span class="rvts50">0</span><span class="rvts43">,</span><span class="rvts50">0</span><span class="rvts43">,</span><span class="rvts50">-5</span><span class="rvts43">])</span><br/><span class="rvts43">{</span><br/><span class="rvts43">cube(</span><span class="rvts50">10</span><span class="rvts43">);</span><br/><span class="rvts43">cylinder(r</span><span class="rvts50">=5</span><span class="rvts43">,h</span><span class="rvts50">=10</span><span class="rvts43">);</span><br/><span class="rvts43">}</span></p>
+<p class="rvps7"><span class="rvts22">Transformations are written before the object they affect.</span></p>
+<p class="rvps7"><span class="rvts22">Imagine commands like translate, mirror and scale as verbs. Commands like color are like adjectives that describe the object.</span></p>
+<p class="rvps7"><span class="rvts22">Notice that there is no semicolon following transformation command.</span></p>
+<h3 class="rvps31"><span class="rvts0"><span class="rvts59">Advanced concept</span></span></h3>
+<p class="rvps7"><span class="rvts22">As OpenSCAD uses different libraries to implement capabilities this can introduce some inconsistencies to the F5 preview behavior of transformations. Traditional transforms (translate, rotate, scale, mirror &amp; multimatrix) are performed using OpenGL in preview, while other more advanced transforms, such as resize, perform a CGAL operation, behaving like a CSG operation affecting the underlying object, not just transforming it. In particular this can affect the display of modifier characters, specifically "#" and "%", where the highlight may not display intuitively, such as highlighting the pre-resized object, but highlighting the post-scaled object.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create help files for the Qt Help Framework</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create help files for the Qt Help Framework</a></p>
 
 	</div>
 	

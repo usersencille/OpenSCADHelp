@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="StringFunctions.html">String Functions</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="StringFunctions.html">String Functions</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,28 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps2"><span class="rvts6">Convert numbers to a string containing character with the corresponding code. OpenSCAD uses Unicode, so the number is interpreted as Unicode code point. Numbers outside the valid code point range produce an empty string.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Parameters</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">chr(Number) </span></p>
+<p class="rvps2"><span class="rvts6">Convert one code point to a string of length 1 (number of bytes depending on UTF-8 encoding) if the code point is valid.</span></p>
+<p class="rvps2"><span class="rvts6">chr(Vector) </span></p>
+<p class="rvps2"><span class="rvts6">Convert all code points given in the argument vector to a string.</span></p>
+<p class="rvps2"><span class="rvts6">chr(Range) </span></p>
+<p class="rvps2"><span class="rvts6">Convert all code points produced by the range argument to a string.</span></p>
+<p class="rvps2"><span class="rvts6">Examples</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">echo(chr(65), chr(97)); &nbsp; &nbsp; &nbsp;// ECHO: "A", "a"</span></p>
+<p class="rvps2"><span class="rvts6">echo(chr(65, 97)); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // ECHO: "Aa"</span></p>
+<p class="rvps2"><span class="rvts6">echo(chr([66, 98])); &nbsp; &nbsp; &nbsp; &nbsp; // ECHO: "Bb"</span></p>
+<p class="rvps2"><span class="rvts6">echo(chr([97 : 2 : 102])); &nbsp; // ECHO: "ace"</span></p>
+<p class="rvps2"><span class="rvts6">echo(chr(-3)); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // ECHO: ""</span></p>
+<p class="rvps2"><span class="rvts6">echo(chr(9786), chr(9788)); &nbsp;// ECHO: "☺", "☼"</span></p>
+<p class="rvps2"><span class="rvts6">echo(len(chr(9788))); &nbsp; &nbsp; &nbsp; &nbsp;// ECHO: 1</span></p>
+<p class="rvps2"><span class="rvts6">Note: When used with echo() the output to the console for character codes greater than 127 is platform dependent.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></p>
 
 	</div>
 	

@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="2DObjects1.html">2D Objects</a> &rsaquo;&rsaquo; <a href="2Dto3DProjection.html">2D to 3D Projection</a> &rsaquo;&rsaquo; <a href="Parameters.html">Parameters</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="2DObjects1.html">2D Objects</a> &rsaquo;&rsaquo; <a href="2Dto3DProjection.html">2D to 3D Projection</a> &rsaquo;&rsaquo; <a href="RotateExtrude.html">Rotate Extrude</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -71,11 +71,11 @@
 			<div id="topic_header_nav">
 				
 				
-				<a href="Parameters.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				<a href="RotateExtrude.html"><img src="img/arrow_up.png" alt="Parent"/></a>
 				
 				
 				
-				<a href="Parameters.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				<a href="RotateExtrude.html"><img src="img/arrow_left.png" alt="Previous"/></a>
 				
 				
 				
@@ -91,8 +91,24 @@
 	<div id="topic_content">
 		
 <p></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Usage</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/2D_to_3D_Extrusion&action=edit&section=T-9">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps17"><span class="rvts36">rotate_extrude(angle = 360, convexity = 2) {...}</span></p>
+<p class="rvps7"><span class="rvts22">You must use parameter names due to a backward compatibility issue.</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">convexity&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">If the extrusion fails for a non-trival 2D shape, try setting the convexity parameter (the default is not 10, but 10 is a "good" value to try). See explanation further down.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">angle&nbsp;[</span><span class="rvts44">Note:</span><span class="rvts21">&nbsp;</span><span class="rvts26">Requires version&nbsp;</span><span class="rvts38">2019.05</span><span class="rvts21">]&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Defaults to 360. Specifies the number of degrees to sweep, starting at the positive X axis. The direction of the sweep follows the&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/right-hand_rule">Right Hand Rule</a><span class="rvts22">, hence a negative angle sweeps clockwise.</span></li>
+</ul>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/220px-Right-hand_grip_rulesvg.png"><br/><span class="rvts48">Right-hand grip rule</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></p>
 
 	</div>
 	

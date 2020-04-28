@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -79,7 +79,7 @@
 				
 				
 				
-				<a href="Example1.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="UserDefinedFunctionsandModules.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,37 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts26">see also&nbsp;</span><a class="rvts77" href="https://en.wikipedia.org/wiki/Assertion_(software_development)">Assertion (software development)</a></p>
+<p class="rvps7"><span class="rvts22">Assert evaluates a logical expression. If the expression evaluates to false, the generation of the preview/render is stopped, and an error condition is reported via the console. The report consists of a string representation of the expression and an additional string (optional) that is specified in the assert command.</span></p>
+<p class="rvps17"><span class="rvts36">assert(condition); assert(condition, string);</span></p>
+<p class="rvps7"><span class="rvts21">Parameters</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">condition&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Expression. The expression to be evaluated as check for the assertion.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">message&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">String. Optional message to be output in case the assertion failed.</span></li>
+</ul>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Example</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-29">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts22">The simplest example is a simple&nbsp;</span><span class="rvts34">assert(false);</span><span class="rvts22">, e.g. in a file named&nbsp;</span><span class="rvts34">assert_example1.scad</span><span class="rvts22">.</span></p>
+<p class="rvps27"><span class="rvts43">cube();</span><br/><span class="rvts43">assert(</span><span class="rvts61">false</span><span class="rvts43">);</span><br/><span class="rvts43">sphere();</span><br/><span class="rvts49">// ERROR: Assertion 'false' failed in file assert_example1.scad, line 2</span></p>
+<p class="rvps7"><span class="rvts22">This example has little use, but the simple&nbsp;</span><span class="rvts34">assert(false);</span><span class="rvts22">&nbsp;can be used in code sections that should be unreachable.</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Checking parameters</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-30">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts22">A useful example is checking the validity of input parameters:</span></p>
+<p class="rvps27"><span class="rvts43">module row(cnt </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">3</span><span class="rvts43">){</span><br/><span class="rvts49">// Count has to be a positive integer greater 0</span><br/><span class="rvts43">assert(cnt </span><span class="rvts50">&gt;</span><span class="rvts43">&nbsp;</span><span class="rvts50">0</span><span class="rvts43">);</span><br/><span class="rvts61">for</span><span class="rvts43">&nbsp;(i </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[</span><span class="rvts50">1</span><span class="rvts43">&nbsp;</span><span class="rvts50">:</span><span class="rvts43">&nbsp;cnt]) {</span><br/><span class="rvts43">translate([i </span><span class="rvts50">*</span><span class="rvts43">&nbsp;</span><span class="rvts50">2</span><span class="rvts43">, </span><span class="rvts50">0</span><span class="rvts43">, </span><span class="rvts50">0</span><span class="rvts43">]) sphere();</span><br/><span class="rvts43">}</span><br/><span class="rvts43">}</span><br/><span class="rvts43">row(</span><span class="rvts50">0</span><span class="rvts43">);</span><br/><span class="rvts49">// ERROR: Assertion '(cnt &gt; 0)' failed in file assert_example2.scad, line 3</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Adding message</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-31">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts22">When writing a library, it could be useful to output additional information to the user in case of an failed assertion.</span></p>
+<p class="rvps27"><span class="rvts43">module row(cnt </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">3</span><span class="rvts43">){</span><br/><span class="rvts43">assert(cnt </span><span class="rvts50">&gt;</span><span class="rvts43">&nbsp;</span><span class="rvts50">0</span><span class="rvts43">, </span><span class="rvts54">"Count has to be a positive integer greater 0"</span><span class="rvts43">);</span><br/><span class="rvts61">for</span><span class="rvts43">(i </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[</span><span class="rvts50">1</span><span class="rvts43">&nbsp;</span><span class="rvts50">:</span><span class="rvts43">&nbsp;cnt]) {</span><br/><span class="rvts43">translate([i </span><span class="rvts50">*</span><span class="rvts43">&nbsp;</span><span class="rvts50">2</span><span class="rvts43">, </span><span class="rvts50">0</span><span class="rvts43">, </span><span class="rvts50">0</span><span class="rvts43">]) sphere();</span><br/><span class="rvts43">}</span><br/><span class="rvts43">}</span><br/><span class="rvts43">row(</span><span class="rvts50">0</span><span class="rvts43">);</span><br/><span class="rvts49">// ERROR: Assertion '(cnt &gt; 0)': "Count has to be a positive integer greater 0" failed in file assert_example3.scad, line 2</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Using assertions in function</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-32">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts22">Assert returns its children, so when using it in a function you can write</span></p>
+<p class="rvps27"><span class="rvts61">function</span><span class="rvts43">&nbsp;f(a, b) </span><span class="rvts50">=</span><br/><span class="rvts43">assert(a </span><span class="rvts50">&lt;</span><span class="rvts43">&nbsp;</span><span class="rvts50">0</span><span class="rvts43">, </span><span class="rvts54">"wrong a"</span><span class="rvts43">) </span><span class="rvts49">// assert input</span><br/><span class="rvts43">assert(b </span><span class="rvts50">&gt;</span><span class="rvts43">&nbsp;</span><span class="rvts50">0</span><span class="rvts43">, </span><span class="rvts54">"wrong b"</span><span class="rvts43">) </span><span class="rvts49">// assert input</span><br/><span class="rvts61">let</span><span class="rvts43">&nbsp;(c </span><span class="rvts50">=</span><span class="rvts43">&nbsp;a </span><span class="rvts50">+</span><span class="rvts43">&nbsp;b) </span><span class="rvts49">// derive a new value from input</span><br/><span class="rvts43">assert(c </span><span class="rvts50">!=</span><span class="rvts43">&nbsp;</span><span class="rvts50">0</span><span class="rvts43">, </span><span class="rvts54">"wrong c"</span><span class="rvts43">) </span><span class="rvts49">// assert derived value</span><br/><span class="rvts43">a </span><span class="rvts50">*</span><span class="rvts43">&nbsp;b; </span><span class="rvts49">// calculate</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/iphone-website-generation">Easily create iPhone documentation</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/iphone-website-generation">Easily create iPhone documentation</a></p>
 
 	</div>
 	

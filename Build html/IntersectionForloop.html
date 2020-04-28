@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="ConditionandIteratorfunctions.html">Condition and Iterator functions</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ConditionandIteratorfunctions.html">Condition and Iterator functions</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,53 @@
 	<div id="topic_content">
 		
 <p></p>
+<h3 class="rvps31"><span class="rvts0"><span class="rvts59">Intersection For Loop</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Conditional_and_Iterator_Functions&action=edit&section=T-2">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h3>
+<hr style="height: 1px; color : #222222;  background-color : #222222; border-width : 0px;">
+<p class="rvps7"><span class="rvts22">Iterate over the values in a range or vector and create the&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language#intersection">intersection</a><span class="rvts22">&nbsp;of objects created by each pass.</span></p>
+<p class="rvps7"><span class="rvts22">Besides creating separate instances for each pass, the standard&nbsp;</span><span class="rvts21">for()</span><span class="rvts22">&nbsp;also groups all these instances creating an implicit union.&nbsp;</span><span class="rvts21">intersection_for()</span><span class="rvts22">&nbsp;is a work around because the implicit union prevents getting the expected results using a combination of the standard&nbsp;</span><span class="rvts21">for()</span><span class="rvts22">&nbsp;and&nbsp;</span><span class="rvts21">intersection()</span><span class="rvts22">&nbsp;statements.</span></p>
+<p class="rvps7"><span class="rvts21">intersection_for()</span><span class="rvts22">&nbsp;uses the same parameters, and works the same as a&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language#For_Loop">For Loop</a><span class="rvts22">, other than eliminating the implicit union.</span></p>
+<div class="rvps2"><table width="100%" border="0" cellpadding="1" cellspacing="2" style="border-width: 0px; background-color: #ffffff; border-spacing: 2px;">
+<tr valign="top">
+<td valign="middle" style="padding: 1px;"><p class="rvps2"><span class="rvts21">example 1 - loop over a range:</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="padding: 1px;"><p class="rvps27"><span class="rvts43">intersection_for(n </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[</span><span class="rvts50">1</span><span class="rvts43">&nbsp;</span><span class="rvts50">:</span><span class="rvts43">&nbsp;</span><span class="rvts50">6</span><span class="rvts43">])</span><br/><span class="rvts43">{</span><br/><span class="rvts43">rotate([</span><span class="rvts50">0</span><span class="rvts43">, </span><span class="rvts50">0</span><span class="rvts43">, n </span><span class="rvts50">*</span><span class="rvts43">&nbsp;</span><span class="rvts50">60</span><span class="rvts43">])</span><br/><span class="rvts43">{</span><br/><span class="rvts43">translate([</span><span class="rvts50">5</span><span class="rvts43">,</span><span class="rvts50">0</span><span class="rvts43">,</span><span class="rvts50">0</span><span class="rvts43">])</span><br/><span class="rvts43">sphere(r</span><span class="rvts50">=12</span><span class="rvts43">);</span><br/><span class="rvts43">}</span><br/><span class="rvts43">}</span></p>
+</td>
+<td valign="middle" style="padding: 1px;"><p class="rvps26"><img alt="" style="padding : 1px;" src="lib/220px-OpenSCAD_Intersection_For_Range.png"><br/><span class="rvts48">intersection_for()</span></p>
+</td>
+<td valign="middle" style="padding: 1px;"><p class="rvps26"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_Intersectionfor_example1.jpg"><br/><span class="rvts48">either intersection() for() or for() intersection()</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps7"><span class="rvts22"><br/></span></p>
+<div class="rvps2"><table width="100%" border="0" cellpadding="1" cellspacing="2" style="border-width: 0px; background-color: #ffffff; border-spacing: 2px;">
+<tr valign="top">
+<td valign="middle" style="padding: 1px;"><p class="rvps2"><span class="rvts21">example 2 - rotation&nbsp;</span><span class="rvts22">:</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="padding: 1px;"><p class="rvps27"><span class="rvts43">intersection_for(i </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[ [ </span><span class="rvts50">0</span><span class="rvts43">, </span><span class="rvts50">0</span><span class="rvts43">, </span><span class="rvts50">0</span><span class="rvts43">],</span><br/><span class="rvts43">[ </span><span class="rvts50">10</span><span class="rvts43">, </span><span class="rvts50">20</span><span class="rvts43">, </span><span class="rvts50">300</span><span class="rvts43">],</span><br/><span class="rvts43">[</span><span class="rvts50">200</span><span class="rvts43">, </span><span class="rvts50">40</span><span class="rvts43">, </span><span class="rvts50">57</span><span class="rvts43">],</span><br/><span class="rvts43">[ </span><span class="rvts50">20</span><span class="rvts43">, </span><span class="rvts50">88</span><span class="rvts43">, </span><span class="rvts50">57</span><span class="rvts43">] ])</span><br/><span class="rvts43">{</span><br/><span class="rvts43">rotate(i)</span><br/><span class="rvts43">cube([</span><span class="rvts50">100</span><span class="rvts43">, </span><span class="rvts50">20</span><span class="rvts43">, </span><span class="rvts50">20</span><span class="rvts43">], center </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts61">true</span><span class="rvts43">);</span><br/><span class="rvts43">}</span></p>
+</td>
+<td valign="middle" style="padding: 1px;"><p class="rvps26"><img alt="" style="padding : 1px;" src="lib/220px-OpenSCAD_Intersection_For_Rotation.png"><br/><span class="rvts48">intersection_for()</span></p>
+</td>
+<td valign="middle" style="padding: 1px;"><p class="rvps26"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_Intersectionfor_example_2.jpg"><br/><span class="rvts48">intersection() for()</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps7"><span class="rvts22">In</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com">Free EPub and documentation generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com">Free EPub and documentation generator</a></p>
 
 	</div>
 	

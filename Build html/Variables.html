@@ -91,36 +91,34 @@
 	<div id="topic_content">
 		
 <p></p>
-<h1 class="rvps4"><span class="rvts0"><span class="rvts26">Variables</span></span></h1>
-<p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts21">OpenSCAD variables are created by a statement with a name or&nbsp;</span><a class="rvts38" href="https://en.wikipedia.org/wiki/Identifier_(computer_programming)">identifier</a><span class="rvts21">, assignment via an expression and a semicolon. The role of arrays, found in many imperative languages, is handled in OpenSCAD via vectors.</span></p>
+<p class="rvps2"><span class="rvts22">OpenSCAD variables are created by a statement with a name or&nbsp;</span><a class="rvts37" href="https://en.wikipedia.org/wiki/Identifier_(computer_programming)">identifier</a><span class="rvts22">, assignment via an expression and a semicolon. The role of arrays, found in many imperative languages, is handled in OpenSCAD via vectors.</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps9"><span class="rvts33">var = 25; </span></p>
+<p class="rvps9"><span class="rvts33">xx = 1.25 * cos(50); </span></p>
+<p class="rvps9"><span class="rvts33">y = 2 * xx + var; </span></p>
+<p class="rvps9"><span class="rvts33">logic = true; </span></p>
+<p class="rvps9"><span class="rvts33">MyString = "This is a string"; </span></p>
+<p class="rvps9"><span class="rvts33">a_vector = [1,2,3]; </span></p>
+<p class="rvps9"><span class="rvts33">rr = a_vector[2]; // member of vector </span></p>
+<p class="rvps9"><span class="rvts33">range1 = [-1.5:0.5:3]; // for() loop range </span></p>
+<p class="rvps9"><span class="rvts33">xx = [0:5]; // alternate for() loop range</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">OpenSCAD is a&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a><span class="rvts22">&nbsp;programming language, as such&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/Variable_(computer_science))">variables</a><span class="rvts22">&nbsp;are bound to expressions and keep a single value during their entire lifetime due to the requirements of&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/Referential_transparency_(computer_science)">referential transparency</a><span class="rvts22">. In&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/Imperative_programming">imperative languages</a><span class="rvts22">, such as C, the same behavior is seen as constants, which are typically contrasted with normal variables.</span></p>
 <p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps9"><span class="rvts34">var = 25; </span></p>
-<p class="rvps9"><span class="rvts34">xx = 1.25 * cos(50); </span></p>
-<p class="rvps9"><span class="rvts34">y = 2 * xx + var; </span></p>
-<p class="rvps9"><span class="rvts34">logic = true; </span></p>
-<p class="rvps9"><span class="rvts34">MyString = "This is a string"; </span></p>
-<p class="rvps9"><span class="rvts34">a_vector = [1,2,3]; </span></p>
-<p class="rvps9"><span class="rvts34">rr = a_vector[2]; // member of vector </span></p>
-<p class="rvps9"><span class="rvts34">range1 = [-1.5:0.5:3]; // for() loop range </span></p>
-<p class="rvps9"><span class="rvts34">xx = [0:5]; // alternate for() loop range</span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">OpenSCAD is a&nbsp;</span><a class="rvts22" href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a><span class="rvts21">&nbsp;programming language, as such&nbsp;</span><a class="rvts22" href="https://en.wikipedia.org/wiki/Variable_(computer_science))">variables</a><span class="rvts21">&nbsp;are bound to expressions and keep a single value during their entire lifetime due to the requirements of&nbsp;</span><a class="rvts22" href="https://en.wikipedia.org/wiki/Referential_transparency_(computer_science)">referential transparency</a><span class="rvts21">. In&nbsp;</span><a class="rvts22" href="https://en.wikipedia.org/wiki/Imperative_programming">imperative languages</a><span class="rvts21">, such as C, the same behavior is seen as constants, which are typically contrasted with normal variables.</span></p>
-<p class="rvps2"><span class="rvts20"><br/></span></p>
-<p class="rvps2"><span class="rvts20">In other words OpenSCAD variables are more like constants, but with an important difference. If variables are assigned a value multiple times, only the last assigned value is used in all places in the code.</span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">See further discussion at&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language#Variables_are_set_at_compile-time">Variables are set at compile-time, not run-time</a><span class="rvts21">. This behavior is due to the need to supply variable input on the&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Using_OpenSCAD_in_a_command_line_environment">command line</a><span class="rvts21">, via the use of&nbsp;</span><span class="rvts25">-D variable=value</span><span class="rvts21">&nbsp;option. OpenSCAD currently places that assignment at the end of the source code, and thus must allow a variable's value to be changed for this purpose.</span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts20">Values cannot be modified during run time; all variables are effectively constants that do not change</span><span class="rvts21">. Each variable retains its last assigned value at compile time, in line with&nbsp;</span><a class="rvts22" href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a><span class="rvts21">&nbsp;programming languages. Unlike&nbsp;</span><a class="rvts22" href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a><span class="rvts21">&nbsp;languages, such as C, OpenSCAD is not an iterative language, and as such </span><span class="rvts20">the concept of&nbsp;</span><span class="rvts39">x&nbsp;=&nbsp;x&nbsp;+&nbsp;1</span><span class="rvts20">&nbsp;is not valid.</span><span class="rvts21">&nbsp;Understanding this concept leads to understanding the beauty of OpenSCAD.</span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">Variables can be assigned in any scope. Note that assignments are only valid within the scope in which they are defined - you are still not allowed to leak values to an outer scope. See&nbsp;</span><a class="rvts24" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language#Scope_of_variables">Scope of variables</a><span class="rvts21">&nbsp;for more details.</span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps9"><span class="rvts34">a=0; </span></p>
-<p class="rvps9"><span class="rvts34">if (a==0) { </span></p>
-<p class="rvps9"><span class="rvts34">&nbsp; &nbsp;a=1; // but the value a=1 is confined to within the braces {} </span></p>
-<p class="rvps9"><span class="rvts34">}</span></p>
+<p class="rvps2"><span class="rvts21">In other words OpenSCAD variables are more like constants, but with an important difference. If variables are assigned a value multiple times, only the last assigned value is used in all places in the code.</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">See further discussion at&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language#Variables_are_set_at_compile-time">Variables are set at compile-time, not run-time</a><span class="rvts22">. This behavior is due to the need to supply variable input on the&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Using_OpenSCAD_in_a_command_line_environment">command line</a><span class="rvts22">, via the use of&nbsp;</span><span class="rvts26">-D variable=value</span><span class="rvts22">&nbsp;option. OpenSCAD currently places that assignment at the end of the source code, and thus must allow a variable's value to be changed for this purpose.</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts21">Values cannot be modified during run time; all variables are effectively constants that do not change</span><span class="rvts22">. Each variable retains its last assigned value at compile time, in line with&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/Functional_programming">Functional</a><span class="rvts22">&nbsp;programming languages. Unlike&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/Imperative_programming">Imperative</a><span class="rvts22">&nbsp;languages, such as C, OpenSCAD is not an iterative language, and as such </span><span class="rvts21">the concept of&nbsp;</span><span class="rvts38">x&nbsp;=&nbsp;x&nbsp;+&nbsp;1</span><span class="rvts21">&nbsp;is not valid.</span><span class="rvts22">&nbsp;Understanding this concept leads to understanding the beauty of OpenSCAD.</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">Variables can be assigned in any scope. Note that assignments are only valid within the scope in which they are defined - you are still not allowed to leak values to an outer scope. See&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language#Scope_of_variables">Scope of variables</a><span class="rvts22">&nbsp;for more details.</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps9"><span class="rvts33">a=0; </span></p>
+<p class="rvps9"><span class="rvts33">if (a==0) { </span></p>
+<p class="rvps9"><span class="rvts33">&nbsp; &nbsp;a=1; // but the value a=1 is confined to within the braces {} </span></p>
+<p class="rvps9"><span class="rvts33">}</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/help-authoring-tool">Easy to use tool to create HTML Help files and Help web sites</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/help-authoring-tool">Easy to use tool to create HTML Help files and Help web sites</a></p>
 
 	</div>
 	

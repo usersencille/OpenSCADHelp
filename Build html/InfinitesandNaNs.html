@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -71,7 +71,7 @@
 			<div id="topic_header_nav">
 				
 				
-				<a href="OtherFunctionsandOperators.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				<a href="LanguageReference.html"><img src="img/arrow_up.png" alt="Parent"/></a>
 				
 				
 				
@@ -91,8 +91,102 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps2"><span class="rvts6">How does OpenSCAD deal with inputs like (1/0)? Basically, the behavior is inherited from the language OpenSCAD was written in, the C++ language, and its floating point number types and the associated C math library. This system allows representation of both positive and negative infinity by the special values "Inf" or "-Inf". It also allow representation of creatures like sqrt(-1) or 0/0 as "NaN", an abbreviation for "Not A Number". Some very nice explanations can be found on the web, for example the Open Group's site on math.h or Wikipedia's page on the IEEE 754 number format. However OpenSCAD is it's own language so it may not exactly match everything that happens in C. For example, OpenSCAD uses degrees instead of radians for trigonometric functions. Another example is that sin() does not throw a "domain error" when the input is 1/0, although it does return NaN.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Here are some examples of infinite input to OpenSCAD math functions and the resulting output, taken from OpenSCAD's regression test system in late 2015.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts55"><br/></span></p>
+<div class="rvps37"><table border="1" cellpadding="4" cellspacing="-1" style="border-color: #a2a9b1; border-style: solid; background-color: #f8f9fa; border-collapse: collapse;">
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">0/0: nan</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">sin(1/0): nan</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">asin(1/0): nan</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">ln(1/0): inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">round(1/0): inf</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">-0/0: nan</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">cos(1/0): nan</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">acos(1/0): nan</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">ln(-1/0): nan</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">round(-1/0): -inf</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">0/-0: nan</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">tan(1/0): nan</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">atan(1/0): 90</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">log(1/0): inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">sign(1/0): 1</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">1/0: inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">ceil(-1/0): -inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">atan(-1/0): -90</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">log(-1/0): nan</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">sign(-1/0): -1</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">1/-0: -inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">ceil(1/0): inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">atan2(1/0, -1/0): 135</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">max(-1/0, 1/0): inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">sqrt(1/0): inf</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">-1/0: -inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">floor(-1/0): -inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">exp(1/0): inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">min(-1/0, 1/0): -inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">sqrt(-1/0): nan</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">-1/-0: inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">floor(1/0): inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">exp(-1/0): 0</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">pow(2, 1/0): inf</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps2"><span class="rvts22">pow(2, -1/0): 0</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts55"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Produce online help for Qt applications</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Produce online help for Qt applications</a></p>
 
 	</div>
 	

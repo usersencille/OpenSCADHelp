@@ -79,7 +79,7 @@
 				
 				
 				
-				<a href="OtherFunctionsandOperators.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="ConditionandIteratorfunctions.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,22 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts21">Warning:</span><span class="rvts22">&nbsp;Using render, always calculates the CSG model for this tree (even in OpenCSG preview mode). This can make previewing very slow and OpenSCAD to appear to hang/freeze.</span></p>
+<p class="rvps27"><span class="rvts43">Usage example</span><span class="rvts50">:</span><br/><span class="rvts43">render(convexity </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">1</span><span class="rvts43">) { ... }</span></p>
+<div class="rvps2"><table border="1" cellpadding="1" cellspacing="2" style="background-color: #ffffff; border-spacing: 2px;">
+<tr valign="top">
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">convexity</span></p>
+</td>
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">Integer. The convexity parameter specifies the maximum number of front and back sides a ray intersecting the object might penetrate. This parameter is only needed for correctly displaying the object in OpenCSG preview mode and has no effect on the polyhedron rendering.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps7"><span class="rvts22"><br/></span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/400px-Openscad_convexity2.jpg"></p>
+<p class="rvps7"><span class="rvts22">This image shows a 2D shape with a convexity of 4, as the ray indicated in red crosses the 2D shape a maximum of 4 times. The convexity of a 3D shape would be determined in a similar way. Setting it to 10 should work fine for most cases.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/create-epub-ebooks">Write EPub books for the iPad</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/create-epub-ebooks">Write EPub books for the iPad</a></p>
 
 	</div>
 	

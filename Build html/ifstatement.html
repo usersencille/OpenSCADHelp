@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="ConditionandIteratorfunctions.html">Condition and Iterator functions</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ConditionandIteratorfunctions.html">Condition and Iterator functions</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,32 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Performs a test to determine if the actions in a sub scope should be performed or not.</span></p>
+<p class="rvps17"><span class="rvts36">if (test) scope1 if (test){scope1} if (test) scope1 else scope2 if (test){scope1} else {scope2}</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Parameters</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">test</span><span class="rvts22">: Usually a boolean expression, but can be any value or variable.</span></li>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
+<li style="margin-left: 0px" class="rvps10"><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/General#Boolean_Values">See here for true or false state of values.</a></li>
+<li style="margin-left: 0px" class="rvps10"><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Mathematical_Operators#Relational_Operators">See here for boolean and logical operators</a></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Do not confuse the assignment operator '=' with the equal operator '=='</span></li>
+</ul>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">scope1</span><span class="rvts22">: one or more actions to take when test is&nbsp;</span><span class="rvts21">true</span><span class="rvts22">.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">scope2</span><span class="rvts22">: one or more actions to take when test is&nbsp;</span><span class="rvts21">false</span><span class="rvts22">.</span></li>
+</ul></ul>
+<p class="rvps17"><span class="rvts36">if (b==a) cube(4); if (b&lt;a) {cube(4); cylinder(6);} if (b&amp;&amp;a) {cube(4); cylinder(6);} if (b!=a) cube(4); else cylinder(3); if (b) {cube(4); cylinder(6);} else {cylinder(10,5,5);} if (!true){cube(4); cylinder(6);} else cylinder(10,5,5); if (x&gt;y) cube(1, center=false); else {cube(size = 2, center = true);} if (a==4) {} else echo("a is not 4"); if ((b&lt;5)&amp;&amp;(a&gt;8)) {cube(4);} else {cylinder(3);} if (b&lt;5&amp;&amp;a&gt;8) cube(4); else cylinder(3);</span></p>
+<p class="rvps7"><span class="rvts22">Since 2015.03 variables can now be assigned in any scope. Note that assignments are only valid within the scope in which they are defined - you are still not allowed to leak values to an outer scope. See&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Conditional_and_Iterator_Functions&stable=0#Scope_of_variables">Scope of variables</a><span class="rvts22">&nbsp;for more details.</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Nested if</span></li>
+</ul>
+<p class="rvps7"><span class="rvts22">The scopes of both the&nbsp;</span><span class="rvts21">if()</span><span class="rvts22">&nbsp;portion and the&nbsp;</span><span class="rvts21">else</span><span class="rvts22">&nbsp;portion, can in turn contain&nbsp;</span><span class="rvts21">if()</span><span class="rvts22">&nbsp;statements. This nesting can be to many depths.</span></p>
+<p class="rvps17"><span class="rvts36">if (test1) { scope1 if (test2) {scope2.1} else {scope2.2} } else { scope2 if (test3) {scope3.1} else {scope3.2} }</span></p>
+<p class="rvps7"><span class="rvts22">When scope1 and scope2 contain&nbsp;</span><span class="rvts21">only</span><span class="rvts22">&nbsp;the if() statement, the outer sets of braces can be removed.</span></p>
+<p class="rvps17"><span class="rvts36">if (test1) if (test2) {scope2.1} else {scope2.2} else if (test3) {scope3.1} else {scope3.2}</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Full-featured Kindle eBooks generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Full-featured Kindle eBooks generator</a></p>
 
 	</div>
 	

@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="ConditionandIteratorfunctions.html">Condition and Iterator functions</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ConditionandIteratorfunctions.html">Condition and Iterator functions</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -91,8 +91,62 @@
 	<div id="topic_content">
 		
 <p></p>
+<h3 class="rvps31"><span class="rvts0"><span class="rvts59">For loop</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Conditional_and_Iterator_Functions&action=edit&section=T-1">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h3>
+<hr style="height: 1px; color : #222222;  background-color : #222222; border-width : 0px;">
+<p class="rvps7"><span class="rvts22">Evaluate each value in a range or vector, applying it to the following Action.</span></p>
+<p class="rvps17"><span class="rvts36">for(variable = [start&nbsp;: increment&nbsp;: end]) for(variable = [start&nbsp;: end]) for(variable = [vector])</span></p>
+<p class="rvps7"><span class="rvts21">parameters</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">As a range&nbsp;</span><span class="rvts21">[</span><span class="rvts22">&nbsp;start&nbsp;</span><span class="rvts21">:</span><span class="rvts22">&nbsp;&lt;increment&nbsp;</span><span class="rvts21">:</span><span class="rvts22">&nbsp;&gt; end&nbsp;</span><span class="rvts21">]</span><span class="rvts22">&nbsp;(see section on&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/General#Ranges">range</a><span class="rvts22">)</span></li>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts70">Note: For range, values are separated by colons rather than commas used in vectors.</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">start</span><span class="rvts22">&nbsp;- initial value</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">increment</span><span class="rvts22">&nbsp;or step - amount to increase the value,&nbsp;</span><span class="rvts26">optional, default = 1</span></li>
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">end</span><span class="rvts22">&nbsp;- stop when next value would be past end</span></li>
+</ul></ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">examples</span><span class="rvts22">:</span></li>
+</ul>
+<p class="rvps17"><span class="rvts36">for (a =[3:5])echo(a); // 3 4 5 for (a =[3:0]){echo(a);} // 0 1 2 3 start &gt; end is invalid, deprecated by 2015.3 for (a =[3:0.5:5])echo(a); // 3 3.5 4 4.5 5 for (a =[0:2:5])echo(a); // 0 2 4 a never equals end for (a =[3:-2:-1])echo(a); // 3 1 -1 negative increment requires 2015.3 be sure end &lt; start</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">As a vector</span></li>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">The Action is evaluated for each element of the vector</span></li>
+</ul></ul>
+<p class="rvps17"><span class="rvts36">for (a =[3,4,1,5])echo(a); // 3 4 1 5 for (a =[0.3,PI,1,99]){echo(a);} // 0.3 3.14159 1 99 x1=2; x2=8; x3=5.5; for (a =[x1,x2,x3]){echo(a);} // 2 8 5.5 for (a =[[1,2],6,"s",[[3,4],[5,6]]])echo(a); // [1,2] 6 "s" [[3,4],[5,6]]</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">The vector can be described elsewhere, like 'for each' in other languages</span></li>
+</ul>
+<p class="rvps17"><span class="rvts36">animals = ["elephants", "snakes", "tigers", "giraffes"]; for(animal = animals) echo(str("I've been to the zoo and saw ", animal)); // "I've been to the zoo and saw elephants", for each animal</span></p>
+<p class="rvps7"><span class="rvts22">for() is an Operator. Operators require braces {} if more than one Action is within it scope. Actions end in semicolons, Operators do not.</span></p>
+<p class="rvps7"><span class="rvts22">for() is not an exception to the rule about variables having only one value within a scope. Each evaluation is given its own scope, allowing any variables to have unique values. No, you still can't do a=a+1;</span></p>
+<p class="rvps7"><span class="rvts22">Remember this is not an iterative language, the for() does not loop in the programmatic sense, it builds a tree of objects one branch for each item in the range/vector, inside each branch the 'variable' is a specific and separate instantiation or scope.</span></p>
+<p class="rvps7"><span class="rvts22">Hence:</span></p>
+<p class="rvps17"><span class="rvts36">for (i=[0:3]) translate([i*10,0,0]) cube(i+1);</span></p>
+<p class="rvps7"><span class="rvts22">Produces:&nbsp;</span><span class="rvts70">[See Design/Display-CSG-Tree menu]</span></p>
+<p class="rvps17"><span class="rvts36">group() { group() { multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) { cube(size = [1, 1, 1], center = false); } multmatrix([[1, 0, 0, 10], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) { cube(size = [2, 2, 2], center = false); } multmatrix([[1, 0, 0, 20], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) { cube(size = [3, 3, 3], center = false); } multmatrix([[1, 0, 0, 30], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) { cube(size = [4, 4, 4], center = false); } } }</span></p>
+<p class="rvps7"><span class="rvts22">All instances of the for() exist at the same time, they do not iterate sequentially.</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Nested for()</span></li>
+</ul>
+<p class="rvps7"><span class="rvts22">While it is reasonable to nest multiple for() statements such as:</span></p>
+<p class="rvps17"><span class="rvts36">for(z=[-180:45:+180]) for(x=[10:5:50]) rotate([0,0,z]) translate([x,0,0]) cube(1);</span></p>
+<p class="rvps7"><span class="rvts22">instead, all ranges/vectors can be included in the same for() operator.</span></p>
+<p class="rvps17"><span class="rvts36">for ( variable1 = &lt;range or vector&gt; , variable2 = &lt;range or vector&gt; ) &lt;do something using both variables&gt;</span></p>
+<p class="rvps17"><span class="rvts36">example for() nested 3 deep color_vec = ["black","red","blue","green","pink","purple"]; for (x = [-20:10:20] ) for (y = [0:4] )color(color_vec[y]) for (z = [0,4,10] ) {translate([x,y*5-10,z])cube();} </span><span class="rvts71">shorthand</span><span class="rvts36">&nbsp;nesting for same result color_vec = ["black","red","blue","green","pink","purple"]; for (x = [-20:10:20], y = [0:4], z = [0,4,10] ) translate([x,y*5-10,z]){color(color_vec[y])cube();}</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">Examples using vector of vectors</span></li>
+</ul>
+<p class="rvps17"><span class="rvts36">example 1 - iteration over a vector of vectors (rotation) for(i = [ [ 0, 0, 0], [ 10, 20, 300], [200, 40, 57], [ 20, 88, 57] ]) { rotate(i) cube([100, 20, 20], center = true); }</span></p>
+<p class="rvps7"><span class="rvts22"><br/></span></p>
+<p class="rvps17"><span class="rvts36">example 2 - iteration over a vector of vectors (translation) for(i = [ [ 0, 0, 0], [10, 12, 10], [20, 24, 20], [30, 36, 30], [20, 48, 40], [10, 60, 50] ]) { translate(i) cube([50, 15, 10], center = true); }</span></p>
+<p class="rvps17"><span class="rvts36">example 3 - iteration over a vector of vectors for(i = [ [[ 0, 0, 0], 20], [[10, 12, 10], 50], [[20, 24, 20], 70], [[30, 36, 30], 10], [[20, 48, 40], 30], [[10, 60, 50], 40] ]) { translate([i[0][0], 2*i[0][1], 0]) cube([10, 15, i[1]]); }</span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_Manual_nested_for.jpg"><br/><span class="rvts48">for() loops nested 3 deep</span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/220px-OpenSCAD_For_Rotation.png"><br/><span class="rvts48">example 1 for() loop vector of vectors (rotation)</span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/220px-OpenSCAD_For_Translation.png"><br/><span class="rvts48">example 2 for() loop vector of vectors (translation)</span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_Vector_of_vectors_example_3.jpg"><br/><span class="rvts48">example 3 for() loop vector of vectors</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/help-authoring-tool">Easy to use tool to create HTML Help files and Help web sites</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/help-authoring-tool">Easy to use tool to create HTML Help files and Help web sites</a></p>
 
 	</div>
 	

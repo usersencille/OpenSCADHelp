@@ -79,7 +79,7 @@
 				
 				
 				
-				<a href="Extrudeparametersforallextrusion.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="Transforms.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,57 @@
 	<div id="topic_content">
 		
 <p></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Extrude parameters for all extrusion modes</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/2D_to_3D_Extrusion&action=edit&section=T-14">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<div class="rvps2"><table border="1" cellpadding="1" cellspacing="2" style="background-color: #ffffff; border-spacing: 2px;">
+<tr valign="top">
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">convexity</span></p>
+</td>
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">Integer. The convexity parameter specifies the maximum number of front sides (back sides) a ray intersecting the object might penetrate.</span></p>
+<p class="rvps30"><span class="rvts22">This parameter is only needed for correctly displaying the object in OpenCSG preview mode and has no effect on the polyhedron rendering.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps7"><span class="rvts22"><br/></span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/400px-Openscad_convexity1.jpg"></p>
+<p class="rvps7"><span class="rvts22">This image shows a 2D shape with a convexity of 4, as the ray indicated in red crosses the 2D shape a maximum of 4 times. The convexity of a 3D shape would be determined in a similar way. Setting it to 10 should work fine for most cases.</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Extrude parameters for linear extrusion only</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/2D_to_3D_Extrusion&action=edit&section=T-15">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<div class="rvps2"><table border="1" cellpadding="1" cellspacing="2" style="background-color: #ffffff; border-spacing: 2px;">
+<tr valign="top">
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">height</span></p>
+</td>
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">The extrusion height</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">center</span></p>
+</td>
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">If true, the solid is centered after extrusion</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">twist</span></p>
+</td>
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">The extrusion twist in degrees</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">slices</span></p>
+</td>
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">Similar to special variable $fn without being passed down to the child 2D shape.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">scale</span></p>
+</td>
+<td valign="middle" style="border-style: inset; padding: 1px;"><p class="rvps2"><span class="rvts22">Scales the 2D shape by this value over the height of the extrusion.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts55"><br/></span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/iphone-website-generation">iPhone web sites made easy</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/iphone-website-generation">iPhone web sites made easy</a></p>
 
 	</div>
 	

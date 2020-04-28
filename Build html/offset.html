@@ -75,7 +75,7 @@
 				
 				
 				
-				<a href="Example2.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				<a href="color.html"><img src="img/arrow_left.png" alt="Previous"/></a>
 				
 				
 				
@@ -91,8 +91,45 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Offset generates a new 2d interior or exterior outline from an existing outline. There are two modes of operation. radial and offset. The offset method creates a new outline who's sides are a fixed distance outer (delta &gt; 0) or inner (delta &lt; 0) from the original outline. The radial method creates a new outline as if a circle of some radius is rotated around the exterior (r&gt;0} or interior (r&lt;0) original outline.</span></p>
+<p class="rvps7"><span class="rvts22">The construction methods can either produce an outline that is interior or exterior to the original outline. For exterior outlines the corners can be given an optional chamfer.</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps8"><span class="rvts22">This transform is useful for making thin walls, by subtracting a negative-offset construction from the original, or the original from a Positive offset construction.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps8"><span class="rvts22">Fillet: offset(r=-3) offset(delta=+3) rounds all inside (concave) corners, and leaves flat walls unchanged. However, holes less than 2*r in diameter vanish.</span></li>
+<li class="rvps8"><span class="rvts22">Round: offset(r=+3) offset(delta=-3) rounds all outside (convex) corners, and leaves flat walls unchanged. However, walls less than 2*r thick vanish.</span></li>
+</ul>
+<p class="rvps7"><span class="rvts21">Parameters</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">r&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Double. Amount to offset the polygon. When negative, the polygon is offset inwards. R specifies the radius of the circle that is rotated about the outline, either inside or outside. This mode produces rounded corners.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">delta&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Double. Amount to offset the polygon. When negative, the polygon is offset inwards. Delta specifies the distance of the new outline from the original outline, and therefore reproduces angled corners.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">chamfer&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">Boolean. (default&nbsp;</span><span class="rvts26">false</span><span class="rvts22">) When using the delta parameter, this flag defines if edges should be chamfered (cut off with a straight line) or not (extended to their intersection).</span></li>
+</ul>
+<p class="rvps25"><span class="rvts48">Result for different parameters. The black polygon is the input for the offset() operation.</span></p>
+<p class="rvps33"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_offset_join-type_outsvg.png"></p>
+<p class="rvps25"><span class="rvts48">Positive r/delta value</span></p>
+<p class="rvps33"><img alt="" style="padding : 1px;" src="lib/350px-OpenSCAD_offset_join-type_insvg.png"></p>
+<p class="rvps25"><span class="rvts48">Negative r/delta value</span></p>
+<p class="rvps7"><span class="rvts21">Examples</span></p>
+<p class="rvps27"><span class="rvts49">// Example 1</span><br/><span class="rvts43">linear_extrude(height </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">60</span><span class="rvts43">, twist </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">90</span><span class="rvts43">, slices </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">60</span><span class="rvts43">) {</span><br/><span class="rvts43">difference() {</span><br/><span class="rvts43">offset(r </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">10</span><span class="rvts43">) {</span><br/><span class="rvts43">square(</span><span class="rvts50">20</span><span class="rvts43">, center </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts61">true</span><span class="rvts43">);</span><br/><span class="rvts43">}</span><br/><span class="rvts43">offset(r </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">8</span><span class="rvts43">) {</span><br/><span class="rvts43">square(</span><span class="rvts50">20</span><span class="rvts43">, center </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts61">true</span><span class="rvts43">);</span><br/><span class="rvts43">}</span><br/><span class="rvts43">}</span><br/><span class="rvts43">}</span></p>
+<p class="rvps27"><span class="rvts49">// Example 2</span><br/><span class="rvts43">module fillet(r) {</span><br/><span class="rvts43">offset(r </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">-</span><span class="rvts43">r) {</span><br/><span class="rvts43">offset(delta </span><span class="rvts50">=</span><span class="rvts43">&nbsp;r) {</span><br/><span class="rvts43">children();</span><br/><span class="rvts43">}</span><br/><span class="rvts43">}</span><br/><span class="rvts43">}</span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_offset_example.png"><br/><span class="rvts48">Example 1: Result.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpauthoringsoftware.com">Benefits of a Help Authoring Tool</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpauthoringsoftware.com">Benefits of a Help Authoring Tool</a></p>
 
 	</div>
 	

@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="ConditionandIteratorfunctions.html">Condition and Iterator functions</a> &rsaquo;&rsaquo; <a href="Conditional.html">Conditional ?</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="ConditionandIteratorfunctions.html">Condition and Iterator functions</a> &rsaquo;&rsaquo; <a href="Conditional.html">Conditional ?</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -79,7 +79,7 @@
 				
 				
 				
-				<a href="AssignStatement.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="LetStatement.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,14 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Recursive function calls are supported. Using the Conditional "...&nbsp;? ...&nbsp;: ... " it's possible to ensure the recursion is terminated. Note: There is a built-in recursion limit to prevent an application crash. If the limit is hit, the function returns undef.</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts21">example</span></li>
+</ul>
+<p class="rvps17"><span class="rvts36">// recursion - find the sum of the values in a vector (array) by calling itself // from the start (or s'th element) to the i'th element - remember elements are zero based function sumv(v,i,s=0) = (i==s&nbsp;? v[i]&nbsp;: v[i] + sumv(v,i-1,s)); vec=[ 10, 20, 30, 40 ]; echo("sum vec=", sumv(vec,2,1)); // calculates 20+30=50</span></p>
+<p class="rvps7"><span class="rvts22">Some forms of&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/User-Defined_Functions_and_Modules#Recursive_functions">tail-recursion</a><span class="rvts22">&nbsp;elimination are supported.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/iphone-website-generation">Easily create iPhone documentation</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/iphone-website-generation">Easily create iPhone documentation</a></p>
 
 	</div>
 	

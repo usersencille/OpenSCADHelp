@@ -75,11 +75,11 @@
 				
 				
 				
-				<a href="More.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				<a href="multimatrix.html"><img src="img/arrow_left.png" alt="Previous"/></a>
 				
 				
 				
-				<a href="functionsignature1.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="offset.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,766 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Displays the child elements using the specified RGB color + alpha value. This is only used for the F5 preview as CGAL and STL (F6) do not currently support color. The alpha value defaults to 1.0 (opaque) if not specified.</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Function signature:</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Transformations&action=edit&section=T-14">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps17"><span class="rvts36">color( c = [r, g, b, a] ) { ... } color( c = [r, g, b], alpha = 1.0 ) { ... } color( "#hexvalue" ) { ... } color( "colorname", 1.0 ) { ... }</span></p>
+<p class="rvps7"><span class="rvts22">Note that the&nbsp;</span><span class="rvts34">r, g, b, a</span><span class="rvts22">&nbsp;values are limited to floating point values in the range&nbsp;</span><span class="rvts21">[0,1]</span><span class="rvts22">&nbsp;rather than the more traditional integers { 0 ... 255 }. However, nothing prevents you to using&nbsp;</span><span class="rvts34">R, G, B</span><span class="rvts22">&nbsp;values from {0 ... 255} with appropriate scaling:&nbsp;</span><span class="rvts34">color([ R/255, G/255, B/255 ]) { ... }</span></p>
+<p class="rvps7"><span class="rvts21">[</span><span class="rvts44">Note:</span><span class="rvts21">&nbsp;</span><span class="rvts26">Requires version&nbsp;</span><span class="rvts38">2011.12</span><span class="rvts21">]</span><span class="rvts22">&nbsp;Colors can also be defined by name (case&nbsp;</span><span class="rvts21">in</span><span class="rvts22">sensitive). For example, to create a red sphere, you can write&nbsp;</span><span class="rvts34">color("red") sphere(5);</span><span class="rvts22">. Alpha is specified as an extra parameter for named colors:&nbsp;</span><span class="rvts34">color("Blue",0.5) cube(5);</span></p>
+<p class="rvps7"><span class="rvts21">[</span><span class="rvts44">Note:</span><span class="rvts21">&nbsp;</span><span class="rvts26">Requires version&nbsp;</span><span class="rvts38">2019.05</span><span class="rvts21">]</span><span class="rvts22">&nbsp;Hex values can be given in 4 formats,&nbsp;</span><span class="rvts34">#rgb</span><span class="rvts22">,&nbsp;</span><span class="rvts34">#rgba</span><span class="rvts22">,&nbsp;</span><span class="rvts34">#rrggbb</span><span class="rvts22">&nbsp;and&nbsp;</span><span class="rvts34">#rrggbbaa</span><span class="rvts22">. If the alpha value is given in both the hex value and as separate alpha parameter, the alpha parameter takes precedence.</span></p>
+<p class="rvps7"><span class="rvts22">The available color names are taken from the World Wide Web consortium's&nbsp;</span><a class="rvts23" href="http://www.w3.org/TR/css3-color/">SVG color list</a><span class="rvts22">. A chart of the color names is as follows,</span><br/><span class="rvts64">(note that both spellings of grey/gray including slategrey/slategray etc are valid)</span><span class="rvts22">:</span></p>
+<div class="rvps2"><table width="100%" border="1" cellpadding="4" cellspacing="2" style="border-color: #222222; border-style: solid; background-color: #ffffff; border-spacing: 2px;">
+<tr valign="top">
+<td width="20%" valign="top" style="border-width : 0px; padding: 4px;"><div class="rvps2"><table width="100%" border="0" cellpadding="1" cellspacing="2" style="border-width: 0px; border-spacing: 2px;">
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5f5f5;"><p class="rvps3"><span class="rvts65">Purples</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #e6e6fa;"><p class="rvps2"><span class="rvts66">Lavender</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #d8bfd8;"><p class="rvps2"><span class="rvts66">Thistle</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #dda0dd;"><p class="rvps2"><span class="rvts66">Plum</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ee82ee;"><p class="rvps2"><span class="rvts66">Violet</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #da70d6;"><p class="rvps2"><span class="rvts66">Orchid</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ff00ff;"><p class="rvps2"><span class="rvts67">Fuchsia</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ff00ff;"><p class="rvps2"><span class="rvts67">Magenta</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ba55d3;"><p class="rvps2"><span class="rvts67">MediumOrchid</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #9370db;"><p class="rvps2"><span class="rvts67">MediumPurple</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #9966cc;"><p class="rvps2"><span class="rvts67">BlueViolet</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #9400d3;"><p class="rvps2"><span class="rvts67">DarkViolet</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #9932cc;"><p class="rvps2"><span class="rvts67">DarkOrchid</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #8b008b;"><p class="rvps2"><span class="rvts67">DarkMagenta</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #800080;"><p class="rvps2"><span class="rvts67">Purple</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #4b0082;"><p class="rvps2"><span class="rvts67">Indigo</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #483d8b;"><p class="rvps2"><span class="rvts67">DarkSlateBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #6a5acd;"><p class="rvps2"><span class="rvts67">SlateBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #7b68ee;"><p class="rvps2"><span class="rvts67">MediumSlateBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5f5f5;"><p class="rvps3"><span class="rvts65">Pinks</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffc0cb;"><p class="rvps2"><span class="rvts66">Pink</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffb6c1;"><p class="rvps2"><span class="rvts66">LightPink</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ff69b4;"><p class="rvps2"><span class="rvts67">HotPink</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ff1493;"><p class="rvps2"><span class="rvts67">DeepPink</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #c71585;"><p class="rvps2"><span class="rvts67">MediumVioletRed</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #db7093;"><p class="rvps2"><span class="rvts67">PaleVioletRed</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td width="20%" valign="top" style="border-width : 0px; padding: 4px;"><div class="rvps2"><table width="100%" border="0" cellpadding="1" cellspacing="2" style="border-width: 0px; border-spacing: 2px;">
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5f5f5;"><p class="rvps3"><span class="rvts65">Blues</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #00ffff;"><p class="rvps2"><span class="rvts66">Aqua</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #00ffff;"><p class="rvps2"><span class="rvts66">Cyan</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #e0ffff;"><p class="rvps2"><span class="rvts66">LightCyan</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #afeeee;"><p class="rvps2"><span class="rvts66">PaleTurquoise</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #7fffd4;"><p class="rvps2"><span class="rvts66">Aquamarine</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #40e0d0;"><p class="rvps2"><span class="rvts66">Turquoise</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #48d1cc;"><p class="rvps2"><span class="rvts66">MediumTurquoise</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #00ced1;"><p class="rvps2"><span class="rvts67">DarkTurquoise</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #5f9ea0;"><p class="rvps2"><span class="rvts67">CadetBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #4682b4;"><p class="rvps2"><span class="rvts67">SteelBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #b0c4de;"><p class="rvps2"><span class="rvts66">LightSteelBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #b0e0e6;"><p class="rvps2"><span class="rvts66">PowderBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #add8e6;"><p class="rvps2"><span class="rvts66">LightBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #87ceeb;"><p class="rvps2"><span class="rvts66">SkyBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #87cefa;"><p class="rvps2"><span class="rvts66">LightSkyBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #00bfff;"><p class="rvps2"><span class="rvts67">DeepSkyBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #1e90ff;"><p class="rvps2"><span class="rvts67">DodgerBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #6495ed;"><p class="rvps2"><span class="rvts67">CornflowerBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #4169e1;"><p class="rvps2"><span class="rvts67">RoyalBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #0000ff;"><p class="rvps2"><span class="rvts67">Blue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #0000cd;"><p class="rvps2"><span class="rvts67">MediumBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #00008b;"><p class="rvps2"><span class="rvts67">DarkBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #000080;"><p class="rvps2"><span class="rvts67">Navy</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #191970;"><p class="rvps2"><span class="rvts67">MidnightBlue</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5f5f5;"><p class="rvps3"><span class="rvts65">Reds</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #cd5c5c;"><p class="rvps2"><span class="rvts67">IndianRed</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f08080;"><p class="rvps2"><span class="rvts66">LightCoral</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #fa8072;"><p class="rvps2"><span class="rvts66">Salmon</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #e9967a;"><p class="rvps2"><span class="rvts66">DarkSalmon</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffa07a;"><p class="rvps2"><span class="rvts66">LightSalmon</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ff0000;"><p class="rvps2"><span class="rvts67">Red</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #dc1436;"><p class="rvps2"><span class="rvts67">Crimson</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #b22222;"><p class="rvps2"><span class="rvts67">FireBrick</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #8b0000;"><p class="rvps2"><span class="rvts67">DarkRed</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td width="20%" valign="top" style="border-width : 0px; padding: 4px;"><div class="rvps2"><table width="100%" border="0" cellpadding="1" cellspacing="2" style="border-width: 0px; border-spacing: 2px;">
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5f5f5;"><p class="rvps3"><span class="rvts65">Greens</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #adff2f;"><p class="rvps2"><span class="rvts66">GreenYellow</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #7fff00;"><p class="rvps2"><span class="rvts66">Chartreuse</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #7cfc00;"><p class="rvps2"><span class="rvts66">LawnGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #00ff00;"><p class="rvps2"><span class="rvts66">Lime</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #32cd32;"><p class="rvps2"><span class="rvts66">LimeGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #98fb98;"><p class="rvps2"><span class="rvts66">PaleGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #90ee90;"><p class="rvps2"><span class="rvts66">LightGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #00fa9a;"><p class="rvps2"><span class="rvts66">MediumSpringGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #00ff7f;"><p class="rvps2"><span class="rvts66">SpringGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #3cb371;"><p class="rvps2"><span class="rvts67">MediumSeaGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #2e8b57;"><p class="rvps2"><span class="rvts67">SeaGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #228b22;"><p class="rvps2"><span class="rvts67">ForestGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #008000;"><p class="rvps2"><span class="rvts67">Green</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #006400;"><p class="rvps2"><span class="rvts67">DarkGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #9acd32;"><p class="rvps2"><span class="rvts66">YellowGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #6b8e23;"><p class="rvps2"><span class="rvts67">OliveDrab</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #808000;"><p class="rvps2"><span class="rvts67">Olive</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #556b2f;"><p class="rvps2"><span class="rvts67">DarkOliveGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #66cdaa;"><p class="rvps2"><span class="rvts66">MediumAquamarine</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #8fbc8f;"><p class="rvps2"><span class="rvts66">DarkSeaGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #20b2aa;"><p class="rvps2"><span class="rvts67">LightSeaGreen</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #008b8b;"><p class="rvps2"><span class="rvts67">DarkCyan</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #008080;"><p class="rvps2"><span class="rvts67">Teal</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5f5f5;"><p class="rvps3"><span class="rvts65">Oranges</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffa07a;"><p class="rvps2"><span class="rvts66">LightSalmon</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ff7f50;"><p class="rvps2"><span class="rvts67">Coral</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ff6347;"><p class="rvps2"><span class="rvts67">Tomato</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ff4500;"><p class="rvps2"><span class="rvts67">OrangeRed</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ff8c00;"><p class="rvps2"><span class="rvts67">DarkOrange</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffa500;"><p class="rvps2"><span class="rvts67">Orange</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td width="20%" valign="top" style="border-width : 0px; padding: 4px;"><div class="rvps2"><table width="100%" border="0" cellpadding="1" cellspacing="2" style="border-width: 0px; border-spacing: 2px;">
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5f5f5;"><p class="rvps3"><span class="rvts65">Yellows</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffd700;"><p class="rvps2"><span class="rvts66">Gold</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffff00;"><p class="rvps2"><span class="rvts66">Yellow</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffffe0;"><p class="rvps2"><span class="rvts66">LightYellow</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #fffacd;"><p class="rvps2"><span class="rvts66">LemonChiffon</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #fafad2;"><p class="rvps2"><span class="rvts66">LightGoldenrodYellow</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffefd5;"><p class="rvps2"><span class="rvts66">PapayaWhip</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffe4b5;"><p class="rvps2"><span class="rvts66">Moccasin</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffdab9;"><p class="rvps2"><span class="rvts66">PeachPuff</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #eee8aa;"><p class="rvps2"><span class="rvts66">PaleGoldenrod</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f0e68c;"><p class="rvps2"><span class="rvts66">Khaki</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #bdb76b;"><p class="rvps2"><span class="rvts66">DarkKhaki</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5f5f5;"><p class="rvps3"><span class="rvts65">Browns</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #fff8dc;"><p class="rvps2"><span class="rvts66">Cornsilk</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffebcd;"><p class="rvps2"><span class="rvts66">BlanchedAlmond</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffe4c4;"><p class="rvps2"><span class="rvts66">Bisque</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffdead;"><p class="rvps2"><span class="rvts66">NavajoWhite</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5deb3;"><p class="rvps2"><span class="rvts66">Wheat</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #deb887;"><p class="rvps2"><span class="rvts66">BurlyWood</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #d2b48c;"><p class="rvps2"><span class="rvts66">Tan</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #bc8f8f;"><p class="rvps2"><span class="rvts66">RosyBrown</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f4a460;"><p class="rvps2"><span class="rvts66">SandyBrown</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #daa520;"><p class="rvps2"><span class="rvts66">Goldenrod</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #b8860b;"><p class="rvps2"><span class="rvts67">DarkGoldenrod</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #cd853f;"><p class="rvps2"><span class="rvts67">Peru</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #d2691e;"><p class="rvps2"><span class="rvts67">Chocolate</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #8b4513;"><p class="rvps2"><span class="rvts67">SaddleBrown</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #a0522d;"><p class="rvps2"><span class="rvts67">Sienna</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #a52a2a;"><p class="rvps2"><span class="rvts67">Brown</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #800000;"><p class="rvps2"><span class="rvts67">Maroon</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td width="20%" valign="top" style="border-width : 0px; padding: 4px;"><div class="rvps2"><table width="100%" border="0" cellpadding="1" cellspacing="2" style="border-width: 0px; border-spacing: 2px;">
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5f5f5;"><p class="rvps3"><span class="rvts65">Whites</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffffff;"><p class="rvps2"><span class="rvts45">White</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #fffafa;"><p class="rvps2"><span class="rvts45">Snow</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f0fff0;"><p class="rvps2"><span class="rvts45">Honeydew</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5fffa;"><p class="rvps2"><span class="rvts45">MintCream</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f0ffff;"><p class="rvps2"><span class="rvts45">Azure</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f0f8ff;"><p class="rvps2"><span class="rvts45">AliceBlue</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f8f8ff;"><p class="rvps2"><span class="rvts45">GhostWhite</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5f5f5;"><p class="rvps2"><span class="rvts45">WhiteSmoke</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #fff5ee;"><p class="rvps2"><span class="rvts45">Seashell</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #f5f5dc;"><p class="rvps2"><span class="rvts45">Beige</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #fdf5e6;"><p class="rvps2"><span class="rvts45">OldLace</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #fffaf0;"><p class="rvps2"><span class="rvts45">FloralWhite</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #fffff0;"><p class="rvps2"><span class="rvts45">Ivory</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #faebd7;"><p class="rvps2"><span class="rvts45">AntiqueWhite</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #faf0e6;"><p class="rvps2"><span class="rvts45">Linen</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #fff0f5;"><p class="rvps2"><span class="rvts45">LavenderBlush</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #ffe4e1;"><p class="rvps2"><span class="rvts45">MistyRose</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td colspan="3" valign="top" style="padding: 1px; background-color: #f5f5f5;"><p class="rvps3"><span class="rvts65">Grays</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #dcdcdc;"><p class="rvps2"><span class="rvts66">Gainsboro</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #d3d3d3;"><p class="rvps2"><span class="rvts66">LightGrey</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #c0c0c0;"><p class="rvps2"><span class="rvts66">Silver</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #a9a9a9;"><p class="rvps2"><span class="rvts66">DarkGray</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #808080;"><p class="rvps2"><span class="rvts66">Gray</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #696969;"><p class="rvps2"><span class="rvts67">DimGray</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #778899;"><p class="rvps2"><span class="rvts67">LightSlateGray</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #708090;"><p class="rvps2"><span class="rvts67">SlateGray</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #2f4f4f;"><p class="rvps2"><span class="rvts67">DarkSlateGray</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="padding: 1px; background-color: #000000;"><p class="rvps2"><span class="rvts67">Black</span></p>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+<td style="padding: 1px;"><br/>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Example</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Transformations&action=edit&section=T-15">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts22">Here's a code fragment that draws a wavy multicolor object</span></p>
+<p class="rvps27"><span class="rvts61">for</span><span class="rvts43">(i</span><span class="rvts50">=</span><span class="rvts43">[</span><span class="rvts50">0:36</span><span class="rvts43">]) {</span><br/><span class="rvts61">for</span><span class="rvts43">(j</span><span class="rvts50">=</span><span class="rvts43">[</span><span class="rvts50">0:36</span><span class="rvts43">]) {</span><br/><span class="rvts43">color( [</span><span class="rvts50">0.5+</span><span class="rvts43">sin(</span><span class="rvts50">10*</span><span class="rvts43">i)</span><span class="rvts50">/2</span><span class="rvts43">, </span><span class="rvts50">0.5+</span><span class="rvts43">sin(</span><span class="rvts50">10*</span><span class="rvts43">j)</span><span class="rvts50">/2</span><span class="rvts43">, </span><span class="rvts50">0.5+</span><span class="rvts43">sin(</span><span class="rvts50">10*</span><span class="rvts43">(i</span><span class="rvts50">+</span><span class="rvts43">j))</span><span class="rvts50">/2</span><span class="rvts43">] )</span><br/><span class="rvts43">translate( [i, j, </span><span class="rvts50">0</span><span class="rvts43">] )</span><br/><span class="rvts43">cube( size </span><span class="rvts50">=</span><span class="rvts43">&nbsp;[</span><span class="rvts50">1</span><span class="rvts43">, </span><span class="rvts50">1</span><span class="rvts43">, </span><span class="rvts50">11+10*</span><span class="rvts43">cos(</span><span class="rvts50">10*</span><span class="rvts43">i)</span><span class="rvts50">*</span><span class="rvts43">sin(</span><span class="rvts50">10*</span><span class="rvts43">j)] );</span><br/><span class="rvts43">}</span><br/><span class="rvts43">}</span></p>
+<p class="rvps7"><span class="rvts22">↗ Being that -1&lt;=sin(</span><span class="rvts26">x</span><span class="rvts22">)&lt;=1 then 0&lt;=(1/2 + sin(</span><span class="rvts26">x</span><span class="rvts22">)/2)&lt;=1 , allowing for the RGB components assigned to color to remain within the [0,1] interval.</span></p>
+<p class="rvps7"><a class="rvts68" href="https://en.wikipedia.org/wiki/Web_colors">Chart based on "Web Colors" from Wikipedia</a></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Example 2</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Transformations&action=edit&section=T-16">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts22">In cases where you want to optionally set a color based on a parameter you can use the following trick:</span></p>
+<p class="rvps27"><span class="rvts43">module myModule(withColors</span><span class="rvts50">=</span><span class="rvts61">false</span><span class="rvts43">) {</span><br/><span class="rvts43">c</span><span class="rvts50">=</span><span class="rvts43">withColors</span><span class="rvts50">?</span><span class="rvts54">"red"</span><span class="rvts50">:</span><span class="rvts43">undef;</span><br/><span class="rvts43">color(c) circle(r</span><span class="rvts50">=10</span><span class="rvts43">);</span><br/><span class="rvts43">}</span></p>
+<p class="rvps7"><span class="rvts22">Setting the colorname to undef keeps the default colors.</span></p>
+<p class="rvps26"><a href="https://commons.wikimedia.org/wiki/File:Wavy_multicolor_object.jpg"><img width="220" height="208" alt="" style="vertical-align: middle;" src="lib/NewItem.png"></a><br/><span class="rvts48">A 3-D multicolor sine wave</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EBook editor</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EBook editor</a></p>
 
 	</div>
 	

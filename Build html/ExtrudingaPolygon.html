@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="2DObjects1.html">2D Objects</a> &rsaquo;&rsaquo; <a href="2Dto3DProjection.html">2D to 3D Projection</a> &rsaquo;&rsaquo; <a href="Parameters.html">Parameters</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="2DObjects1.html">2D Objects</a> &rsaquo;&rsaquo; <a href="2Dto3DProjection.html">2D to 3D Projection</a> &rsaquo;&rsaquo; <a href="RotateExtrude.html">Rotate Extrude</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -71,7 +71,7 @@
 			<div id="topic_header_nav">
 				
 				
-				<a href="Parameters.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				<a href="RotateExtrude.html"><img src="img/arrow_up.png" alt="Parent"/></a>
 				
 				
 				
@@ -91,8 +91,15 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Extrusion can also be performed on polygons with points chosen by the user.</span></p>
+<p class="rvps7"><span class="rvts22">Here is a simple polygon and its 200 step rotational extrusion. (Note it has been rotated 90 degrees to show how the rotation appears; the&nbsp;</span><span class="rvts34">rotate_extrude()</span><span class="rvts22">&nbsp;needs it flat).</span></p>
+<p class="rvps17"><span class="rvts36">rotate([90,0,0]) polygon( points=[[0,0],[2,1],[1,2],[1,3],[3,4],[0,5]] );</span></p>
+<p class="rvps17"><span class="rvts36">rotate_extrude($fn=200) polygon( points=[[0,0],[2,1],[1,2],[1,3],[3,4],[0,5]] );</span></p>
+<p class="rvps7"><span class="rvts57">→</span><img alt="" style="padding : 1px;" src="lib/Rotate_extrude_wiki_2D_B.jpg"><span class="rvts57">→</span><img alt="" style="padding : 1px;" src="lib/300px-Openscad_polygon_extrusion_1.png"></p>
+<p class="rvps7"><span class="rvts22">For more information on polygons, please see:&nbsp;</span><a class="rvts58" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/2D_Primitives#polygon">2D Primitives: Polygon</a><span class="rvts22">.</span></p>
+<p class="rvps29"><img alt="" style="padding : 1px;" src="lib/300px-Openscad_polygon_extrusion_2.png"></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></p>
 
 	</div>
 	

@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; <a href="Search.html">Search</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; <a href="Search.html">Search</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -79,7 +79,7 @@
 				
 				
 				
-				<a href="Indexvaluesreturnaslist.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="OpenSCADVersion.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,135 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">The search() function is a general-purpose function to find one or more (or all) occurrences of a value or list of values in a vector, string or more complex list-of-list construct.</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Search Usage</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-18">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">search(&nbsp;</span><span class="rvts26">match_value</span><span class="rvts22">&nbsp;,&nbsp;</span><span class="rvts26">string_or_vector</span><span class="rvts22">&nbsp;[,&nbsp;</span><span class="rvts26">num_returns_per_match</span><span class="rvts22">&nbsp;[,&nbsp;</span><span class="rvts26">index_col_num</span><span class="rvts22">&nbsp;] ] );</span></li>
+</ul>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Search Arguments</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-19">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps8"><span class="rvts21">match_value</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts22">Can be a single string value. Search loops over the characters in the string and searches for each one in the second argument. The second argument must be a string or a list of lists (this second case is not recommended). The search function does&nbsp;</span><span class="rvts21">not</span><span class="rvts22">&nbsp;search for substrings.</span></li>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 44px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps8"><span class="rvts22">Can be a single numerical value.</span></li>
+<li class="rvps8"><span class="rvts22">Can be a list of values. The search function searches for each item on the list.</span></li>
+<li class="rvps8"><span class="rvts22">To search for a list or a full string give the list or string as a single element list such as ["abc"] to search for the string "abc" (See&nbsp;</span><span class="rvts21">Example 9</span><span class="rvts22">) or [[6,7,8]] to search for the list [6,7,8]. Without the extra brackets, search looks separately for each item in the list.</span></li>
+<li class="rvps8"><span class="rvts22">If match_value is boolean then search returns undef.</span></li>
+</ul></ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps8"><span class="rvts21">string_or_vector</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts22">The string or vector to search for matches.</span></li>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 44px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps8"><span class="rvts22">If&nbsp;</span><span class="rvts21">match_value</span><span class="rvts22">&nbsp;is a string then this should be a string and the string is searched for individual character matches to the characters in&nbsp;</span><span class="rvts21">match_value</span></li>
+<li class="rvps8"><span class="rvts22">If this is a list of lists, v=[[a0,a1,a2...],[b0,b1,b2,...],[c0,c1,c2,...],...] then search looks only at one index position of the sublists. By default this is position 0, so the search looks only at a0, b0, c0, etc. The&nbsp;</span><span class="rvts21">index_col_num</span><span class="rvts22">&nbsp;parameter changes which index is searched.</span></li>
+<li class="rvps8"><span class="rvts22">If&nbsp;</span><span class="rvts21">match_value</span><span class="rvts22">&nbsp;is a string and this parameter is a list of lists then the characters of the string are tested against the appropriate index entry in the list of lists. However, if any characters fail to find a match a warning message is printed and that return value is excluded from the output (if&nbsp;</span><span class="rvts21">num_returns_per_match</span><span class="rvts22">&nbsp;is 1). This means that the length of the output is unpredictable.</span></li>
+</ul></ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps8"><span class="rvts21">num_returns_per_match</span><span class="rvts22">&nbsp;(default: 1)</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts22">By default, search only looks for one match per element of match_value to return as a list of indices</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 44px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps8"><span class="rvts22">If num_returns_per_match &gt; 1, search returns a list of lists of up to num_returns_per_match index values for each element of match_value.</span></li>
+</ul></ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
+<li class="rvps8"><span class="rvts22">See&nbsp;</span><span class="rvts21">Example 8</span><span class="rvts22">&nbsp;below.</span></li>
+</ul></ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 44px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps8"><span class="rvts22">If num_returns_per_match = 0, search returns a list of lists of&nbsp;</span><span class="rvts21">all</span><span class="rvts22">&nbsp;matching index values for each element of match_value.</span></li>
+</ul></ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside;">
+<li class="rvps8"><span class="rvts22">See&nbsp;</span><span class="rvts21">Example 6</span><span class="rvts22">&nbsp;below.</span></li>
+</ul></ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps8"><span class="rvts21">index_col_num</span><span class="rvts22">&nbsp;(default: 0)</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts22">As noted above, when searching a list of lists, search looks only at one index position of each sublist. That index position is specified by&nbsp;</span><span class="rvts21">index_col_num</span><span class="rvts22">.</span></li>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 44px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps8"><span class="rvts22">See&nbsp;</span><span class="rvts21">Example 5</span><span class="rvts22">&nbsp;below for a simple usage example.</span></li>
+</ul></ul>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Search Usage Examples</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-20">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">See&nbsp;</span><span class="rvts21">example023.scad</span><span class="rvts22">&nbsp;included with OpenSCAD for a renderable example.</span></li>
+</ul>
+<h5 class="rvps34"><span class="rvts0"><span class="rvts42">Index values return as list</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-21">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h5>
+<div class="rvps37"><table border="1" cellpadding="4" cellspacing="-1" style="border-color: #a2a9b1; border-style: solid; background-color: #f8f9fa; border-collapse: collapse;">
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px; background-color: #eaecf0;"><p class="rvps3"><span class="rvts21">Example</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px; background-color: #eaecf0;"><p class="rvps3"><span class="rvts21">Code</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px; background-color: #eaecf0;"><p class="rvps3"><span class="rvts21">Result</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps41"><span class="rvts22">1</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps30"><span class="rvts34">search("a","abcdabcd");</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps30"><span class="rvts22">[0]</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps41"><span class="rvts22">2</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps30"><span class="rvts34">search("e","abcdabcd");</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps30"><span class="rvts22">[]</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps41"><span class="rvts22">3</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps30"><span class="rvts34">search("a","abcdabcd",0);</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps30"><span class="rvts22">[[0,4]]</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps41"><span class="rvts22">4</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps30"><span class="rvts34">data=[ ["a",1],["b",2],["c",3],["d",4],["a",5],["b",6],["c",7],["d",8],["e",9] ];</span></p>
+<p class="rvps30"><span class="rvts34">search("a", data,&nbsp;</span><span class="rvts75">num_returns_per_match</span><span class="rvts34">=0);</span></p>
+</td>
+<td valign="middle" style="border-color : #a2a9b1 #a2a9b1 #a2a9b1 #a2a9b1; border-style: solid; padding: 2px 5px;"><p class="rvps30"><span class="rvts22">[[0,4]] (see also Example 6 below)</span></p>
+</td>
+</tr>
+</table>
+</div>
+<h5 class="rvps34"><span class="rvts0"><span class="rvts42">Search on different column; return Index values</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-22">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h5>
+<p class="rvps7"><span class="rvts21">Example 5:</span></p>
+<p class="rvps17"><span class="rvts36">data= [ ["a",1],["b",2],["c",3],["d",4],["a",5],["b",6],["c",7],["d",8],["e",3] ]; echo(search(3, data)); // Searches index 0, so it doesn't find anything echo(search(3, data, </span><span class="rvts76">num_returns_per_match</span><span class="rvts36">=0, </span><span class="rvts76">index_col_num</span><span class="rvts36">=1));</span></p>
+<p class="rvps7"><span class="rvts22">Outputs:</span></p>
+<p class="rvps17"><span class="rvts36">ECHO: [] ECHO: [2, 8]</span></p>
+<h5 class="rvps34"><span class="rvts0"><span class="rvts42">Search on list of values</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-23">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h5>
+<p class="rvps7"><span class="rvts21">Example 6: Return all matches per search vector element.</span></p>
+<p class="rvps17"><span class="rvts36">data= [ ["a",1],["b",2],["c",3],["d",4],["a",5],["b",6],["c",7],["d",8],["e",9] ]; search("abc", data, num_returns_per_match=0);</span></p>
+<p class="rvps7"><span class="rvts22">Returns:</span></p>
+<p class="rvps17"><span class="rvts36">[[0,4],[1,5],[2,6]]</span></p>
+<p class="rvps7"><span class="rvts21">Example 7: Return first match per search vector element; special case return vector.</span></p>
+<p class="rvps17"><span class="rvts36">data= [ ["a",1],["b",2],["c",3],["d",4],["a",5],["b",6],["c",7],["d",8],["e",9] ]; search("abc", data, num_returns_per_match=1);</span></p>
+<p class="rvps7"><span class="rvts22">Returns:</span></p>
+<p class="rvps17"><span class="rvts36">[0,1,2]</span></p>
+<p class="rvps7"><span class="rvts21">Example 8: Return first two matches per search vector element; vector of vectors.</span></p>
+<p class="rvps17"><span class="rvts36">data= [ ["a",1],["b",2],["c",3],["d",4],["a",5],["b",6],["c",7],["d",8],["e",9] ]; search("abce", data, num_returns_per_match=2);</span></p>
+<p class="rvps7"><span class="rvts22">Returns:</span></p>
+<p class="rvps17"><span class="rvts36">[[0,4],[1,5],[2,6],[8]]</span></p>
+<h5 class="rvps34"><span class="rvts0"><span class="rvts42">Search on list of strings</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-24">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h5>
+<p class="rvps7"><span class="rvts21">Example 9:</span></p>
+<p class="rvps17"><span class="rvts36">lTable2=[ ["cat",1],["b",2],["c",3],["dog",4],["a",5],["b",6],["c",7],["d",8],["e",9],["apple",10],["a",11] ]; lSearch2=["b","zzz","a","c","apple","dog"]; l2=search(lSearch2,lTable2); echo(str("Default list string search (",lSearch2,"): ",l2));</span></p>
+<p class="rvps7"><span class="rvts22">Returns</span></p>
+<p class="rvps17"><span class="rvts36">ECHO: "Default list string search (["b", "zzz", "a", "c", "apple", "dog"]): [1, [], 4, 2, 9, 3]"</span></p>
+<h5 class="rvps34"><span class="rvts0"><span class="rvts42">Getting the right results</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-25">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h5>
+<p class="rvps17"><span class="rvts36">// workout which vectors get the results v=[ ["O",2],["p",3],["e",9],["n",4],["S",5],["C",6],["A",7],["D",8] ]; // echo(v[0]); // -&gt; ["O",2] echo(v[1]); // -&gt; ["p",3] echo(v[1][0],v[1][1]); // -&gt; "p",3 echo(search("p",v)); // find "p" -&gt; [1] echo(search("p",v)[0]); // -&gt; 1 echo(search(9,v,0,1)); // find 9 -&gt; [2] echo(v[search(9,v,0,1)[0]]); // -&gt; ["e",9] echo(v[search(9,v,0,1)[0]][0]); // -&gt; "e" echo(v[search(9,v,0,1)[0]][1]); // -&gt; 9 echo(v[search("p",v,1,0)[0]][1]); // -&gt; 3 echo(v[search("p",v,1,0)[0]][0]); // -&gt; "p" echo(v[search("d",v,1,0)[0]][0]); // "d" not found -&gt; undef echo(v[search("D",v,1,0)[0]][1]); // -&gt; 8</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EBook editor</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EBook editor</a></p>
 
 	</div>
 	

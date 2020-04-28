@@ -91,41 +91,39 @@
 	<div id="topic_content">
 		
 <p></p>
-<h1 class="rvps4"><span class="rvts0"><span class="rvts26">Numbers</span></span></h1>
-<p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts21">Numbers are the most important type of value in OpenSCAD, and they are written in the familiar decimal notation used in other languages. Eg, -1, 42, 0.5, 2.99792458e+8. </span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">[OpenSCAD does not support octal or hexadecimal notation for numbers.]</span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">In additional to decimal numerals, the following names for special numbers are defined:</span></p>
+<p class="rvps2"><span class="rvts22">Numbers are the most important type of value in OpenSCAD, and they are written in the familiar decimal notation used in other languages. Eg, -1, 42, 0.5, 2.99792458e+8. </span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">[OpenSCAD does not support octal or hexadecimal notation for numbers.]</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">In additional to decimal numerals, the following names for special numbers are defined:</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 22px; list-style-position: outside; list-style-type: disc;">
-<li class="rvps2"><span class="rvts20">PI</span></li>
+<li class="rvps2"><span class="rvts21">PI</span></li>
 </ul>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">OpenSCAD has only a single kind of number, which is a 64 bit IEEE floating point number. </span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">[OpenSCAD does not distinguish integers and floating point numbers as two different types, nor does it support complex numbers.] </span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">Because OpenSCAD uses the IEEE floating point standard, there are a few deviations from the behavior of numbers in mathematics:</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">OpenSCAD has only a single kind of number, which is a 64 bit IEEE floating point number. </span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">[OpenSCAD does not distinguish integers and floating point numbers as two different types, nor does it support complex numbers.] </span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">Because OpenSCAD uses the IEEE floating point standard, there are a few deviations from the behavior of numbers in mathematics:</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
-<li style="margin-left: 0px" class="rvps9"><span class="rvts21">We use binary floating point. A fractional number is not represented exactly unless the denominator is a power of 2. For example, 0.2 (2/10) does not have an exact internal representation, but 0.25 (1/4) and 0.125 (1/8) are represented exactly.</span></li>
-<li style="margin-left: 0px" class="rvps9"><span class="rvts21">The largest representable number is about 1e308. If a numeric result is too large, then the result can be infinity (printed as inf by echo).</span></li>
-<li style="margin-left: 0px" class="rvps9"><span class="rvts21">The smallest representable number is about -1e308. If a numeric result is too small, then the result can be -infinity (printed as -inf by echo).</span></li>
-<li style="margin-left: 0px" class="rvps9"><span class="rvts21">If a numeric result is invalid, then the result can be Not A Number (printed as </span><span class="rvts20">nan</span><span class="rvts21">&nbsp;by echo).</span></li>
-<li style="margin-left: 0px" class="rvps9"><span class="rvts21">If a non-zero numeric result is too close to zero to be representable, then the result is -0 if the result is negative, otherwise it is 0. Zero (0) and negative zero (-0) are treated as two distinct numbers by some of the math operations, and are printed differently by 'echo', although they compare as equal.</span></li>
+<li style="margin-left: 0px" class="rvps9"><span class="rvts22">We use binary floating point. A fractional number is not represented exactly unless the denominator is a power of 2. For example, 0.2 (2/10) does not have an exact internal representation, but 0.25 (1/4) and 0.125 (1/8) are represented exactly.</span></li>
+<li style="margin-left: 0px" class="rvps9"><span class="rvts22">The largest representable number is about 1e308. If a numeric result is too large, then the result can be infinity (printed as inf by echo).</span></li>
+<li style="margin-left: 0px" class="rvps9"><span class="rvts22">The smallest representable number is about -1e308. If a numeric result is too small, then the result can be -infinity (printed as -inf by echo).</span></li>
+<li style="margin-left: 0px" class="rvps9"><span class="rvts22">If a numeric result is invalid, then the result can be Not A Number (printed as </span><span class="rvts21">nan</span><span class="rvts22">&nbsp;by echo).</span></li>
+<li style="margin-left: 0px" class="rvps9"><span class="rvts22">If a non-zero numeric result is too close to zero to be representable, then the result is -0 if the result is negative, otherwise it is 0. Zero (0) and negative zero (-0) are treated as two distinct numbers by some of the math operations, and are printed differently by 'echo', although they compare as equal.</span></li>
 </ul></ul>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">The constants </span><span class="rvts20">'inf'</span><span class="rvts21">&nbsp;and </span><span class="rvts20">'nan'</span><span class="rvts21">&nbsp;are not supported as numeric constants by OpenSCAD, even though you can compute numbers that are printed this way by 'echo'. You can define variables with these values by using:</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">The constants </span><span class="rvts21">'inf'</span><span class="rvts22">&nbsp;and </span><span class="rvts21">'nan'</span><span class="rvts22">&nbsp;are not supported as numeric constants by OpenSCAD, even though you can compute numbers that are printed this way by 'echo'. You can define variables with these values by using:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps9"><span class="rvts34"><br/></span></p>
-<p class="rvps9"><span class="rvts34">inf = 1e200 * 1e200; </span></p>
-<p class="rvps9"><span class="rvts34">nan = 0 / 0; </span></p>
-<p class="rvps9"><span class="rvts34">echo(inf, nan);</span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21"><br/></span></p>
-<p class="rvps2"><span class="rvts21">The value 'nan' is the only OpenSCAD value that is not equal to any other value, including itself. Although you can test if a variable 'x' has the undefined value using 'x == undef', you can't use 'x == 0/0' to test if x is Not A Number. Instead, you must use 'x&nbsp;!= x' to test if x is nan.</span></p>
+<p class="rvps9"><span class="rvts33"><br/></span></p>
+<p class="rvps9"><span class="rvts33">inf = 1e200 * 1e200; </span></p>
+<p class="rvps9"><span class="rvts33">nan = 0 / 0; </span></p>
+<p class="rvps9"><span class="rvts33">echo(inf, nan);</span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22"><br/></span></p>
+<p class="rvps2"><span class="rvts22">The value 'nan' is the only OpenSCAD value that is not equal to any other value, including itself. Although you can test if a variable 'x' has the undefined value using 'x == undef', you can't use 'x == 0/0' to test if x is Not A Number. Instead, you must use 'x&nbsp;!= x' to test if x is nan.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com">Free PDF documentation generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com">Free PDF documentation generator</a></p>
 
 	</div>
 	

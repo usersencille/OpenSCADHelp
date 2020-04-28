@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="2DObjects1.html">2D Objects</a> &rsaquo;&rsaquo; <a href="Text.html">Text</a> &rsaquo;&rsaquo; <a href="Alignment.html">Alignment</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="2DObjects1.html">2D Objects</a> &rsaquo;&rsaquo; <a href="Text.html">Text</a> &rsaquo;&rsaquo; <a href="UsingFontsStyles.html">Using Fonts &amp; Styles</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -71,7 +71,7 @@
 			<div id="topic_header_nav">
 				
 				
-				<a href="Alignment.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				<a href="UsingFontsStyles.html"><img src="img/arrow_up.png" alt="Parent"/></a>
 				
 				
 				
@@ -91,8 +91,28 @@
 	<div id="topic_content">
 		
 <p></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">left&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">The text is aligned with the left side of the bounding box at the given X coordinate. This is the default.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">center&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">The text is aligned with the center of the bounding box at the given X coordinate.</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li class="rvps8"><span class="rvts21">right&nbsp;</span></li>
+</ul>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 0px; list-style-position: inside;">
+<li style="margin-left: 0px" class="rvps10"><span class="rvts22">The text is aligned with the right of the bounding box at the given X coordinate.</span></li>
+</ul>
+<p class="rvps17"><span class="rvts36">text = "Align"; font = "Liberation Sans"; halign = [ [10, "left"], [50, "center"], [90, "right"] ]; for (a = halign) { translate([140, a[0], 0]) { color("red") cube([115, 2,0.1]); color("blue") cube([2, 20,0.1]); linear_extrude(height = 0.5) { text(text = str(text,"_",a[1]), font = font, size = 20, halign = a[1]); } } }</span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_text_align_horizontal.png"><br/><span class="rvts48">OpenSCAD horizontal text alignment</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/help-authoring-tool">Full-featured multi-format Help generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/help-authoring-tool">Full-featured multi-format Help generator</a></p>
 
 	</div>
 	

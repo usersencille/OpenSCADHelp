@@ -63,7 +63,7 @@
 				
 				
 				<div id="topic_breadcrumb">
-					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherFunctionsandOperators.html">Other Functions and Operators</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; 
+					<a href="LanguageReference.html">Language Reference</a> &rsaquo;&rsaquo; <a href="OtherLanguageFeatures.html">Other Language Features</a> &rsaquo;&rsaquo; 
 				</div>
 				
 			</div>
@@ -79,7 +79,7 @@
 				
 				
 				
-				<a href="Usageexamples.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="EchoFunction.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,23 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">This function prints the contents to the compilation window (aka Console). Useful for debugging code. Also see the String function&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/String_Functions#str">str()</a><span class="rvts22">.</span></p>
+<p class="rvps7"><span class="rvts22">Numeric values are rounded to 5 significant digits.</span></p>
+<p class="rvps7"><span class="rvts22">It can be handy to use 'variable=variable' as the expression to easily label the variables, see the example below.</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Usage examples</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-7">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts21">Usage examples:</span></p>
+<p class="rvps17"><span class="rvts36">my_h=50; my_r=100; echo("This is a cylinder with h=", my_h, " and r=", my_r); echo(my_h=my_h,my_r=my_r); // shortcut cylinder(h=my_h, r=my_r);</span></p>
+<p class="rvps7"><span class="rvts22">Shows in the Console as</span></p>
+<p class="rvps17"><span class="rvts36">ECHO: "This is a cylinder with h=", 50, " and r=", 100 ECHO: my_h = 50, my_r = 100</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Rounding examples</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-8">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts22">An example for the rounding:</span></p>
+<p class="rvps27"><span class="rvts43">a</span><span class="rvts50">=1.0</span><span class="rvts43">;</span><br/><span class="rvts43">b</span><span class="rvts50">=1.000002</span><span class="rvts43">;</span><br/><span class="rvts43">echo(a);</span><br/><span class="rvts43">echo(b);</span><br/><span class="rvts61">if</span><span class="rvts43">(a</span><span class="rvts50">==</span><span class="rvts43">b){ </span><span class="rvts49">//while echoed the same, the values are still distinct</span><br/><span class="rvts43">echo (</span><span class="rvts54">"a==b"</span><span class="rvts43">);</span><br/><span class="rvts43">}</span><span class="rvts61">else</span><span class="rvts43">&nbsp;</span><span class="rvts61">if</span><span class="rvts43">(a</span><span class="rvts50">&gt;</span><span class="rvts43">b){</span><br/><span class="rvts43">echo (</span><span class="rvts54">"a&gt;b"</span><span class="rvts43">);</span><br/><span class="rvts43">}</span><span class="rvts61">else</span><span class="rvts43">&nbsp;</span><span class="rvts61">if</span><span class="rvts43">(a</span><span class="rvts50">&lt;</span><span class="rvts43">b){</span><br/><span class="rvts43">echo (</span><span class="rvts54">"a&lt;b"</span><span class="rvts43">);</span><br/><span class="rvts43">}</span><span class="rvts61">else</span><span class="rvts43">{</span><br/><span class="rvts43">echo (</span><span class="rvts54">"???"</span><span class="rvts43">);</span><br/><span class="rvts43">}</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">Small and large Numbers</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-9">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps27"><span class="rvts43">c</span><span class="rvts50">=1000002</span><span class="rvts43">;</span><br/><span class="rvts43">d</span><span class="rvts50">=0.000002</span><span class="rvts43">;</span><br/><span class="rvts43">echo(c); </span><span class="rvts49">//1e+06</span><br/><span class="rvts43">echo(d); </span><span class="rvts49">//2e-06</span></p>
+<h4 class="rvps28"><span class="rvts0"><span class="rvts42">HTML</span></span><span class="rvts0"><span class="rvts52">[</span></span><span class="rvts0"><a class="rvts51" href="https://en.wikibooks.org/w/index.php?title=OpenSCAD_User_Manual/Other_Language_Features&action=edit&section=T-10">edit</a></span><span class="rvts0"><span class="rvts52">]</span></span></h4>
+<p class="rvps7"><span class="rvts22">HTML output is not officially supported, however depending on the OpenSCAD version, some HTML tags were rendered in the console window.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Produce online help for Qt applications</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Produce online help for Qt applications</a></p>
 
 	</div>
 	

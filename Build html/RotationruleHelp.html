@@ -91,8 +91,16 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">For the case of:</span></p>
+<p class="rvps17"><span class="rvts36">rotate([a, b, c]) { ... };</span></p>
+<p class="rvps7"><span class="rvts22">"a" is a rotation about the X axis, from the +Y axis, toward the +Z axis.</span><br/><span class="rvts22">"b" is a rotation about the Y axis, from the +Z axis, toward the +X axis.</span><br/><span class="rvts22">"c" is a rotation about the Z axis, from the +X axis, toward the +Y axis.</span></p>
+<p class="rvps7"><span class="rvts22">These are all cases of the&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/right-hand_rule">Right Hand Rule</a><span class="rvts22">. Point your right thumb along the positive axis, your fingers show the direction of rotation.</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/220px-Right-hand_grip_rulesvg1.png"></p>
+<p class="rvps7"><span class="rvts22">Thus if "a" is fixed to zero, and "b" and "c" are manipulated appropriately, this is the&nbsp;</span><span class="rvts26">spherical coordinate system</span><span class="rvts22">.</span><br/><span class="rvts22">So, to construct a cylinder from the origin to some other point (x,y,z):</span></p>
+<p class="rvps27"><span class="rvts43">x</span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">10</span><span class="rvts43">; y </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">10</span><span class="rvts43">; z </span><span class="rvts50">=</span><span class="rvts43">&nbsp;</span><span class="rvts50">10</span><span class="rvts43">; </span><span class="rvts49">// point coordinates of end of cylinder</span><br/><span class="rvts43">length </span><span class="rvts50">=</span><span class="rvts43">&nbsp;norm([x,y,z]); </span><span class="rvts49">// radial distance</span><br/><span class="rvts43">b </span><span class="rvts50">=</span><span class="rvts43">&nbsp;acos(z</span><span class="rvts50">/</span><span class="rvts43">length); </span><span class="rvts49">// inclination angle</span><br/><span class="rvts43">c </span><span class="rvts50">=</span><span class="rvts43">&nbsp;atan2(y,x); </span><span class="rvts49">// azimuthal angle</span><br/><span class="rvts43">rotate([</span><span class="rvts50">0</span><span class="rvts43">, b, c]) cylinder(h</span><span class="rvts50">=</span><span class="rvts43">length, r</span><span class="rvts50">=0.5</span><span class="rvts43">);</span><br/><span class="rvts50">%</span><span class="rvts43">cube([x,y,z]); </span><span class="rvts49">// corner of cube should coincide with end of cylinder</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/Example_xyz_rotation_in_OpenSCAD.jpg"></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/feature-tour">Easily create Help documents</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour">Easily create Help documents</a></p>
 
 	</div>
 	

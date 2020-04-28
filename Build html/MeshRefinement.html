@@ -91,8 +91,14 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">The slices parameter defines the number of intermediate points along the Z axis of the extrusion. Its default increases with the value of twist. Explicitly setting slices may improve the output refinement.</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/400px-Openscad_linext_06.jpg"></p>
+<p class="rvps17"><span class="rvts36">linear_extrude(height = 10, center = false, convexity = 10, twist = 360, slices = 100) translate([2, 0, 0]) circle(r = 1);</span></p>
+<p class="rvps7"><span class="rvts22">The&nbsp;</span><a class="rvts25" href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Other_Language_Features">special variables</a><span class="rvts22">&nbsp;$fn, $fs and $fa can also be used to improve the output. If slices is not defined, its value is taken from the defined $fn value.</span></p>
+<p class="rvps7"><img alt="" style="padding : 1px;" src="lib/400px-Openscad_linext_07.jpg"></p>
+<p class="rvps17"><span class="rvts36">linear_extrude(height = 10, center = false, convexity = 10, twist = 360, $fn = 100) translate([2, 0, 0]) circle(r = 1);</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EPub generator</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EPub generator</a></p>
 
 	</div>
 	

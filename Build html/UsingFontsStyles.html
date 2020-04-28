@@ -79,7 +79,7 @@
 				
 				
 				
-				<a href="Alignment.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				<a href="VerticalAlignment.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
 				
 			</div>
@@ -91,8 +91,23 @@
 	<div id="topic_content">
 		
 <p></p>
+<p class="rvps7"><span class="rvts22">Fonts are specified by their logical font name; in addition a style parameter can be added to select a specific font style like "</span><span class="rvts21">bold</span><span class="rvts22">" or "</span><span class="rvts26">italic</span><span class="rvts22">", such as:</span></p>
+<p class="rvps17"><span class="rvts36">font="Liberation Sans:style=Bold Italic"</span></p>
+<p class="rvps7"><span class="rvts22">The font list dialog (available under Help &gt; Font List) shows the font name and the font style for each available font. For reference, the dialog also displays the location of the font file. You can drag a font in the font list, into the editor window to use in the text() statement.</span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_font_list_dialog.png"><br/><span class="rvts48">OpenSCAD font list dialog</span></p>
+<p class="rvps7"><span class="rvts22">OpenSCAD includes the fonts&nbsp;</span><span class="rvts26">Liberation Mono, Liberation Sans, Liberation Sans Narrow and Liberation Serif</span><span class="rvts22">. Hence, as fonts in general differ by platform type, use of these included fonts is likely to be portable across platforms.</span></p>
+<p class="rvps7"><span class="rvts22">For common/casual text usage, the specification of one of these fonts is&nbsp;</span><span class="rvts21">recommended</span><span class="rvts22">&nbsp;for this reason. Liberation Sans is the default font to encourage this.</span></p>
+<p class="rvps7"><span class="rvts22"></span><br/><span class="rvts22">In addition to the installed fonts, it's possible to add project specific font files. Supported font file formats are&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/TrueType">TrueType</a><span class="rvts22">&nbsp;Fonts (*.ttf) and&nbsp;</span><a class="rvts23" href="https://en.wikipedia.org/wiki/OpenType">OpenType</a><span class="rvts22">&nbsp;Fonts (*.otf). The files need to be registered with use&lt;&gt;.</span></p>
+<p class="rvps17"><span class="rvts36">use &lt;ttf/paratype-serif/PTF55F.ttf&gt;</span></p>
+<p class="rvps7"><span class="rvts22">After the registration, the font is listed in the font list dialog, so in case logical name of a font is unknown, it can be looked up as it was registered.</span></p>
+<p class="rvps7"><span class="rvts22">OpenSCAD uses fontconfig to find and manage fonts, so it's possible to list the system configured fonts on command line using the fontconfig tools in a format similar to the GUI dialog.</span></p>
+<p class="rvps27"><span class="rvts43">$ fc-list -f </span><span class="rvts54">"%-60{{%{family[0]}%{:style[0]=}}}%{file}\n"</span><span class="rvts43">&nbsp;| sort ... Liberation Mono:style</span><span class="rvts50">=</span><span class="rvts43">Bold Italic /usr/share/fonts/truetype/liberation2/LiberationMono-BoldItalic.ttf Liberation Mono:style</span><span class="rvts50">=</span><span class="rvts43">Bold /usr/share/fonts/truetype/liberation2/LiberationMono-Bold.ttf Liberation Mono:style</span><span class="rvts50">=</span><span class="rvts43">Italic /usr/share/fonts/truetype/liberation2/LiberationMono-Italic.ttf Liberation Mono:style</span><span class="rvts50">=</span><span class="rvts43">Regular /usr/share/fonts/truetype/liberation2/LiberationMono-Regular.ttf ...</span></p>
+<p class="rvps7"><span class="rvts21">Example</span></p>
+<p class="rvps17"><span class="rvts36">square(10); translate([15, 15]) { text("OpenSCAD", font = "Liberation Sans"); } translate([15, 0]) { text("OpenSCAD", font = "Liberation Sans:style=Bold Italic"); }</span></p>
+<p class="rvps2"><span class="rvts55"><br/></span></p>
+<p class="rvps26"><img alt="" style="padding : 1px;" src="lib/OpenSCAD_text_font_style_example.png"><br/><span class="rvts48">Example 2: Result.</span></p>
 <p></p>
-<p class="rvps6" style="clear: both;"><span class="rvts18">Created with the Personal Edition of HelpNDoc: </span><a class="rvts19" href="https://www.helpndoc.com/create-epub-ebooks">Free EPub producer</a></p>
+<p class="rvps6" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/create-epub-ebooks">Free EPub producer</a></p>
 
 	</div>
 	
